@@ -61,9 +61,9 @@ export default function Hero() {
           jobPosition={t("hero.subtitle")}
           firstName="Dr. Jonas"
           lastName="Heller"
-          imageUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=80&w=800"
+          imageUrl="/images/jonas.png"
           description={t("hero.value")}
-          ctaHref="#contact"
+          ctaHref="#about"
         />
       </div>
     </section>
