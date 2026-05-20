@@ -94,8 +94,11 @@ export default function TeamMemberCard({
           </div>
 
           <div className={cn('flex gap-8', isPositionRight && 'justify-end')}>
-            <motion.a
-              href={ctaHref}
+            <motion.button
+              onClick={() => {
+                const el = document.querySelector(ctaHref);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
@@ -114,7 +117,7 @@ export default function TeamMemberCard({
                 )}
                 style={{ color: 'var(--color-text-secondary)' }}
               />
-            </motion.a>
+            </motion.button>
 
             <div className='w-[40%]'>
               <p
