@@ -31,9 +31,9 @@ const translations: TranslationMap = {
   // Hero
   "hero.subtitle": { en: "Researcher · Consultant · Speaker", de: "Forscher · Berater · Redner", nl: "Onderzoeker · Adviseur · Spreker" },
   "hero.value": {
-    en: "I help organizations harness AR, VR, and AI to transform customer experiences — backed by rigorous research and real-world results.",
-    de: "Ich helfe Unternehmen, AR, VR und KI für bessere Kundenerlebnisse zu nutzen — gestützt auf fundierte Forschung und praxisnahe Ergebnisse.",
-    nl: "Ik help organisaties AR, VR en AI in te zetten voor betere klantbeleving — onderbouwd door gedegen onderzoek en concrete resultaten.",
+    en: "I research how AR, VR, and AI change the way people shop, work, and interact with brands — and help companies put these insights into practice.",
+    de: "Ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern — und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
+    nl: "Ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen — en help bedrijven die inzichten toe te passen.",
   },
   "hero.bio": {
     en: "Assistant Professor in Marketing at Maastricht University. Co-Founder of",
