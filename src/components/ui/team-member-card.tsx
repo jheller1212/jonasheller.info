@@ -54,14 +54,14 @@ export default function TeamMemberCard({
         </p>
       </motion.div>
 
-      <div className='flex items-center justify-end'>
+      <div className='flex flex-col md:flex-row items-center justify-end'>
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative h-[500px] w-[360px] shrink-0 overflow-hidden rounded-sm',
-            isPositionRight && 'order-1'
+            'relative h-[350px] w-full md:h-[500px] md:w-[360px] shrink-0 overflow-hidden rounded-sm',
+            isPositionRight && 'md:order-1'
           )}
         >
           <div className='pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent' />
@@ -74,17 +74,17 @@ export default function TeamMemberCard({
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 0, y: 20 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative -left-8 z-[2] flex w-[calc(100%-350px)] flex-col gap-14',
-            isPositionRight && 'left-8 items-end'
+            'relative z-[2] flex w-full flex-col gap-6 -mt-12 px-4 md:mt-0 md:px-0 md:-left-8 md:w-[calc(100%-350px)] md:gap-14',
+            isPositionRight && 'md:left-8 md:items-end'
           )}
         >
           <div>
             <p
-              className='text-5xl leading-[1.1] font-extralight tracking-tight'
+              className='text-3xl md:text-5xl leading-[1.1] font-extralight tracking-tight'
               style={{ color: 'var(--color-text)' }}
             >
               {firstName}
@@ -93,7 +93,19 @@ export default function TeamMemberCard({
             </p>
           </div>
 
-          <div className={cn('flex gap-8', isPositionRight && 'justify-end')}>
+          <div className={cn('flex flex-col gap-4 md:flex-row md:gap-8', isPositionRight && 'md:justify-end')}>
+            <div className='order-1 md:order-none w-full md:w-[55%]'>
+              <p
+                className={cn(
+                  'text-sm leading-[1.8]',
+                  isPositionRight && 'md:text-right'
+                )}
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                {description}
+              </p>
+            </div>
+
             <motion.button
               onClick={() => {
                 const el = document.querySelector(ctaHref);
@@ -102,8 +114,8 @@ export default function TeamMemberCard({
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                'group flex h-20 w-20 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300',
-                isPositionRight && 'order-1'
+                'group flex h-14 w-14 md:h-20 md:w-20 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300',
+                isPositionRight && 'md:order-1'
               )}
               style={{
                 borderColor: 'var(--color-border)',
@@ -118,18 +130,6 @@ export default function TeamMemberCard({
                 style={{ color: 'var(--color-text-secondary)' }}
               />
             </motion.button>
-
-            <div className='w-[40%]'>
-              <p
-                className={cn(
-                  'text-sm leading-[1.8]',
-                  isPositionRight && 'text-right'
-                )}
-                style={{ color: 'var(--color-text-secondary)' }}
-              >
-                {description}
-              </p>
-            </div>
           </div>
         </motion.div>
       </div>
