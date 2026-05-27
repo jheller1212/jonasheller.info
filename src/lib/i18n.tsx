@@ -31,9 +31,9 @@ const translations: TranslationMap = {
   // Hero
   "hero.subtitle": { en: "Researcher · Consultant · Speaker", de: "Forscher · Berater · Redner", nl: "Onderzoeker · Adviseur · Spreker" },
   "hero.value": {
-    en: "I research how AR, VR, and AI change the way people shop, work, and interact with brands — and help companies put these insights into practice.",
-    de: "Ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern — und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
-    nl: "Ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen — en help bedrijven die inzichten toe te passen.",
+    en: "Marie Curie Fellow researching how AR, VR, and AI change the way people shop, work, and interact with brands — and helping companies put these insights into practice.",
+    de: "Marie-Curie-Stipendiat — ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern, und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
+    nl: "Marie Curie Fellow — ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen, en help bedrijven die inzichten toe te passen.",
   },
   "hero.bio": {
     en: "Assistant Professor in Marketing at Maastricht University. Co-Founder of",
@@ -52,7 +52,7 @@ const translations: TranslationMap = {
   "terminal.line.2": { en: 'affiliation: "Maastricht University, SBE"', de: 'Universität: "Maastricht University, SBE"', nl: 'universiteit: "Maastricht University, SBE"' },
   "terminal.line.3": { en: 'labs: ["DEXLab", "LIT Network"]', de: 'Labs: ["DEXLab", "LIT Network"]', nl: 'labs: ["DEXLab", "LIT Network"]' },
   "terminal.line.4": { en: 'research: ["AR/VR", "AI", "Digital Marketing", "Consumer Behavior"]', de: 'Forschung: ["AR/VR", "KI", "Digitales Marketing", "Konsumentenverhalten"]', nl: 'onderzoek: ["AR/VR", "AI", "Digitale Marketing", "Consumentengedrag"]' },
-  "terminal.line.5": { en: 'funding: "€2.1M+ in competitive grants"', de: 'Förderung: "€2,1 Mio.+ kompetitive Drittmittel"', nl: 'financiering: "€2,1 mln.+ competitieve subsidies"' },
+  "terminal.line.5": { en: 'funding: "Marie Curie Fellow | €2.1M+ in competitive grants"', de: 'Förderung: "Marie-Curie-Stipendiat | €2,1 Mio.+ kompetitive Drittmittel"', nl: 'financiering: "Marie Curie Fellow | €2,1 mln.+ competitieve subsidies"' },
   "terminal.line.6": { en: 'awards: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', de: 'Auszeichnungen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', nl: 'prijzen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]' },
   "terminal.line.7": { en: 'education: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Maastricht University"', de: 'Ausbildung: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Universität Maastricht"', nl: 'opleiding: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Universiteit Maastricht"' },
   "terminal.line.8": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
