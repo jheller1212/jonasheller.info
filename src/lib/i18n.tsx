@@ -54,9 +54,13 @@ const translations: TranslationMap = {
   "terminal.line.4": { en: 'research: ["AR/VR", "AI", "Digital Marketing", "Consumer Behavior"]', de: 'Forschung: ["AR/VR", "KI", "Digitales Marketing", "Konsumentenverhalten"]', nl: 'onderzoek: ["AR/VR", "AI", "Digitale Marketing", "Consumentengedrag"]' },
   "terminal.line.5": { en: 'funding: "Marie Curie Fellow | €2.1M+ in competitive grants"', de: 'Förderung: "Marie-Curie-Stipendiat | €2,1 Mio.+ kompetitive Drittmittel"', nl: 'financiering: "Marie Curie Fellow | €2,1 mln.+ competitieve subsidies"' },
   "terminal.line.6": { en: 'awards: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', de: 'Auszeichnungen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', nl: 'prijzen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]' },
-  "terminal.line.7": { en: 'education: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Maastricht University"', de: 'Ausbildung: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Universität Maastricht"', nl: 'opleiding: "PhD Digital Marketing @ UNSW | M.Sc. International Business: SCM & B.Sc. International Business @ Universiteit Maastricht"' },
-  "terminal.line.8": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
-  "terminal.line.9": { en: 'publications: "39 peer-reviewed articles | h-index 23"', de: 'Publikationen: "39 peer-reviewed Artikel | h-Index 23"', nl: 'publicaties: "39 peer-reviewed artikelen | h-index 23"' },
+  "terminal.line.7": { en: 'education: [', de: 'Ausbildung: [', nl: 'opleiding: [' },
+  "terminal.line.8": { en: '  "PhD Digital Marketing @ UNSW",', de: '  "PhD Digital Marketing @ UNSW",', nl: '  "PhD Digital Marketing @ UNSW",' },
+  "terminal.line.9": { en: '  "M.Sc. International Business: SCM @ Maastricht University",', de: '  "M.Sc. International Business: SCM @ Universität Maastricht",', nl: '  "M.Sc. International Business: SCM @ Universiteit Maastricht",' },
+  "terminal.line.10": { en: '  "B.Sc. International Business @ Maastricht University"', de: '  "B.Sc. International Business @ Universität Maastricht"', nl: '  "B.Sc. International Business @ Universiteit Maastricht"' },
+  "terminal.line.11": { en: ']', de: ']', nl: ']' },
+  "terminal.line.12": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
+  "terminal.line.13": { en: 'publications: "39 peer-reviewed articles | h-index 23"', de: 'Publikationen: "39 peer-reviewed Artikel | h-Index 23"', nl: 'publicaties: "39 peer-reviewed artikelen | h-index 23"' },
 
   // About bio
   "about.bio": {

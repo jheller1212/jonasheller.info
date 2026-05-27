@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
 
-const LINE_COUNT = 10;
+const LINE_COUNT = 14;
+const INDENT_LINES = new Set([8, 9, 10, 11]);
 
 export default function Terminal() {
   const { ref, isVisible } = useScrollAnimation(0.2);
@@ -15,7 +16,7 @@ export default function Terminal() {
   const [isTyping, setIsTyping] = useState(false);
 
   const terminalLines = Array.from({ length: LINE_COUNT }, (_, i) => ({
-    prompt: ">",
+    prompt: INDENT_LINES.has(i) ? "" : ">",
     text: t(`terminal.line.${i}`),
   }));
 
