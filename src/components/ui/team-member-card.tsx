@@ -78,9 +78,10 @@ export default function TeamMemberCard({
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative z-[2] flex w-full flex-col gap-6 mt-6 px-4 md:mt-0 md:px-0 md:-left-8 md:w-[calc(100%-350px)] md:gap-14',
+            'relative z-[2] flex w-full flex-col gap-6 mt-6 px-4 md:mt-0 md:px-6 md:py-8 md:-left-8 md:w-[calc(100%-350px)] md:gap-14 md:rounded-xl md:backdrop-blur-md',
             isPositionRight && 'md:left-8 md:items-end'
           )}
+          style={{ backgroundColor: 'color-mix(in srgb, var(--color-bg) 80%, transparent)' }}
         >
           <div>
             <p
