@@ -31,9 +31,9 @@ const translations: TranslationMap = {
   // Hero
   "hero.subtitle": { en: "Researcher · Consultant · Speaker", de: "Forscher · Berater · Redner", nl: "Onderzoeker · Adviseur · Spreker" },
   "hero.value": {
-    en: "Marie Curie Fellow researching how AR, VR, and AI change the way people shop, work, and interact with brands — and helping companies put these insights into practice.",
-    de: "Marie-Curie-Stipendiat — ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern, und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
-    nl: "Marie Curie Fellow — ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen, en help bedrijven die inzichten toe te passen.",
+    en: "I research how AR, VR, and AI change the way people shop, work, and interact with brands — and help companies put these insights into practice.",
+    de: "Ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern — und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
+    nl: "Ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen — en help bedrijven die inzichten toe te passen.",
   },
   "hero.bio": {
     en: "Assistant Professor in Marketing at Maastricht University. Co-Founder of",
