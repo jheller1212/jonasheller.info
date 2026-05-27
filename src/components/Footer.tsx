@@ -1,7 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
+
+function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return <span>[email protected]</span>;
+  const email = `${user}@${domain}`;
+  return (
+    <a
+      href={`mailto:${email}`}
+      className="underline underline-offset-4 decoration-1 hover:opacity-70"
+      style={{ color: "var(--color-accent)" }}
+    >
+      {email}
+    </a>
+  );
+}
 
 export default function Footer() {
   const [showImpressum, setShowImpressum] = useState(false);
@@ -51,7 +67,10 @@ export default function Footer() {
 
             <h2 className="text-xl font-bold mb-6">Impressum</h2>
 
-            <div className="space-y-4 text-sm" style={{ color: "var(--color-text-secondary)" }}>
+            <div
+              className="space-y-4 text-sm"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
                   Responsible for content
@@ -68,11 +87,19 @@ export default function Footer() {
                   Contact
                 </p>
                 <p>
-                  Please use the{" "}
+                  <ObfuscatedEmail
+                    user="j.heller"
+                    domain="maastrichtuniversity.nl"
+                  />
+                </p>
+                <p className="mt-1">
+                  Or use the{" "}
                   <button
                     onClick={() => {
                       setShowImpressum(false);
-                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
                     style={{ color: "var(--color-accent)" }}
@@ -85,29 +112,50 @@ export default function Footer() {
 
               <hr style={{ borderColor: "var(--color-border)" }} />
 
-              <h3 className="text-base font-bold pt-2" style={{ color: "var(--color-text)" }}>
+              <h3
+                className="text-base font-bold pt-2"
+                style={{ color: "var(--color-text)" }}
+              >
                 Privacy Notice
               </h3>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Contact form
+                  Data controller
                 </p>
                 <p>
-                  When you submit the contact form, your name, email address, and
-                  message are transmitted to{" "}
+                  Dr. Jonas Heller, Maastricht University, Tongersestraat 53,
+                  6211 LM Maastricht, The Netherlands.{" "}
+                  <ObfuscatedEmail
+                    user="j.heller"
+                    domain="maastrichtuniversity.nl"
+                  />
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Contact form / Formspree
+                </p>
+                <p>
+                  When you submit the contact form, your name, email address,
+                  and message are transmitted to{" "}
                   <a
-                    href="https://formspree.io/legal/privacy-policy/"
+                    href="https://formspree.io/legal/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 decoration-1 hover:opacity-70"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    Formspree
+                    Formspree Inc.
                   </a>{" "}
-                  for processing and forwarded to me via email. This data is used
-                  solely to respond to your inquiry. Legal basis: Art. 6(1)(f) GDPR
-                  (legitimate interest in responding to inquiries).
+                  (US) for processing and forwarded to me by email. Legal basis:
+                  Art. 6(1)(a) GDPR (your consent, given via the consent
+                  checkbox on the form). Formspree is US-based; the transfer is
+                  covered by Standard Contractual Clauses (Art. 46 GDPR). Form
+                  submissions are retained for the duration of correspondence
+                  and then deleted. Formspree retains data per their own privacy
+                  policy.
                 </p>
               </div>
 
@@ -116,8 +164,9 @@ export default function Footer() {
                   Hosting
                 </p>
                 <p>
-                  This website is hosted on GitHub Pages. GitHub may collect
-                  technical log data (IP addresses) in accordance with their{" "}
+                  This website is hosted on GitHub Pages (GitHub Inc. /
+                  Microsoft). Server logs may record IP addresses in accordance
+                  with GitHub&apos;s{" "}
                   <a
                     href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
                     target="_blank"
@@ -133,11 +182,12 @@ export default function Footer() {
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  No tracking
+                  No cookies or tracking
                 </p>
                 <p>
-                  This website does not use cookies, analytics, or any third-party
-                  tracking tools.
+                  This website uses no cookies, analytics, or third-party
+                  tracking. Language preference is stored in localStorage
+                  (functional, exempt from consent requirements).
                 </p>
               </div>
 
@@ -146,9 +196,29 @@ export default function Footer() {
                   Your rights
                 </p>
                 <p>
-                  Under the GDPR, you have the right to access, rectify, or delete
-                  your personal data. To exercise these rights, please contact me
-                  via the contact form.
+                  Under the GDPR (Art. 15–21), you have the right to access,
+                  rectification, erasure, restriction of processing, data
+                  portability, and objection. To exercise these rights, please
+                  contact me via email or the contact form above.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Right to complain
+                </p>
+                <p>
+                  You have the right to lodge a complaint with the{" "}
+                  <a
+                    href="https://www.autoriteitpersoonsgegevens.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 decoration-1 hover:opacity-70"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    Autoriteit Persoonsgegevens
+                  </a>{" "}
+                  or your local supervisory authority.
                 </p>
               </div>
             </div>
