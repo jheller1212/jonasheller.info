@@ -53,20 +53,6 @@ public/
   robots.txt
 ```
 
-## Transparency note
-
-This website was built collaboratively with [Claude Code](https://claude.ai/code) (Anthropic) on 8--10 March 2026. All content — publications, biography, CV data, affiliations — was provided and verified by Jonas Heller. The code, design, and structure were generated through iterative human-AI pair programming.
-
-### Development timeline
-
-| Date | What changed |
-|---|---|
-| 8 Mar 2026 | Initial site design and build; first deployment to GitHub Pages |
-| 9 Mar 2026 | Redesign (colour scheme, layout); added awards, funding, citation stats; rebuilt with Next.js 14 + TypeScript + Tailwind |
-| 10 Mar 2026 | Expanded publications to 39 papers from Google Scholar; added SEO (JSON-LD, metadata, sitemap, robots.txt); added contact form; added CV page; added Impressum & Privacy notice; custom favicon |
-
-The full commit history is public and can be inspected in this repository.
-
 ## License
 
 Content (text, publications, biographical data) is owned by Jonas Heller. Code is available for reference.
