@@ -61,7 +61,7 @@ export default function Hero() {
           jobPosition={t("hero.subtitle")}
           firstName="Dr. Jonas"
           lastName="Heller"
-          imageUrl="/images/jonas.png"
+          imageUrl="/images/jonas.webp"
           description={t("hero.value")}
           ctaHref="#about"
         />
