@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useI18n } from "@/lib/i18n";
 
 function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
@@ -22,6 +22,24 @@ function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
 export default function Footer() {
   const [showImpressum, setShowImpressum] = useState(false);
   const { t } = useI18n();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const openBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!showImpressum) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowImpressum(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    // Move focus into dialog
+    dialogRef.current?.focus();
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [showImpressum]);
+
+  // Return focus to trigger button on close
+  useEffect(() => {
+    if (!showImpressum) openBtnRef.current?.focus();
+  }, [showImpressum]);
 
   return (
     <>
@@ -36,6 +54,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Dr. Jonas Heller. {t("footer.rights")}
         </p>
         <button
+          ref={openBtnRef}
           onClick={() => setShowImpressum(true)}
           className="mt-2 hover:opacity-70 transition-opacity underline underline-offset-4 decoration-1"
           style={{ color: "var(--color-text-secondary)" }}
@@ -53,7 +72,12 @@ export default function Footer() {
           }}
         >
           <div
-            className="glass-card rounded-2xl p-8 sm:p-10 max-w-lg w-full max-h-[80vh] overflow-y-auto relative"
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="impressum-title"
+            tabIndex={-1}
+            className="glass-card rounded-2xl p-8 sm:p-10 max-w-lg w-full max-h-[80vh] overflow-y-auto relative focus:outline-none"
             style={{ color: "var(--color-text)" }}
           >
             <button
@@ -65,7 +89,7 @@ export default function Footer() {
               ×
             </button>
 
-            <h2 className="text-xl font-bold mb-6">Impressum</h2>
+            <h2 id="impressum-title" className="text-xl font-bold mb-6">Impressum</h2>
 
             <div
               className="space-y-4 text-sm"

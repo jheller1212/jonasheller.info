@@ -93,7 +93,7 @@ export default function Contact() {
                     name="name"
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2"
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1"
                     style={{
                       borderColor: "var(--color-border)",
                       color: "var(--color-text)",
@@ -117,7 +117,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2"
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1"
                     style={{
                       borderColor: "var(--color-border)",
                       color: "var(--color-text)",
@@ -141,7 +141,7 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 resize-none"
                   style={{
                     borderColor: "var(--color-border)",
                     color: "var(--color-text)",
