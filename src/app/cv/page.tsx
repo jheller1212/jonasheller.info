@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Nav from "@/components/Nav";
@@ -666,13 +667,13 @@ export default function CVPage() {
 
           {/* Back link */}
           <div className="text-center">
-            <a
+            <Link
               href="/"
               className="text-sm hover:opacity-70 transition-opacity"
               style={{ color: "var(--color-accent)" }}
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </main>
