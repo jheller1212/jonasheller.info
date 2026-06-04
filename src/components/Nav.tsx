@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState, useCallback, MouseEvent } from "react";
 import MagneticButton from "./MagneticButton";
@@ -71,13 +72,13 @@ export default function Nav() {
       }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a
+        <Link
           href="/"
           className="text-lg font-bold tracking-tight"
           style={{ color: "var(--color-text)" }}
         >
           JH
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">

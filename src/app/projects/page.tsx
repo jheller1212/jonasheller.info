@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -202,13 +203,13 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-16 text-center"
           >
-            <a
+            <Link
               href="/"
               className="text-sm font-medium hover:opacity-70 transition-opacity"
               style={{ color: "var(--color-accent)" }}
             >
               ← {t("projects.back")}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </main>
