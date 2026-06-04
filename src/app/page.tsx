@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <SmoothScroll />
       <Nav />
-      <main className="font-[family-name:var(--font-geist-sans)]">
+      <main id="main-content" className="font-[family-name:var(--font-geist-sans)]">
         <Hero />
         <Terminal />
         <Bento />
