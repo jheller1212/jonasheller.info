@@ -24,9 +24,11 @@ export default function Footer() {
   const { t } = useI18n();
   const dialogRef = useRef<HTMLDivElement>(null);
   const openBtnRef = useRef<HTMLButtonElement>(null);
+  const hasBeenOpenRef = useRef(false);
 
   useEffect(() => {
     if (!showImpressum) return;
+    hasBeenOpenRef.current = true;
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setShowImpressum(false);
     };
@@ -36,9 +38,9 @@ export default function Footer() {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [showImpressum]);
 
-  // Return focus to trigger button on close
+  // Return focus to trigger button only when dialog closes (not on initial mount)
   useEffect(() => {
-    if (!showImpressum) openBtnRef.current?.focus();
+    if (!showImpressum && hasBeenOpenRef.current) openBtnRef.current?.focus();
   }, [showImpressum]);
 
   return (
