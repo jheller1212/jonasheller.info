@@ -226,8 +226,8 @@ const translations: TranslationMap = {
   "contact.message": { en: "Message", de: "Nachricht", nl: "Bericht" },
   "contact.messagePlaceholder": {
     en: "Tell me about your event or project — a date, audience, and goal help me respond faster...",
-    de: "Erzählen Sie mir von Ihrer Veranstaltung oder Ihrem Projekt — Datum, Zielgruppe und Ziel helfen mir, schneller zu antworten...",
-    nl: "Vertel me over uw evenement of project — datum, doelgroep en doel helpen mij sneller te reageren...",
+    de: "Erzählen Sie mir von Ihrer Veranstaltung oder Ihrem Projekt — Datum, Publikum und Zielsetzung helfen mir, schneller zu antworten...",
+    nl: "Beschrijf uw evenement of project — datum, doelgroep en doelstelling helpen mij sneller te reageren...",
   },
   "contact.interest": { en: "I'm interested in", de: "Ich interessiere mich für", nl: "Ik ben geïnteresseerd in" },
   "contact.interest.placeholder": { en: "Select a topic...", de: "Bitte auswählen...", nl: "Maak een keuze..." },

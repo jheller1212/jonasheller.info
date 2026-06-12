@@ -141,7 +141,7 @@ export default function Contact() {
                   name="enquiry_type"
                   required
                   defaultValue=""
-                  className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 appearance-none"
+                  className="w-full pl-4 pr-10 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 appearance-none"
                   style={{
                     borderColor: "var(--color-border)",
                     color: "var(--color-text)",
@@ -152,7 +152,11 @@ export default function Contact() {
                     backgroundRepeat: "no-repeat",
                   }}
                 >
-                  <option value="" disabled>
+                  <option
+                    value=""
+                    disabled
+                    style={{ backgroundColor: "var(--color-bg-secondary)", color: "var(--color-text)" }}
+                  >
                     {t("contact.interest.placeholder")}
                   </option>
                   {(["keynote", "workshop", "consulting", "execed", "research", "other"] as const).map((key) => (
