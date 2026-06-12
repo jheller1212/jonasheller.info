@@ -12,3 +12,6 @@ out/
 *.pem
 .env*
 .vercel
+
+# typescript
+tsconfig.tsbuildinfo
