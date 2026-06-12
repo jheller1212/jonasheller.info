@@ -38,6 +38,25 @@ const translations: TranslationMap = {
   "hero.ctaPrimary": { en: "Book a keynote", de: "Keynote anfragen", nl: "Keynote boeken" },
   "hero.ctaSecondary": { en: "or discuss a project", de: "oder ein Projekt besprechen", nl: "of een project bespreken" },
 
+  // Trusted by
+  "trusted.label": {
+    en: "Trusted by organizations including",
+    de: "Vertrauen von Organisationen wie",
+    nl: "Vertrouwd door organisaties als",
+  },
+  "trusted.0": { en: "Allianz", de: "Allianz", nl: "Allianz" },
+  "trusted.1": { en: "APG", de: "APG", nl: "APG" },
+  "trusted.2": {
+    en: "Dutch Ministry of I&W",
+    de: "NL-Ministerium für I&W",
+    nl: "Ministerie van I&W",
+  },
+  "trusted.3": {
+    en: "Maastricht University MBA",
+    de: "Maastricht University MBA",
+    nl: "Maastricht University MBA",
+  },
+
   // Terminal
   "terminal.title": { en: "about.sh", de: "ueber-mich.sh", nl: "over-mij.sh" },
 

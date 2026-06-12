@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Terminal from "@/components/Terminal";
+import TrustedBy from "@/components/TrustedBy";
 import Bento from "@/components/Bento";
 import Publications from "@/components/Publications";
 import Speaking from "@/components/Speaking";
@@ -21,6 +22,7 @@ export default function Home() {
       <Nav />
       <main id="main-content" className="font-[family-name:var(--font-geist-sans)]">
         <Hero />
+        <TrustedBy />
         <Speaking />
         <Consulting />
         <Terminal />

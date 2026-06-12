@@ -11,7 +11,7 @@ export default function Speaking() {
   const { t } = useI18n();
 
   return (
-    <section id="speaking" className="scroll-mt-20 pt-24 sm:pt-32 pb-14 sm:pb-16 px-6">
+    <section id="speaking" className="scroll-mt-20 py-14 sm:py-16 px-6">
       <div className="max-w-6xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
