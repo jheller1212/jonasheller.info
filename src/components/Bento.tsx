@@ -31,7 +31,7 @@ export default function Bento() {
   const { t } = useI18n();
 
   return (
-    <section id="research" className="py-14 sm:py-16 px-6">
+    <section id="research" className="scroll-mt-20 py-14 sm:py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

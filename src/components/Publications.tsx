@@ -359,7 +359,7 @@ export default function Publications() {
   const displayed = showAll ? papers : papers.slice(0, 6);
 
   return (
-    <section id="publications" className="py-14 sm:py-16 px-6">
+    <section id="publications" className="scroll-mt-20 py-14 sm:py-16 px-6">
       <div className="max-w-6xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

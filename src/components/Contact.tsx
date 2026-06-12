@@ -21,7 +21,7 @@ export default function Contact() {
   const succeeded = state.succeeded && !dismissed;
 
   return (
-    <section id="contact" className="py-14 sm:py-16 px-6">
+    <section id="contact" className="scroll-mt-20 py-14 sm:py-16 px-6">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

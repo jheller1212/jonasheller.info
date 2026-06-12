@@ -7,25 +7,42 @@ import { twMerge } from 'tailwind-merge'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function cn(...inputs: any[]) { return twMerge(clsx(inputs)) }
 
+interface HeroCta {
+  label: string
+  href: string
+}
+
 interface TeamMemberCardProps {
   position: 'left' | 'right'
-  jobPosition?: string
-  firstName?: string
-  lastName?: string
-  imageUrl?: string
-  description?: string
+  jobPosition: string
+  firstName: string
+  lastName: string
+  imageUrl: string
+  description: string
   className?: string
-  ctaHref?: string
+  primaryCta: HeroCta
+  secondaryCta: HeroCta
+}
+
+function smoothScrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  if (!href.startsWith('#')) return
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+  const el = document.getElementById(href.slice(1))
+  if (!el) return
+  e.preventDefault()
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
 }
 
 export default function TeamMemberCard({
   position = 'left',
-  jobPosition = 'Backend Engineer',
-  firstName = 'Jennie',
-  lastName = 'Garcia',
-  imageUrl = 'https://images.unsplash.com/photo-1526510747491-58f928ec870f?fm=jpg&q=60',
-  description = 'Jennie is a skilled developer with expertise in modern web technologies and a passion for creating seamless user experiences.',
-  ctaHref = '#contact',
+  jobPosition,
+  firstName,
+  lastName,
+  imageUrl,
+  description,
+  primaryCta,
+  secondaryCta,
   className,
 }: TeamMemberCardProps) {
   const fullName = `${firstName} ${lastName}`
@@ -78,23 +95,21 @@ export default function TeamMemberCard({
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative z-[2] flex w-full flex-col gap-6 mt-6 px-4 md:mt-0 md:px-6 md:py-8 md:-left-8 md:w-[calc(100%-350px)] md:gap-14 md:rounded-xl md:backdrop-blur-md',
+            'relative z-[2] flex w-full flex-col gap-6 mt-6 px-4 md:mt-0 md:px-6 md:py-8 md:-left-8 md:w-[calc(100%-350px)] md:gap-12 md:rounded-xl md:backdrop-blur-md',
             isPositionRight && 'md:left-8 md:items-end'
           )}
           style={{ backgroundColor: 'color-mix(in srgb, var(--color-bg) 80%, transparent)' }}
         >
-          <div>
-            <p
-              className='text-3xl md:text-5xl leading-[1.1] font-extralight tracking-tight'
-              style={{ color: 'var(--color-text)' }}
-            >
-              {firstName}
-              <br />
-              <span className='font-normal'>{lastName}</span>
-            </p>
-          </div>
+          <h1
+            className='text-3xl md:text-5xl leading-[1.1] font-extralight tracking-tight'
+            style={{ color: 'var(--color-text)' }}
+          >
+            {firstName}
+            <br />
+            <span className='font-normal'>{lastName}</span>
+          </h1>
 
-          <div className={cn('flex flex-col gap-4 md:flex-row md:gap-8', isPositionRight && 'md:justify-end')}>
+          <div className={cn('flex flex-col gap-8 md:flex-row md:gap-10', isPositionRight && 'md:justify-end')}>
             <div className='order-1 md:order-none w-full md:w-[55%]'>
               <p
                 className={cn(
@@ -107,30 +122,42 @@ export default function TeamMemberCard({
               </p>
             </div>
 
-            <motion.button
-              onClick={() => {
-                const el = document.querySelector(ctaHref);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className={cn(
-                'group flex h-14 w-14 md:h-20 md:w-20 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300',
-                isPositionRight && 'md:order-1'
-              )}
-              style={{
-                borderColor: 'var(--color-border)',
-              }}
-            >
-              <ArrowRight
-                size={22}
-                className={cn(
-                  'transition-all duration-300 group-hover:-rotate-45',
-                  isPositionRight && 'rotate-180 group-hover:rotate-[225deg]'
-                )}
-                style={{ color: 'var(--color-text-secondary)' }}
-              />
-            </motion.button>
+            <div className={cn('order-2 md:order-none flex shrink-0 flex-col justify-center gap-5', isPositionRight && 'md:order-1')}>
+              <motion.a
+                href={primaryCta.href}
+                onClick={(e) => smoothScrollTo(e, primaryCta.href)}
+                whileHover='hover'
+                whileTap={{ scale: 0.97 }}
+                className='group flex items-center gap-4 cursor-pointer'
+              >
+                <motion.span
+                  variants={{ hover: { scale: 1.1 } }}
+                  className='flex h-14 w-14 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-[var(--color-accent)]'
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <ArrowRight
+                    size={20}
+                    className='transition-all duration-300 group-hover:-rotate-45 group-hover:text-[var(--color-accent)]'
+                    style={{ color: 'var(--color-text-secondary)' }}
+                  />
+                </motion.span>
+                <span
+                  className='text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-[var(--color-accent)]'
+                  style={{ color: 'var(--color-text)' }}
+                >
+                  {primaryCta.label}
+                </span>
+              </motion.a>
+
+              <a
+                href={secondaryCta.href}
+                onClick={(e) => smoothScrollTo(e, secondaryCta.href)}
+                className='ml-[4.5rem] w-fit text-sm underline decoration-1 underline-offset-[6px] transition-opacity hover:opacity-70'
+                style={{ color: 'var(--color-text-secondary)', textDecorationColor: 'var(--color-border)' }}
+              >
+                {secondaryCta.label}
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

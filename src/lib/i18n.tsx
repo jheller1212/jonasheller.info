@@ -29,19 +29,14 @@ const translations: TranslationMap = {
   "nav.contact": { en: "Contact", de: "Kontakt", nl: "Contact" },
 
   // Hero
-  "hero.subtitle": { en: "Researcher · Consultant · Speaker", de: "Forscher · Berater · Redner", nl: "Onderzoeker · Adviseur · Spreker" },
+  "hero.subtitle": { en: "Keynote Speaker · Consultant · Professor", de: "Keynote Speaker · Berater · Professor", nl: "Keynote spreker · Adviseur · Professor" },
   "hero.value": {
-    en: "I research how AR, VR, and AI change the way people shop, work, and interact with brands — and help companies put these insights into practice.",
-    de: "Ich erforsche, wie AR, VR und KI das Einkaufen, Arbeiten und die Interaktion mit Marken verändern — und helfe Unternehmen, diese Erkenntnisse umzusetzen.",
-    nl: "Ik onderzoek hoe AR, VR en AI het winkelen, werken en de interactie met merken veranderen — en help bedrijven die inzichten toe te passen.",
+    en: "I help executives and their teams cut through the hype of AR, VR, and AI — with keynotes, workshops, and strategy grounded in a decade of consumer research.",
+    de: "Ich helfe Führungskräften und ihren Teams, den Hype um AR, VR und KI zu durchschauen — mit Keynotes, Workshops und Strategien, gestützt auf ein Jahrzehnt Konsumentenforschung.",
+    nl: "Ik help bestuurders en hun teams door de hype van AR, VR en AI heen te kijken — met keynotes, workshops en strategie, gestoeld op tien jaar consumentenonderzoek.",
   },
-  "hero.bio": {
-    en: "Assistant Professor in Marketing at Maastricht University. Co-Founder of",
-    de: "Assistant Professor für Marketing an der Universität Maastricht. Mitgründer von",
-    nl: "Assistant Professor Marketing aan de Universiteit Maastricht. Medeoprichter van",
-  },
-  "hero.viewResearch": { en: "View Research", de: "Forschung ansehen", nl: "Onderzoek bekijken" },
-  "hero.getInTouch": { en: "Get in Touch", de: "Kontakt aufnehmen", nl: "Neem contact op" },
+  "hero.ctaPrimary": { en: "Book a keynote", de: "Keynote anfragen", nl: "Keynote boeken" },
+  "hero.ctaSecondary": { en: "or discuss a project", de: "oder ein Projekt besprechen", nl: "of een project bespreken" },
 
   // Terminal
   "terminal.title": { en: "about.sh", de: "ueber-mich.sh", nl: "over-mij.sh" },
