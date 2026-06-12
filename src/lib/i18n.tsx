@@ -155,9 +155,9 @@ const translations: TranslationMap = {
     nl: "Reality, Augmented: waar AR & VR zich echt terugbetalen",
   },
   "speaking.0.desc": {
-    en: "What a decade of lab and field studies says about immersive tech in retail and services — your audience leaves knowing which use cases create value and which are expensive gimmicks.",
-    de: "Was ein Jahrzehnt Labor- und Feldforschung über immersive Technologien in Handel und Dienstleistung zeigt — Ihr Publikum erfährt, welche Anwendungsfälle Wert schaffen und welche teure Spielerei sind.",
-    nl: "Wat tien jaar lab- en veldonderzoek leert over immersieve technologie in retail en dienstverlening — uw publiek weet daarna welke toepassingen waarde creëren en welke dure gimmicks zijn.",
+    en: "What a decade of lab and consumer studies says about immersive tech in retail and services — your audience leaves knowing which use cases create value and which are expensive gimmicks.",
+    de: "Was ein Jahrzehnt Labor- und Konsumentenforschung über immersive Technologien in Handel und Dienstleistung zeigt — Ihr Publikum erfährt, welche Anwendungsfälle Wert schaffen und welche teure Spielerei sind.",
+    nl: "Wat tien jaar lab- en consumentenonderzoek leert over immersieve technologie in retail en dienstverlening — uw publiek weet daarna welke toepassingen waarde creëren en welke dure gimmicks zijn.",
   },
   "speaking.1.title": {
     en: "Beyond the AI Hype: What AI Really Does to Customers",
@@ -202,12 +202,12 @@ const translations: TranslationMap = {
   "speaking.5.title": {
     en: "Evidence Over Hype: Inside the Open Science Movement",
     de: "Evidenz statt Hype: Einblick in Open Science",
-    nl: "Bewijs boven hype: binnenin open science",
+    nl: "Bewijs boven hype: de open science-beweging van binnenuit",
   },
   "speaking.5.desc": {
     en: "How open, transparent research separates real insight from noise — and how decision-makers can tell credible evidence from cherry-picked claims.",
-    de: "Wie offene, transparente Forschung echte Erkenntnis von Rauschen trennt — und woran Entscheider glaubwürdige Evidenz von Rosinenpickerei unterscheiden.",
-    nl: "Hoe open, transparant onderzoek echt inzicht van ruis scheidt — en hoe beslissers geloofwaardig bewijs herkennen tussen selectieve claims.",
+    de: "Wie offene, transparente Forschung echte Erkenntnis von Rauschen trennt — und wie Entscheider glaubwürdige Evidenz von Rosinenpickerei unterscheiden.",
+    nl: "Hoe open, transparant onderzoek echt inzicht van ruis scheidt — en hoe beslissers geloofwaardig bewijs onderscheiden van selectieve claims.",
   },
 
   "speaking.bookingCta": {
