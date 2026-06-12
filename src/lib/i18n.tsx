@@ -41,15 +41,15 @@ const translations: TranslationMap = {
   // Trusted by
   "trusted.label": {
     en: "Trusted by organizations including",
-    de: "Vertrauen von Organisationen wie",
-    nl: "Vertrouwd door organisaties als",
+    de: "Diese Organisationen vertrauen mir",
+    nl: "Vertrouwd door organisaties zoals",
   },
   "trusted.0": { en: "Allianz", de: "Allianz", nl: "Allianz" },
   "trusted.1": { en: "APG", de: "APG", nl: "APG" },
   "trusted.2": {
     en: "Dutch Ministry of I&W",
-    de: "NL-Ministerium für I&W",
-    nl: "Ministerie van I&W",
+    de: "NL-Infrastrukturministerium",
+    nl: "Ministerie van IenW",
   },
   "trusted.3": {
     en: "Maastricht University MBA",

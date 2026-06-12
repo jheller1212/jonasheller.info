@@ -11,7 +11,7 @@ export default function TrustedBy() {
   const { t } = useI18n();
 
   return (
-    <section aria-label={t("trusted.label")} className="px-6 pt-16 sm:pt-20 pb-2">
+    <section aria-labelledby="trusted-by-label" className="px-6 pt-16 sm:pt-20 pb-2">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -20,12 +20,13 @@ export default function TrustedBy() {
         className="max-w-6xl mx-auto text-center"
       >
         <p
+          id="trusted-by-label"
           className="text-xs tracking-[0.25em] uppercase mb-6"
-          style={{ color: "var(--color-text-secondary)", opacity: 0.7 }}
+          style={{ color: "var(--color-text-secondary)" }}
         >
           {t("trusted.label")}
         </p>
-        <ul className="flex flex-wrap items-baseline justify-center gap-x-10 gap-y-3 list-none">
+        <ul role="list" className="flex flex-wrap items-baseline justify-center gap-x-10 gap-y-3 list-none">
           {nameKeys.map((i) => (
             <li
               key={i}
