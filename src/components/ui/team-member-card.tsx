@@ -89,7 +89,7 @@ export default function TeamMemberCard({
             fill
             priority
             sizes='(min-width: 768px) 360px, 100vw'
-            className='object-cover object-top md:object-center duration-500 ease-[0.22,1,0.36,1] hover:scale-105'
+            className='object-cover object-top md:object-center transition-transform duration-500 ease-[0.22,1,0.36,1] hover:scale-105'
           />
         </motion.div>
 
