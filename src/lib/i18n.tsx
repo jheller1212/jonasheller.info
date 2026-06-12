@@ -21,7 +21,6 @@ type TranslationMap = Record<string, Record<Locale, string>>;
 const translations: TranslationMap = {
   // Nav
   "nav.about": { en: "About", de: "Über mich", nl: "Over mij" },
-  "nav.research": { en: "Research", de: "Forschung", nl: "Onderzoek" },
   "nav.publications": { en: "Publications", de: "Publikationen", nl: "Publicaties" },
   "nav.speaking": { en: "Speaking", de: "Vorträge", nl: "Lezingen" },
   "nav.consulting": { en: "Consulting", de: "Beratung", nl: "Advies" },
