@@ -56,8 +56,11 @@ export default function Consulting() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
               >
-                <p className="font-semibold text-sm" style={{ color: "var(--color-text)" }}>
+                <h3 className="font-bold mb-2" style={{ color: "var(--color-text)" }}>
                   {t(key)}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                  {t(`${key}.desc`)}
                 </p>
               </motion.div>
             )

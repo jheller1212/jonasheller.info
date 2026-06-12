@@ -226,8 +226,23 @@ const translations: TranslationMap = {
     nl: "Ik help organisaties bij het navigeren van immersieve technologie\u00ebn, AI en consumentengedrag \u2014 en vertaal baanbrekend onderzoek naar uitvoerbare strategie.",
   },
   "consulting.workshops": { en: "Workshops & Masterclasses", de: "Workshops & Masterclasses", nl: "Workshops & Masterclasses" },
+  "consulting.workshops.desc": {
+    en: "Hands-on sessions that take your team from curiosity to a prioritized shortlist of AR, VR, and AI use cases — evidence-based and jargon-free.",
+    de: "Praxisnahe Sessions, die Ihr Team von der Neugier zu einer priorisierten Shortlist von AR-, VR- und KI-Anwendungsfällen führen — evidenzbasiert und ohne Fachjargon.",
+    nl: "Praktische sessies die uw team van nieuwsgierigheid naar een geprioriteerde shortlist van AR-, VR- en AI-toepassingen brengen — onderbouwd en zonder jargon.",
+  },
   "consulting.training": { en: "In-Company Training & Executive Education", de: "Inhouse-Trainings & Executive Education", nl: "Incompany trainingen & Executive Education" },
+  "consulting.training.desc": {
+    en: "Programs for leadership teams and professionals — from MBA-level digital strategy to tailored in-company curricula, as delivered for Allianz, APG, and the Dutch Ministry of I&W.",
+    de: "Programme für Führungsteams und Fachkräfte — von Digital Strategy auf MBA-Niveau bis zu maßgeschneiderten Inhouse-Curricula, wie für Allianz, APG und das NL-Infrastrukturministerium.",
+    nl: "Programma's voor managementteams en professionals — van digital strategy op MBA-niveau tot incompany curricula op maat, zoals verzorgd voor Allianz, APG en het Ministerie van IenW.",
+  },
   "consulting.advisory": { en: "Strategic Advisory on AR, VR, AI & Digital Transformation", de: "Strategische Beratung zu AR, VR, KI & digitale Transformation", nl: "Strategisch advies over AR, VR, AI & digitale transformatie" },
+  "consulting.advisory.desc": {
+    en: "Independent, research-grounded counsel on where immersive technologies and AI fit your strategy — and where they don't.",
+    de: "Unabhängiger, forschungsgestützter Rat dazu, wo immersive Technologien und KI in Ihre Strategie passen — und wo nicht.",
+    nl: "Onafhankelijk, op onderzoek gestoeld advies over waar immersieve technologie en AI in uw strategie passen — en waar niet.",
+  },
   "consulting.clientsTitle": { en: "Past Clients", de: "Bisherige Kunden", nl: "Eerdere klanten" },
   "consulting.clients": {
     en: "Allianz \u00b7 APG \u00b7 Dutch Ministry of Infrastructure and Water Management \u00b7 Maastricht University MBA",
