@@ -152,3 +152,11 @@ html.lenis body {
 select:required:invalid {
   color: var(--color-text-secondary);
 }
+
+/* Unified focus ring color for form fields (matches accent, offset follows theme) */
+input:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: var(--color-accent);
+  --tw-ring-offset-color: var(--color-bg);
+}

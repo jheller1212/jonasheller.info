@@ -34,6 +34,7 @@ export default function MagneticButton({
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!ref.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;

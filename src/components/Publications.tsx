@@ -429,6 +429,7 @@ export default function Publications() {
             <MagneticButton
               className="px-6 py-2 rounded-full text-sm font-semibold border transition-colors"
               onClick={() => setShowAll(!showAll)}
+              aria-expanded={showAll}
             >
               {showAll ? t("pub.showLess") : `${t("pub.showAll")} ${papers.length} ${t("pub.papers")}`}
             </MagneticButton>
