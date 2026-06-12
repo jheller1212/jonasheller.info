@@ -81,7 +81,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {linkKeys.map((link) => (
             <a
               key={link.href}
@@ -154,7 +154,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full border transition-colors"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border transition-colors"
             style={{
               borderColor: "var(--color-border)",
               color: "var(--color-text)",
@@ -183,7 +183,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-4"
+          className="lg:hidden px-6 pb-6 pt-2 flex flex-col gap-4"
           style={{ backgroundColor: "var(--color-nav-bg)" }}
         >
           {linkKeys.map((link) => (
