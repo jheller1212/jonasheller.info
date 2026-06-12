@@ -63,7 +63,8 @@ export default function Hero() {
           lastName="Heller"
           imageUrl="/images/jonas.webp"
           description={t("hero.value")}
-          ctaHref="#about"
+          primaryCta={{ label: t("hero.ctaPrimary"), href: "#speaking" }}
+          secondaryCta={{ label: t("hero.ctaSecondary"), href: "#consulting" }}
         />
       </div>
     </section>
