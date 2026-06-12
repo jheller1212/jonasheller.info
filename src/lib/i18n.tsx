@@ -212,6 +212,24 @@ const translations: TranslationMap = {
   },
   "consulting.cta": { en: "Discuss a Project", de: "Projekt besprechen", nl: "Project bespreken" },
 
+  // Newsletter
+  "newsletter.eyebrow": { en: "Newsletter", de: "Newsletter", nl: "Nieuwsbrief" },
+  "newsletter.title": {
+    en: "From the lab to your inbox",
+    de: "Aus dem Labor in Ihr Postfach",
+    nl: "Van het lab naar uw inbox",
+  },
+  "newsletter.desc": {
+    en: "Essays on what AR, VR, and AI actually do to customers and organizations \u2014 research-backed, hype-free.",
+    de: "Essays dar\u00fcber, was AR, VR und KI bei Kunden und Organisationen wirklich bewirken \u2014 forschungsbasiert, ohne Hype.",
+    nl: "Essays over wat AR, VR en AI echt doen met klanten en organisaties \u2014 onderbouwd door onderzoek, zonder hype.",
+  },
+  "newsletter.cta": {
+    en: "Read on Substack",
+    de: "Auf Substack lesen",
+    nl: "Lees op Substack",
+  },
+
   // Contact
   "contact.eyebrow": { en: "Contact", de: "Kontakt", nl: "Contact" },
   "contact.title": { en: "Get in Touch", de: "Kontakt aufnehmen", nl: "Neem contact op" },
