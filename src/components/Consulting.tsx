@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
@@ -87,6 +88,15 @@ export default function Consulting() {
             >
               {t("consulting.cta")}
             </a>
+            <p className="mt-5 text-sm">
+              <Link
+                href="/consulting"
+                className="underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
+                style={{ color: "var(--color-text-secondary)", textDecorationColor: "var(--color-border)" }}
+              >
+                {t("consulting.moreLink")}
+              </Link>
+            </p>
           </div>
         </motion.div>
       </div>
