@@ -210,6 +210,37 @@ const translations: TranslationMap = {
     nl: "Hoe open, transparant onderzoek echt inzicht van ruis scheidt — en hoe beslissers geloofwaardig bewijs onderscheiden van selectieve claims.",
   },
 
+  "speaking.moreLink": {
+    en: "All talks in detail \u2192",
+    de: "Alle Vortr\u00e4ge im Detail \u2192",
+    nl: "Alle lezingen in detail \u2192",
+  },
+  "speakingPage.heading": {
+    en: "Keynote Speaking",
+    de: "Keynotes & Vortr\u00e4ge",
+    nl: "Keynotes & lezingen",
+  },
+  "speakingPage.intro": {
+    en: "Research-backed keynotes on AR, VR, AI, and consumer behavior \u2014 for conferences, leadership summits, and corporate events. On stage or online, in English or German.",
+    de: "Forschungsbasierte Keynotes zu AR, VR, KI und Konsumentenverhalten \u2014 f\u00fcr Konferenzen, Leadership-Summits und Firmenevents. Auf der B\u00fchne oder online, auf Englisch oder Deutsch.",
+    nl: "Op onderzoek gebaseerde keynotes over AR, VR, AI en consumentengedrag \u2014 voor congressen, leadership summits en bedrijfsevenementen. Op het podium of online, in het Engels of Duits.",
+  },
+  "speakingPage.talksTitle": {
+    en: "Signature Talks",
+    de: "Signature Talks",
+    nl: "Signature talks",
+  },
+  "speakingPage.tailored": {
+    en: "Every talk is tailored to your audience and industry \u2014 and can be combined with a hands-on workshop or executive session on the same day.",
+    de: "Jeder Vortrag wird auf Ihr Publikum und Ihre Branche zugeschnitten \u2014 und l\u00e4sst sich am selben Tag mit einem Workshop oder einer Executive Session kombinieren.",
+    nl: "Elke lezing wordt afgestemd op uw publiek en branche \u2014 en is op dezelfde dag te combineren met een workshop of executive sessie.",
+  },
+  "speakingPage.crossLink": {
+    en: "Also looking for consulting or executive education? \u2192",
+    de: "Auch an Beratung oder Executive Education interessiert? \u2192",
+    nl: "Ook op zoek naar advies of executive education? \u2192",
+  },
+
   "speaking.bookingCta": {
     en: "For keynote bookings, please include the event date, expected audience size, and preferred topic in your message.",
     de: "F\u00fcr Keynote-Buchungen geben Sie bitte Veranstaltungsdatum, erwartete Teilnehmerzahl und gew\u00fcnschtes Thema in Ihrer Nachricht an.",
@@ -250,6 +281,21 @@ const translations: TranslationMap = {
     nl: "Allianz \u00b7 APG \u00b7 Ministerie van Infrastructuur en Waterstaat \u00b7 Maastricht University MBA",
   },
   "consulting.cta": { en: "Discuss a Project", de: "Projekt besprechen", nl: "Project bespreken" },
+  "consulting.moreLink": {
+    en: "More about consulting \u2192",
+    de: "Mehr zur Beratung \u2192",
+    nl: "Meer over advies \u2192",
+  },
+  "consultingPage.heading": {
+    en: "Consulting & Executive Education",
+    de: "Beratung & Executive Education",
+    nl: "Advies & executive education",
+  },
+  "consultingPage.crossLink": {
+    en: "Looking for a keynote instead? \u2192",
+    de: "Lieber eine Keynote buchen? \u2192",
+    nl: "Liever een keynote boeken? \u2192",
+  },
 
   // Newsletter
   "newsletter.eyebrow": { en: "Newsletter", de: "Newsletter", nl: "Nieuwsbrief" },
