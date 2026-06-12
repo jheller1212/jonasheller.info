@@ -21,11 +21,11 @@ export default function Home() {
       <Nav />
       <main id="main-content" className="font-[family-name:var(--font-geist-sans)]">
         <Hero />
+        <Speaking />
+        <Consulting />
         <Terminal />
         <Bento />
         <Publications />
-        <Speaking />
-        <Consulting />
         <Contact />
       </main>
       <Footer />

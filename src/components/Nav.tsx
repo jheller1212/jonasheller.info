@@ -7,10 +7,10 @@ import MagneticButton from "./MagneticButton";
 import { useI18n, localeLabels, Locale } from "@/lib/i18n";
 
 const linkKeys = [
-  { key: "nav.about", href: "#about" },
-  { key: "nav.research", href: "#research" },
-  { key: "nav.publications", href: "#publications" },
   { key: "nav.speaking", href: "#speaking" },
+  { key: "nav.consulting", href: "#consulting" },
+  { key: "nav.about", href: "#about" },
+  { key: "nav.publications", href: "#publications" },
   { key: "nav.projects", href: "/projects" },
   { key: "nav.cv", href: "/cv" },
   { key: "nav.contact", href: "#contact" },
