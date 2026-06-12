@@ -391,6 +391,11 @@ const translations: TranslationMap = {
   "projects.back": { en: "Back to Home", de: "Zur\u00fcck zur Startseite", nl: "Terug naar home" },
 
   // A11y
+  "a11y.switchLang": {
+    en: "Switch language:",
+    de: "Sprache wechseln:",
+    nl: "Taal wijzigen:",
+  },
   "a11y.newTab": {
     en: "(opens in new tab)",
     de: "(\u00f6ffnet in neuem Tab)",
