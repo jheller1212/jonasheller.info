@@ -51,7 +51,7 @@ export default function Terminal() {
   }, [isVisible, visibleLines, currentChar]);
 
   return (
-    <section id="about" className="pt-24 sm:pt-32 pb-14 sm:pb-16 px-6">
+    <section id="about" className="scroll-mt-20 pt-24 sm:pt-32 pb-14 sm:pb-16 px-6">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <div
           className="rounded-xl overflow-hidden shadow-2xl"

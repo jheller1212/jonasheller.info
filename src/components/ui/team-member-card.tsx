@@ -26,10 +26,12 @@ interface TeamMemberCardProps {
 
 function smoothScrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   if (!href.startsWith('#')) return
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
   const el = document.getElementById(href.slice(1))
   if (!el) return
   e.preventDefault()
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
 }
 
 export default function TeamMemberCard({

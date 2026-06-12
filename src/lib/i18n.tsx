@@ -32,11 +32,11 @@ const translations: TranslationMap = {
   "hero.subtitle": { en: "Keynote Speaker · Consultant · Professor", de: "Keynote Speaker · Berater · Professor", nl: "Keynote spreker · Adviseur · Professor" },
   "hero.value": {
     en: "I help executives and their teams cut through the hype of AR, VR, and AI — with keynotes, workshops, and strategy grounded in a decade of consumer research.",
-    de: "Ich helfe Führungskräften und ihren Teams, den Hype um AR, VR und KI zu durchschauen — mit Keynotes, Workshops und Strategien, fundiert durch ein Jahrzehnt Konsumentenforschung.",
+    de: "Ich helfe Führungskräften und ihren Teams, den Hype um AR, VR und KI zu durchschauen — mit Keynotes, Workshops und Strategien, gestützt auf ein Jahrzehnt Konsumentenforschung.",
     nl: "Ik help bestuurders en hun teams door de hype van AR, VR en AI heen te kijken — met keynotes, workshops en strategie, gestoeld op tien jaar consumentenonderzoek.",
   },
   "hero.ctaPrimary": { en: "Book a keynote", de: "Keynote anfragen", nl: "Keynote boeken" },
-  "hero.ctaSecondary": { en: "or discuss a project", de: "oder Projekt besprechen", nl: "of bespreek een project" },
+  "hero.ctaSecondary": { en: "or discuss a project", de: "oder ein Projekt besprechen", nl: "of een project bespreken" },
 
   // Terminal
   "terminal.title": { en: "about.sh", de: "ueber-mich.sh", nl: "over-mij.sh" },
