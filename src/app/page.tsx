@@ -7,6 +7,7 @@ import Terminal from "@/components/Terminal";
 import TrustedBy from "@/components/TrustedBy";
 import Bento from "@/components/Bento";
 import Publications from "@/components/Publications";
+import Newsletter from "@/components/Newsletter";
 import Speaking from "@/components/Speaking";
 import Consulting from "@/components/Consulting";
 import Contact from "@/components/Contact";
@@ -28,6 +29,7 @@ export default function Home() {
         <Terminal />
         <Bento />
         <Publications />
+        <Newsletter />
         <Contact />
       </main>
       <Footer />
