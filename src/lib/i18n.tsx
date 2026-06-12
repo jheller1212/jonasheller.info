@@ -24,6 +24,7 @@ const translations: TranslationMap = {
   "nav.research": { en: "Research", de: "Forschung", nl: "Onderzoek" },
   "nav.publications": { en: "Publications", de: "Publikationen", nl: "Publicaties" },
   "nav.speaking": { en: "Speaking", de: "Vorträge", nl: "Lezingen" },
+  "nav.consulting": { en: "Consulting", de: "Beratung", nl: "Advies" },
   "nav.projects": { en: "Projects", de: "Projekte", nl: "Projecten" },
   "nav.cv": { en: "CV", de: "Lebenslauf", nl: "CV" },
   "nav.contact": { en: "Contact", de: "Kontakt", nl: "Contact" },
