@@ -13,6 +13,7 @@ interface MagneticButtonProps {
   rel?: string;
   onClick?: () => void;
   "aria-label"?: string;
+  "aria-expanded"?: boolean;
   title?: string;
 }
 
@@ -27,6 +28,7 @@ export default function MagneticButton({
   rel,
   onClick,
   "aria-label": ariaLabel,
+  "aria-expanded": ariaExpanded,
   title,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLElement>(null);
@@ -34,6 +36,7 @@ export default function MagneticButton({
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!ref.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -64,6 +67,7 @@ export default function MagneticButton({
     "data-magnetic": true,
     onClick,
     "aria-label": ariaLabel,
+    "aria-expanded": ariaExpanded,
     title,
   };
 

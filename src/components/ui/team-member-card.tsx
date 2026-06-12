@@ -137,6 +137,7 @@ export default function TeamMemberCard({
                 >
                   <ArrowRight
                     size={20}
+                    aria-hidden='true' 
                     className='transition-all duration-300 group-hover:-rotate-45 group-hover:text-[var(--color-accent)]'
                     style={{ color: 'var(--color-text-secondary)' }}
                   />

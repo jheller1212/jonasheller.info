@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState, useCallback, MouseEvent } from "react";
 import MagneticButton from "./MagneticButton";
-import { useI18n, localeLabels, Locale } from "@/lib/i18n";
+import { useI18n, localeLabels, localeNames, Locale } from "@/lib/i18n";
 
 const linkKeys = [
   { key: "nav.speaking", href: "#speaking" },
@@ -39,6 +39,21 @@ export default function Nav() {
       document.body.style.overflow = "";
     }
     return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onResize = () => { if (mq.matches) setMenuOpen(false); };
+    document.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onResize);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onResize);
+    };
   }, [menuOpen]);
 
   const handleNavClick = useCallback((e: MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -108,6 +123,8 @@ export default function Nav() {
               <button
                 key={l}
                 onClick={() => setLocale(l)}
+                aria-label={`${t("a11y.switchLang")} ${localeNames[l]}`}
+                aria-pressed={locale === l}
                 className="px-2 py-1.5 rounded-full transition-colors font-medium"
                 style={{
                   backgroundColor: locale === l ? "var(--color-accent)" : "transparent",
@@ -161,6 +178,8 @@ export default function Nav() {
             }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               {menuOpen ? (
@@ -183,6 +202,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
+          id="mobile-menu"
           className="lg:hidden px-6 pb-6 pt-2 flex flex-col gap-4"
           style={{ backgroundColor: "var(--color-nav-bg)" }}
         >

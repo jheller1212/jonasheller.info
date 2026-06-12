@@ -27,6 +27,12 @@ export default function Footer() {
   const hasBeenOpenRef = useRef(false);
 
   useEffect(() => {
+    const open = () => setShowImpressum(true);
+    window.addEventListener("open-impressum", open);
+    return () => window.removeEventListener("open-impressum", open);
+  }, []);
+
+  useEffect(() => {
     if (!showImpressum) return;
     hasBeenOpenRef.current = true;
     const handleEsc = (e: KeyboardEvent) => {
@@ -190,11 +196,10 @@ export default function Footer() {
                   Hosting
                 </p>
                 <p>
-                  This website is hosted on GitHub Pages (GitHub Inc. /
-                  Microsoft). Server logs may record IP addresses in accordance
-                  with GitHub&apos;s{" "}
+                  This website is hosted on Vercel (Vercel Inc., US). Server
+                  logs may record IP addresses in accordance with Vercel&apos;s{" "}
                   <a
-                    href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                    href="https://vercel.com/legal/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 decoration-1 hover:opacity-70"

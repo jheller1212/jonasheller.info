@@ -65,8 +65,15 @@ export default function Terminal() {
             <span className="ml-3 text-xs text-white/40 font-mono">{t("terminal.title")}</span>
           </div>
 
+          {/* Static text for screen readers; the animation below is decorative */}
+          <ul className="sr-only">
+            {terminalLines.map((line, i) => (
+              <li key={i}>{line.text}</li>
+            ))}
+          </ul>
+
           {/* Terminal content */}
-          <div className="p-6 font-mono text-sm sm:text-base leading-relaxed min-h-[320px]">
+          <div aria-hidden="true" className="p-6 font-mono text-sm sm:text-base leading-relaxed min-h-[320px]">
             {terminalLines.slice(0, visibleLines).map((line, i) => (
               <div key={i} className="mb-1">
                 <span style={{ color: "var(--color-terminal-prompt)" }}>

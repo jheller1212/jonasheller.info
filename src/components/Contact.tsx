@@ -97,8 +97,6 @@ export default function Contact() {
                     style={{
                       borderColor: "var(--color-border)",
                       color: "var(--color-text)",
-                      // @ts-expect-error -- CSS custom property
-                      "--tw-ring-color": "var(--color-accent)",
                     }}
                     placeholder={t("contact.namePlaceholder")}
                   />
@@ -210,10 +208,7 @@ export default function Contact() {
                         type="button"
                         className="underline underline-offset-4 decoration-1 hover:opacity-70 inline"
                         style={{ color: "var(--color-accent)" }}
-                        onClick={() => {
-                          const btn = document.querySelector<HTMLButtonElement>("footer button");
-                          btn?.click();
-                        }}
+                        onClick={() => window.dispatchEvent(new CustomEvent("open-impressum"))}
                       >
                         {part}
                       </button>
@@ -269,6 +264,7 @@ export default function Contact() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${link.label} ${t("a11y.newTab")}`}
               className="hover:opacity-70 transition-opacity"
               style={{ color: "var(--color-accent)" }}
             >

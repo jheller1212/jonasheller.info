@@ -44,6 +44,7 @@ export default function Newsletter() {
             href="https://jonasheller.substack.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${t("newsletter.cta")} ${t("a11y.newTab")}`}
             className="group flex shrink-0 items-center gap-4"
           >
             <span
@@ -52,6 +53,7 @@ export default function Newsletter() {
             >
               <ArrowRight
                 size={20}
+                aria-hidden="true"
                 className="-rotate-45 transition-colors duration-300 group-hover:text-[var(--color-accent)]"
                 style={{ color: "var(--color-text-secondary)" }}
               />

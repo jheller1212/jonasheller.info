@@ -390,6 +390,18 @@ const translations: TranslationMap = {
   },
   "projects.back": { en: "Back to Home", de: "Zur\u00fcck zur Startseite", nl: "Terug naar home" },
 
+  // A11y
+  "a11y.switchLang": {
+    en: "Switch language:",
+    de: "Sprache wechseln:",
+    nl: "Taal wijzigen:",
+  },
+  "a11y.newTab": {
+    en: "(opens in new tab)",
+    de: "(\u00f6ffnet in neuem Tab)",
+    nl: "(opent in nieuw tabblad)",
+  },
+
   // Footer
   "footer.rights": { en: "All rights reserved.", de: "Alle Rechte vorbehalten.", nl: "Alle rechten voorbehouden." },
   "footer.impressum": { en: "Impressum & Privacy", de: "Impressum & Datenschutz", nl: "Impressum & Privacy" },
@@ -412,7 +424,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setLocaleState(detectLocale());
+    const detected = detectLocale();
+    setLocaleState(detected);
+    document.documentElement.lang = detected;
     setMounted(true);
   }, []);
 
@@ -447,4 +461,10 @@ export const localeLabels: Record<Locale, string> = {
   en: "EN",
   de: "DE",
   nl: "NL",
+};
+
+export const localeNames: Record<Locale, string> = {
+  en: "English",
+  de: "Deutsch",
+  nl: "Nederlands",
 };
