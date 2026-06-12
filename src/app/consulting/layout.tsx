@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description:
       "Strategic consulting, workshops, and executive education on AR, VR, AI, and digital transformation.",
     url: `${siteUrl}/consulting`,
+    siteName: "Jonas Heller",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Consulting & Executive Education — AR, VR & AI | Dr. Jonas Heller",
+    description:
+      "Strategic consulting, workshops, and executive education on AR, VR, AI, and digital transformation.",
   },
 };
 
@@ -26,7 +35,10 @@ const jsonLd = {
     "Strategic advisory, workshops, masterclasses, and executive education on augmented reality, virtual reality, artificial intelligence, and digital transformation.",
   url: `${siteUrl}/consulting`,
   areaServed: "Worldwide",
-  availableLanguage: ["English", "German"],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    availableLanguage: ["English", "German"],
+  },
   provider: {
     "@type": "Person",
     name: "Jonas Heller",

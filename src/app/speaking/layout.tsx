@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description:
       "Research-backed keynotes on AR, VR, AI, and consumer behavior for conferences and corporate events.",
     url: `${siteUrl}/speaking`,
+    siteName: "Jonas Heller",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keynote Speaker — AR, VR & AI | Dr. Jonas Heller",
+    description:
+      "Research-backed keynotes on AR, VR, AI, and consumer behavior for conferences and corporate events.",
   },
 };
 
@@ -26,7 +35,10 @@ const jsonLd = {
     "Research-backed keynote talks on augmented reality, virtual reality, artificial intelligence, and consumer behavior for conferences, leadership summits, and corporate events.",
   url: `${siteUrl}/speaking`,
   areaServed: "Worldwide",
-  availableLanguage: ["English", "German"],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    availableLanguage: ["English", "German"],
+  },
   provider: {
     "@type": "Person",
     name: "Jonas Heller",
