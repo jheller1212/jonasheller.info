@@ -147,3 +147,8 @@ html.lenis body {
       "g";
   }
 }
+
+/* Muted placeholder state for required selects (empty value = :invalid) */
+select:required:invalid {
+  color: var(--color-text-secondary);
+}

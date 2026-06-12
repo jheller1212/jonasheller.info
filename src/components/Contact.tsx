@@ -130,6 +130,50 @@ export default function Contact() {
 
               <div>
                 <label
+                  htmlFor="enquiry_type"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {t("contact.interest")}
+                </label>
+                <select
+                  id="enquiry_type"
+                  name="enquiry_type"
+                  required
+                  defaultValue=""
+                  className="w-full pl-4 pr-10 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 appearance-none"
+                  style={{
+                    borderColor: "var(--color-border)",
+                    color: "var(--color-text)",
+                    backgroundImage:
+                      "linear-gradient(45deg, transparent 50%, var(--color-text-secondary) 50%), linear-gradient(135deg, var(--color-text-secondary) 50%, transparent 50%)",
+                    backgroundPosition: "calc(100% - 21px) 50%, calc(100% - 16px) 50%",
+                    backgroundSize: "5px 5px",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  <option
+                    value=""
+                    disabled
+                    style={{ backgroundColor: "var(--color-bg-secondary)", color: "var(--color-text)" }}
+                  >
+                    {t("contact.interest.placeholder")}
+                  </option>
+                  {(["keynote", "workshop", "consulting", "execed", "research", "other"] as const).map((key) => (
+                    <option
+                      key={key}
+                      value={key}
+                      style={{ backgroundColor: "var(--color-bg-secondary)", color: "var(--color-text)" }}
+                    >
+                      {t(`contact.interest.${key}`)}
+                    </option>
+                  ))}
+                </select>
+                <ValidationError prefix="Enquiry type" field="enquiry_type" errors={state.errors} />
+              </div>
+
+              <div>
+                <label
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                   style={{ color: "var(--color-text-secondary)" }}
