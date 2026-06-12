@@ -1,0 +1,23 @@
+import type { MetadataRoute } from "next";
+
+const siteUrl = "https://www.jonasheller.info";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: `${siteUrl}/`,
+      changeFrequency: "monthly",
+      priority: 1.0,
+    },
+    {
+      url: `${siteUrl}/projects`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/cv`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+}
