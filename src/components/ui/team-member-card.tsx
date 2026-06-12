@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { clsx } from 'clsx'
@@ -82,11 +83,13 @@ export default function TeamMemberCard({
           )}
         >
           <div className='pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent' />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={imageUrl}
             alt={fullName}
-            className='h-full w-full object-cover object-top md:object-center duration-500 ease-[0.22,1,0.36,1] hover:scale-105'
+            fill
+            priority
+            sizes='(min-width: 768px) 360px, 100vw'
+            className='object-cover object-top md:object-center duration-500 ease-[0.22,1,0.36,1] hover:scale-105'
           />
         </motion.div>
 
