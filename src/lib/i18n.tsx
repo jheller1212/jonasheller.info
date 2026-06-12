@@ -234,7 +234,7 @@ const translations: TranslationMap = {
   "consulting.training": { en: "In-Company Training & Executive Education", de: "Inhouse-Trainings & Executive Education", nl: "Incompany trainingen & Executive Education" },
   "consulting.training.desc": {
     en: "Programs for leadership teams and professionals — from MBA-level digital strategy to tailored in-company curricula, as delivered for Allianz, APG, and the Dutch Ministry of I&W.",
-    de: "Programme für Führungsteams und Fachkräfte — von Digital Strategy auf MBA-Niveau bis zu maßgeschneiderten Inhouse-Curricula, wie für Allianz, APG und das NL-Infrastrukturministerium.",
+    de: "Programme für Führungsteams und Fachkräfte — von Digital Strategy auf MBA-Niveau bis zu maßgeschneiderten Inhouse-Curricula, u. a. für Allianz, APG und das NL-Infrastrukturministerium.",
     nl: "Programma's voor managementteams en professionals — van digital strategy op MBA-niveau tot incompany curricula op maat, zoals verzorgd voor Allianz, APG en het Ministerie van IenW.",
   },
   "consulting.advisory": { en: "Strategic Advisory on AR, VR, AI & Digital Transformation", de: "Strategische Beratung zu AR, VR, KI & digitale Transformation", nl: "Strategisch advies over AR, VR, AI & digitale transformatie" },

@@ -38,7 +38,7 @@ export default function Consulting() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10"
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={{
