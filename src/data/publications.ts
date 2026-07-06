@@ -51,7 +51,7 @@ export const publications: Publication[] = [
     title: "Brave new procurement deals: An experimental study of how generative artificial intelligence reshapes buyer\u2013supplier negotiations",
     authors: "Herold, S., Heller, J., Rozemeijer, F., Mahr, D.",
     year: 2025,
-    journal: "Journal of Purchasing and Supply Management, 101012",
+    journal: "Journal of Purchasing and Supply Management 31 (4), 101012",
     url: "https://doi.org/10.1016/j.pursup.2025.101012",
   },
   {
