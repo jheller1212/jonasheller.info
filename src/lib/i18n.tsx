@@ -142,6 +142,8 @@ const translations: TranslationMap = {
   "pub.showAll": { en: "Show All", de: "Alle anzeigen", nl: "Alles tonen" },
   "pub.papers": { en: "Papers", de: "Arbeiten", nl: "Artikelen" },
   "pub.showLess": { en: "Show Less", de: "Weniger anzeigen", nl: "Minder tonen" },
+  "pub.sortRelevance": { en: "Relevance", de: "Relevanz", nl: "Relevantie" },
+  "pub.sortYear": { en: "Year", de: "Jahr", nl: "Jaar" },
   "pub.citations": { en: "citations", de: "Zitationen", nl: "citaties" },
 
   // Speaking
