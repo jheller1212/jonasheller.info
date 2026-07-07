@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
+import { publications } from "@/data/publications";
 
 const highlights = [
   { area: "a", titleKey: "bento.a.title", descKey: "bento.a.desc", link: "https://www.sbe-dexlab.com", linkKey: "bento.a.link", accent: true },
@@ -74,7 +75,7 @@ export default function Bento() {
                     color: item.accent ? "var(--color-accent)" : "var(--color-text)",
                   }}
                 >
-                  {t(item.titleKey)}
+                  {t(item.titleKey).replace("{count}", String(publications.length))}
                 </h3>
                 <p
                   className="text-sm sm:text-base leading-relaxed"
