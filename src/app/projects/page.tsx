@@ -95,7 +95,7 @@ export default function ProjectsPage() {
   return (
     <>
       <Nav />
-      <main className="font-[family-name:var(--font-geist-sans)] pt-24 pb-24 px-6">
+      <main id="main-content" className="font-[family-name:var(--font-geist-sans)] pt-24 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
