@@ -64,7 +64,6 @@ export const metadata: Metadata = {
     siteName: "Jonas Heller",
     type: "profile",
     locale: "en_US",
-    alternateLocale: ["de_DE", "nl_NL"],
   },
   twitter: {
     card: "summary_large_image",
