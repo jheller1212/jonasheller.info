@@ -144,6 +144,15 @@ const translations: TranslationMap = {
   "pub.showLess": { en: "Show Less", de: "Weniger anzeigen", nl: "Minder tonen" },
   "pub.sortRelevance": { en: "Relevance", de: "Relevanz", nl: "Relevantie" },
   "pub.sortYear": { en: "Year", de: "Jahr", nl: "Jaar" },
+  "pub.filterAll": { en: "All", de: "Alle", nl: "Alle" },
+  "pub.article": { en: "Articles", de: "Artikel", nl: "Artikelen" },
+  "pub.review": { en: "Reviews", de: "Übersichten", nl: "Reviews" },
+  "pub.chapter": { en: "Chapters", de: "Kapitel", nl: "Hoofdstukken" },
+  "pub.comment": { en: "Comments", de: "Kommentare", nl: "Commentaren" },
+  "pub.abstract": { en: "Abstracts", de: "Abstracts", nl: "Abstracts" },
+  "pub.thesis": { en: "Thesis", de: "Dissertation", nl: "Proefschrift" },
+  "pub.preprint": { en: "Preprints", de: "Preprints", nl: "Preprints" },
+  "pub.report": { en: "Reports", de: "Berichte", nl: "Rapporten" },
   "pub.citations": { en: "citations", de: "Zitationen", nl: "citaties" },
 
   // Speaking
