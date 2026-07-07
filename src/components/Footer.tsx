@@ -19,6 +19,52 @@ function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
   );
 }
 
+// Renders a translated string containing one <a>label</a> marker, turning the
+// marked segment into a link (href) or a button (onAction)
+function LinkifiedText({
+  text,
+  href,
+  onAction,
+}: {
+  text: string;
+  href?: string;
+  onAction?: () => void;
+}) {
+  const linkClass = "underline underline-offset-4 decoration-1 hover:opacity-70";
+  return (
+    <>
+      {text.split(/<a>|<\/a>/).map((part, i) =>
+        i === 1 ? (
+          href ? (
+            <a
+              key={i}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+              style={{ color: "var(--color-accent)" }}
+            >
+              {part}
+            </a>
+          ) : (
+            <button
+              key={i}
+              type="button"
+              onClick={onAction}
+              className={`${linkClass} transition-opacity`}
+              style={{ color: "var(--color-accent)" }}
+            >
+              {part}
+            </button>
+          )
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 export default function Footer() {
   const [showImpressum, setShowImpressum] = useState(false);
   const { t } = useI18n();
@@ -115,7 +161,7 @@ export default function Footer() {
               onClick={() => setShowImpressum(false)}
               className="absolute top-4 right-4 text-xl hover:opacity-70 transition-opacity"
               style={{ color: "var(--color-text-secondary)" }}
-              aria-label="Close"
+              aria-label={t("legal.close")}
             >
               ×
             </button>
@@ -128,18 +174,18 @@ export default function Footer() {
             >
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Responsible for content
+                  {t("legal.responsible")}
                 </p>
                 <p>Dr. Jonas Heller</p>
                 <p>Maastricht University</p>
                 <p>School of Business and Economics</p>
                 <p>Tongersestraat 53, 6211 LM Maastricht</p>
-                <p>The Netherlands</p>
+                <p>{t("legal.countryNL")}</p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Contact
+                  {t("legal.contact")}
                 </p>
                 <p>
                   <ObfuscatedEmail
@@ -148,20 +194,15 @@ export default function Footer() {
                   />
                 </p>
                 <p className="mt-1">
-                  Or use the{" "}
-                  <button
-                    onClick={() => {
+                  <LinkifiedText
+                    text={t("legal.contactForm")}
+                    onAction={() => {
                       setShowImpressum(false);
                       document
                         .getElementById("contact")
                         ?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
-                    style={{ color: "var(--color-accent)" }}
-                  >
-                    contact form
-                  </button>{" "}
-                  on this website.
+                  />
                 </p>
               </div>
 
@@ -171,16 +212,16 @@ export default function Footer() {
                 className="text-base font-bold pt-2"
                 style={{ color: "var(--color-text)" }}
               >
-                Privacy Notice
+                {t("legal.privacyNotice")}
               </h3>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Data controller
+                  {t("legal.controller")}
                 </p>
                 <p>
                   Dr. Jonas Heller, Maastricht University, Tongersestraat 53,
-                  6211 LM Maastricht, The Netherlands.{" "}
+                  6211 LM Maastricht, {t("legal.countryNL")}.{" "}
                   <ObfuscatedEmail
                     user="j.heller"
                     domain="maastrichtuniversity.nl"
@@ -190,89 +231,51 @@ export default function Footer() {
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Contact form / Formspree
+                  {t("legal.formTitle")}
                 </p>
                 <p>
-                  When you submit the contact form, your name, email address,
-                  and message are transmitted to{" "}
-                  <a
+                  <LinkifiedText
+                    text={t("legal.formText")}
                     href="https://formspree.io/legal/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-1 hover:opacity-70"
-                    style={{ color: "var(--color-accent)" }}
-                  >
-                    Formspree Inc.
-                  </a>{" "}
-                  (US) for processing and forwarded to me by email. Legal basis:
-                  Art. 6(1)(a) GDPR (your consent, given via the consent
-                  checkbox on the form). Formspree is US-based; the transfer is
-                  covered by Standard Contractual Clauses (Art. 46 GDPR). Form
-                  submissions are retained for the duration of correspondence
-                  and then deleted. Formspree retains data per their own privacy
-                  policy.
+                  />
                 </p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Hosting
+                  {t("legal.hosting")}
                 </p>
                 <p>
-                  This website is hosted on Vercel (Vercel Inc., US). Server
-                  logs may record IP addresses in accordance with Vercel&apos;s{" "}
-                  <a
+                  <LinkifiedText
+                    text={t("legal.hostingText")}
                     href="https://vercel.com/legal/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-1 hover:opacity-70"
-                    style={{ color: "var(--color-accent)" }}
-                  >
-                    privacy statement
-                  </a>
-                  .
+                  />
                 </p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  No cookies or tracking
+                  {t("legal.cookies")}
                 </p>
-                <p>
-                  This website uses no cookies, analytics, or third-party
-                  tracking. Language preference is stored in localStorage
-                  (functional, exempt from consent requirements).
-                </p>
+                <p>{t("legal.cookiesText")}</p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Your rights
+                  {t("legal.rights")}
                 </p>
-                <p>
-                  Under the GDPR (Art. 15–21), you have the right to access,
-                  rectification, erasure, restriction of processing, data
-                  portability, and objection. To exercise these rights, please
-                  contact me via email or the contact form above.
-                </p>
+                <p>{t("legal.rightsText")}</p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Right to complain
+                  {t("legal.complain")}
                 </p>
                 <p>
-                  You have the right to lodge a complaint with the{" "}
-                  <a
+                  <LinkifiedText
+                    text={t("legal.complainText")}
                     href="https://www.autoriteitpersoonsgegevens.nl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-1 hover:opacity-70"
-                    style={{ color: "var(--color-accent)" }}
-                  >
-                    Autoriteit Persoonsgegevens
-                  </a>{" "}
-                  or your local supervisory authority.
+                  />
                 </p>
               </div>
             </div>

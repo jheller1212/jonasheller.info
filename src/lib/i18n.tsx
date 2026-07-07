@@ -416,6 +416,69 @@ const translations: TranslationMap = {
   // Footer
   "footer.rights": { en: "All rights reserved.", de: "Alle Rechte vorbehalten.", nl: "Alle rechten voorbehouden." },
   "footer.impressum": { en: "Impressum & Privacy", de: "Impressum & Datenschutz", nl: "Impressum & Privacy" },
+
+  // Impressum / Privacy dialog (links are marked as <a>label</a> and split at render time)
+  "legal.close": { en: "Close", de: "Schließen", nl: "Sluiten" },
+  "legal.responsible": {
+    en: "Responsible for content",
+    de: "Verantwortlich für den Inhalt",
+    nl: "Verantwoordelijk voor de inhoud",
+  },
+  "legal.countryNL": { en: "The Netherlands", de: "Niederlande", nl: "Nederland" },
+  "legal.contact": { en: "Contact", de: "Kontakt", nl: "Contact" },
+  "legal.contactForm": {
+    en: "Or use the <a>contact form</a> on this website.",
+    de: "Oder nutzen Sie das <a>Kontaktformular</a> auf dieser Website.",
+    nl: "Of gebruik het <a>contactformulier</a> op deze website.",
+  },
+  "legal.privacyNotice": {
+    en: "Privacy Notice",
+    de: "Datenschutzerklärung",
+    nl: "Privacyverklaring",
+  },
+  "legal.controller": {
+    en: "Data controller",
+    de: "Verantwortlicher",
+    nl: "Verwerkingsverantwoordelijke",
+  },
+  "legal.formTitle": {
+    en: "Contact form / Formspree",
+    de: "Kontaktformular / Formspree",
+    nl: "Contactformulier / Formspree",
+  },
+  "legal.formText": {
+    en: "When you submit the contact form, your name, email address, and message are transmitted to <a>Formspree Inc.</a> (US) for processing and forwarded to me by email. Legal basis: Art. 6(1)(a) GDPR (your consent, given via the consent checkbox on the form). Formspree is US-based; the transfer is covered by Standard Contractual Clauses (Art. 46 GDPR). Form submissions are retained for the duration of correspondence and then deleted. Formspree retains data per their own privacy policy.",
+    de: "Wenn Sie das Kontaktformular absenden, werden Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht zur Verarbeitung an <a>Formspree Inc.</a> (USA) übermittelt und per E-Mail an mich weitergeleitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung über die Checkbox im Formular). Formspree hat seinen Sitz in den USA; die Übermittlung erfolgt auf Grundlage von Standardvertragsklauseln (Art. 46 DSGVO). Formulareinsendungen werden für die Dauer der Korrespondenz gespeichert und danach gelöscht. Formspree speichert Daten gemäß eigener Datenschutzerklärung.",
+    nl: "Wanneer u het contactformulier verzendt, worden uw naam, e-mailadres en bericht ter verwerking doorgegeven aan <a>Formspree Inc.</a> (VS) en per e-mail naar mij doorgestuurd. Rechtsgrondslag: art. 6 lid 1 sub a AVG (uw toestemming via het toestemmingsvakje in het formulier). Formspree is gevestigd in de VS; de doorgifte is gedekt door standaardcontractbepalingen (art. 46 AVG). Formulierinzendingen worden bewaard voor de duur van de correspondentie en daarna verwijderd. Formspree bewaart gegevens volgens haar eigen privacybeleid.",
+  },
+  "legal.hosting": { en: "Hosting", de: "Hosting", nl: "Hosting" },
+  "legal.hostingText": {
+    en: "This website is hosted on Vercel (Vercel Inc., US). Server logs may record IP addresses in accordance with Vercel's <a>privacy statement</a>.",
+    de: "Diese Website wird bei Vercel (Vercel Inc., USA) gehostet. Server-Logs können IP-Adressen gemäß der <a>Datenschutzerklärung</a> von Vercel erfassen.",
+    nl: "Deze website wordt gehost bij Vercel (Vercel Inc., VS). Serverlogs kunnen IP-adressen registreren conform de <a>privacyverklaring</a> van Vercel.",
+  },
+  "legal.cookies": {
+    en: "No cookies or tracking",
+    de: "Keine Cookies oder Tracking",
+    nl: "Geen cookies of tracking",
+  },
+  "legal.cookiesText": {
+    en: "This website uses no cookies, analytics, or third-party tracking. Language preference is stored in localStorage (functional, exempt from consent requirements).",
+    de: "Diese Website verwendet keine Cookies, keine Analyse-Tools und kein Tracking durch Dritte. Die Spracheinstellung wird im localStorage gespeichert (funktional, nicht einwilligungspflichtig).",
+    nl: "Deze website gebruikt geen cookies, analytics of tracking door derden. De taalvoorkeur wordt opgeslagen in localStorage (functioneel, vrijgesteld van toestemmingsvereisten).",
+  },
+  "legal.rights": { en: "Your rights", de: "Ihre Rechte", nl: "Uw rechten" },
+  "legal.rightsText": {
+    en: "Under the GDPR (Art. 15–21), you have the right to access, rectification, erasure, restriction of processing, data portability, and objection. To exercise these rights, please contact me via email or the contact form above.",
+    de: "Nach der DSGVO (Art. 15–21) haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zur Ausübung dieser Rechte kontaktieren Sie mich bitte per E-Mail oder über das Kontaktformular.",
+    nl: "Op grond van de AVG (art. 15–21) heeft u recht op inzage, rectificatie, verwijdering, beperking van de verwerking, gegevensoverdraagbaarheid en bezwaar. Neem hiervoor contact met mij op per e-mail of via het contactformulier.",
+  },
+  "legal.complain": { en: "Right to complain", de: "Beschwerderecht", nl: "Klachtrecht" },
+  "legal.complainText": {
+    en: "You have the right to lodge a complaint with the <a>Autoriteit Persoonsgegevens</a> or your local supervisory authority.",
+    de: "Sie haben das Recht, Beschwerde bei der <a>Autoriteit Persoonsgegevens</a> (niederländische Datenschutzbehörde) oder Ihrer lokalen Aufsichtsbehörde einzulegen.",
+    nl: "U heeft het recht een klacht in te dienen bij de <a>Autoriteit Persoonsgegevens</a> of uw lokale toezichthouder.",
+  },
 };
 
 interface I18nContextValue {
