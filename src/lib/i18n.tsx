@@ -74,13 +74,13 @@ const translations: TranslationMap = {
   "terminal.line.10": { en: '  "B.Sc. International Business @ Maastricht University"', de: '  "B.Sc. International Business @ Universität Maastricht"', nl: '  "B.Sc. International Business @ Universiteit Maastricht"' },
   "terminal.line.11": { en: ']', de: ']', nl: ']' },
   "terminal.line.12": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
-  "terminal.line.13": { en: 'publications: "39 peer-reviewed articles | h-index 23"', de: 'Publikationen: "39 peer-reviewed Artikel | h-Index 23"', nl: 'publicaties: "39 peer-reviewed artikelen | h-index 23"' },
+  "terminal.line.13": { en: 'publications: "36 peer-reviewed articles | h-index 23"', de: 'Publikationen: "36 peer-reviewed Artikel | h-Index 23"', nl: 'publicaties: "36 peer-reviewed artikelen | h-index 23"' },
 
   // About bio
   "about.bio": {
-    en: "Jonas Heller is an Assistant Professor of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured over \u20AC2.1M in competitive research funding, published 39 peer-reviewed papers, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
-    de: "Jonas Heller ist Assistant Professor f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat \u00fcber 2,1 Mio. \u20AC an kompetitiven Forschungsmitteln eingeworben, 39 peer-reviewed Artikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
-    nl: "Jonas Heller is Assistant Professor Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft meer dan \u20AC2,1 miljoen aan competitieve onderzoeksfinanciering verworven, 39 peer-reviewed artikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
+    en: "Jonas Heller is an Assistant Professor of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured over \u20AC2.1M in competitive research funding, published 36 peer-reviewed papers, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
+    de: "Jonas Heller ist Assistant Professor f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat \u00fcber 2,1 Mio. \u20AC an kompetitiven Forschungsmitteln eingeworben, 36 peer-reviewed Artikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
+    nl: "Jonas Heller is Assistant Professor Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft meer dan \u20AC2,1 miljoen aan competitieve onderzoeksfinanciering verworven, 36 peer-reviewed artikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
   },
 
   // Bento
@@ -122,7 +122,7 @@ const translations: TranslationMap = {
     nl: "Medeoprichter van het Limburg Immersive Technologies Network dat wetenschap, industrie en mkb verbindt.",
   },
   "bento.e.link": { en: "Learn more →", de: "Mehr erfahren →", nl: "Meer informatie →" },
-  "bento.f.title": { en: "39 Publications", de: "39 Publikationen", nl: "39 Publicaties" },
+  "bento.f.title": { en: "{count} Publications", de: "{count} Publikationen", nl: "{count} Publicaties" },
   "bento.f.desc": {
     en: "Published in journals including Journal of Retailing, Journal of Service Research, and Computers in Human Behavior.",
     de: "Veröffentlichungen u.a. in Journal of Retailing, Journal of Service Research und Computers in Human Behavior.",
