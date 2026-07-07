@@ -1,3 +1,13 @@
+export type PublicationType =
+  | 'article'
+  | 'review'
+  | 'chapter'
+  | 'thesis'
+  | 'comment'
+  | 'abstract'
+  | 'preprint'
+  | 'report';
+
 export interface Publication {
   id: string;
   title: string;
@@ -5,6 +15,7 @@ export interface Publication {
   year: number;
   journal: string;
   url?: string;
+  type: PublicationType;
 }
 
 function citationUrl(citationId: string): string {
@@ -15,6 +26,7 @@ export const publications: Publication[] = [
   // 2026
   {
     id: "becker2026",
+    type: "article",
     title: "Using customized, conversational AI agents in leadership and management research: Benefits, practical illustrations, and best practices",
     authors: "Becker, M., de Jong, D., Briker, R., Mennens, K., Heller, J., Mahr, D., Grewal, D.",
     year: 2026,
@@ -23,6 +35,7 @@ export const publications: Publication[] = [
   },
   {
     id: "glebova2026",
+    type: "chapter",
     title: "Immersive Environments",
     authors: "Glebova, E., Heller, J.",
     year: 2026,
@@ -31,6 +44,7 @@ export const publications: Publication[] = [
   },
   {
     id: "bos2026",
+    type: "preprint",
     title: "Perspective-taking and meaning-making among public policy professionals experiencing an immersive poverty narrative",
     authors: "Bos, S. G., Br\u00fcggen, L., van der Werf, M., Heller, J.",
     year: 2026,
@@ -40,6 +54,7 @@ export const publications: Publication[] = [
   // 2025
   {
     id: "barrett2025",
+    type: "article",
     title: "Customer engagement in utilitarian vs. hedonic service contexts",
     authors: "Barrett, J. A. M., Jaakkola, E., Heller, J., Br\u00fcggen, E. C.",
     year: 2025,
@@ -48,6 +63,7 @@ export const publications: Publication[] = [
   },
   {
     id: "herold2025",
+    type: "article",
     title: "Brave new procurement deals: An experimental study of how generative artificial intelligence reshapes buyer\u2013supplier negotiations",
     authors: "Herold, S., Heller, J., Rozemeijer, F., Mahr, D.",
     year: 2025,
@@ -56,6 +72,7 @@ export const publications: Publication[] = [
   },
   {
     id: "dong2025",
+    type: "article",
     title: "Does using augmented reality in online shopping affect post-purchase product perceptions? A mixed design using machine-learning based sentiment analysis, lab experiments, and focus groups",
     authors: "Dong, X., Hu, C., Heller, J., Deng, N.",
     year: 2025,
@@ -64,6 +81,7 @@ export const publications: Publication[] = [
   },
   {
     id: "palma2025",
+    type: "article",
     title: "Does Using Virtual Reality to Enhance Students\u2019 Presentation Skills Work? The Role of Feedback and Presence",
     authors: "Di Palma, R., Beausaert, S., Mahr, D., Heller, J., Hilken, T.",
     year: 2025,
@@ -72,6 +90,7 @@ export const publications: Publication[] = [
   },
   {
     id: "becker2025",
+    type: "preprint",
     title: "Introducing ResearchChatAI: An easy-to-use, open-source tool to build conversational AI agents for management and leadership research",
     authors: "Becker, M., De Jong, D., Briker, R., Mennens, K., Heller, J., Mahr, D., Grewal, D.",
     year: 2025,
@@ -80,6 +99,7 @@ export const publications: Publication[] = [
   },
   {
     id: "mahr2025",
+    type: "report",
     title: "Immersion and regulation: extended reality technologies, their impact on innovation and policy recommendations",
     authors: "Mahr, D., Heller, J., Hilken, T., GUMBI Center",
     year: 2025,
@@ -89,6 +109,7 @@ export const publications: Publication[] = [
   // 2024
   {
     id: "rauschnabel2024",
+    type: "article",
     title: "The 4C framework: Towards a holistic understanding of consumer engagement with augmented reality",
     authors: "Rauschnabel, P. A., Felix, R., Heller, J., Hinsch, C.",
     year: 2024,
@@ -97,6 +118,7 @@ export const publications: Publication[] = [
   },
   {
     id: "windhausen2024",
+    type: "article",
     title: "Exploring the impact of augmented reality smart glasses on worker well-being in warehouse order picking",
     authors: "Windhausen, A., Heller, J., Hilken, T., Mahr, D., Di Palma, R., Quintens, L.",
     year: 2024,
@@ -105,6 +127,7 @@ export const publications: Publication[] = [
   },
   {
     id: "moonen2024",
+    type: "article",
     title: "Immersion or social presence? Investigating the effect of virtual reality immersive environments on sommelier learning experiences",
     authors: "Moonen, N., Heller, J., Hilken, T., Danny Han, D. I., Mahr, D.",
     year: 2024,
@@ -113,6 +136,7 @@ export const publications: Publication[] = [
   },
   {
     id: "werf2024",
+    type: "report",
     title: "Challenges of Automated Financial Advice: Definition and Ethical Considerations",
     authors: "Werf, M., Meacham, D., Br\u00fcggen, E., Hogreve, J., Heller, J., Gianni, R., Post, T.",
     year: 2024,
@@ -122,6 +146,7 @@ export const publications: Publication[] = [
   // 2023
   {
     id: "ciuchita2023",
+    type: "review",
     title: "It is really not a game: an integrative review of gamification for service research",
     authors: "Ciuchita, R., Heller, J., K\u00f6cher, S., K\u00f6cher, S., Leclercq, T., Sidaoui, K., Stead, S.",
     year: 2023,
@@ -130,6 +155,7 @@ export const publications: Publication[] = [
   },
   {
     id: "herold2023",
+    type: "review",
     title: "Dynamic capabilities for digital procurement transformation: a systematic literature review",
     authors: "Herold, S., Heller, J., Rozemeijer, F., Mahr, D.",
     year: 2023,
@@ -138,6 +164,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pfeifer2023",
+    type: "article",
     title: "More than meets the eye: In-store retail experiences with augmented reality smart glasses",
     authors: "Pfeifer, P., Hilken, T., Heller, J., Alimamy, S., Di Palma, R.",
     year: 2023,
@@ -146,6 +173,7 @@ export const publications: Publication[] = [
   },
   {
     id: "glebova2023",
+    type: "article",
     title: "Sports Venue Digital Twin Technology from a Spectator Virtual Visiting Perspective",
     authors: "Glebova, E., Book, R., Su, Y., Peri\u0107, M., Heller, J.",
     year: 2023,
@@ -154,6 +182,7 @@ export const publications: Publication[] = [
   },
   {
     id: "heller2023",
+    type: "article",
     title: "An interdisciplinary Co-authorship networking perspective on AR and human behavior: Taking stock and moving ahead",
     authors: "Heller, J., Mahr, D., de Ruyter, K., Schaap, E., Hilken, T., Keeling, D. I., Chylinski, M., Flavi\u00e1n, C., Jung, T., Rauschnabel, P. A.",
     year: 2023,
@@ -162,6 +191,7 @@ export const publications: Publication[] = [
   },
   {
     id: "mahr2023",
+    type: "chapter",
     title: "Augmented reality (AR): The blurring of reality in human-computer interaction",
     authors: "Mahr, D., Heller, J., de Ruyter, K.",
     year: 2023,
@@ -170,6 +200,7 @@ export const publications: Publication[] = [
   },
   {
     id: "hilken2023",
+    type: "article",
     title: "Closing the customer imagination gap with augmented and virtual reality",
     authors: "Hilken, T., Heller, J., Mahr, D.",
     year: 2023,
@@ -178,6 +209,7 @@ export const publications: Publication[] = [
   },
   {
     id: "heller2023b",
+    type: "article",
     title: "Zur aktuellen und zuk\u00fcnftigen wirtschaftlichen Lage von Selbst\u00e4ndigen",
     authors: "Heller, J., Sauer, S., Wohlrabe, K.",
     year: 2023,
@@ -186,6 +218,7 @@ export const publications: Publication[] = [
   },
   {
     id: "mahr2023b",
+    type: "article",
     title: "Die Innovation synthetischer Kundenerlebnisse: Machen ist wichtiger als Denken.",
     authors: "Mahr, D., Heller, J., Hilken, T., Wigger, M.",
     year: 2023,
@@ -195,6 +228,7 @@ export const publications: Publication[] = [
   // 2022
   {
     id: "golf-papez2022",
+    type: "article",
     title: "Embracing Falsity through the Metaverse: The Case of Synthetic Customer Experiences",
     authors: "Golf-Papez, M., Heller, J., Hilken, T., Chylinski, M., de Ruyter, K., Keeling, D. I., Mahr, D.",
     year: 2022,
@@ -203,6 +237,7 @@ export const publications: Publication[] = [
   },
   {
     id: "hilken2022",
+    type: "article",
     title: "How to strategically choose or combine augmented and virtual reality for improved online experiential retailing",
     authors: "Hilken, T., Chylinski, M., Keeling, D. I., Heller, J., de Ruyter, K., Mahr, D.",
     year: 2022,
@@ -211,6 +246,7 @@ export const publications: Publication[] = [
   },
   {
     id: "hilken2022b",
+    type: "article",
     title: "Disrupting marketing realities: A research agenda for investigating the psychological mechanisms of next generation experiences with reality enhancing technologies",
     authors: "Hilken, T., Keeling, D. I., Chylinski, M., de Ruyter, K., Heller, J., Mahr, D., Alimamy, S.",
     year: 2022,
@@ -219,6 +255,7 @@ export const publications: Publication[] = [
   },
   {
     id: "hilken2022c",
+    type: "article",
     title: "Exploring the frontiers in reality-enhanced service communication: from augmented and virtual reality to neuro-enhanced reality",
     authors: "Hilken, T., Chylinski, M., de Ruyter, K., Heller, J., Keeling, D. I.",
     year: 2022,
@@ -227,6 +264,7 @@ export const publications: Publication[] = [
   },
   {
     id: "hilken2022d",
+    type: "article",
     title: "Bridging imagination gaps on the path to purchase with augmented reality: Field and experimental evidence",
     authors: "Hilken, T., Heller, J., Keeling, D. I., Chylinski, M., Mahr, D., de Ruyter, K.",
     year: 2022,
@@ -235,6 +273,7 @@ export const publications: Publication[] = [
   },
   {
     id: "chylinski2022",
+    type: "chapter",
     title: "The customer loyalty journey-technology enabled loyalty touchpoints",
     authors: "Chylinski, M., Heller, J.",
     year: 2022,
@@ -244,6 +283,7 @@ export const publications: Publication[] = [
   // 2021
   {
     id: "heller2021",
+    type: "article",
     title: "Tangible service automation: Decomposing the technology-enabled engagement process (TEEP) for augmented reality",
     authors: "Heller, J., Chylinski, M., de Ruyter, K., Keeling, D. I., Hilken, T., Mahr, D.",
     year: 2021,
@@ -252,6 +292,7 @@ export const publications: Publication[] = [
   },
   {
     id: "lammerding2021",
+    type: "chapter",
     title: "Too real for comfort: Measuring consumers\u2019 augmented reality information privacy concerns",
     authors: "Lammerding, L., Hilken, T., Mahr, D., Heller, J.",
     year: 2021,
@@ -261,6 +302,7 @@ export const publications: Publication[] = [
   // 2020
   {
     id: "chylinski2020",
+    type: "article",
     title: "Augmented reality marketing: A technology-enabled approach to situated customer experience",
     authors: "Chylinski, M., Heller, J., Hilken, T., Keeling, D. I., Mahr, D., de Ruyter, K.",
     year: 2020,
@@ -269,6 +311,7 @@ export const publications: Publication[] = [
   },
   {
     id: "jessen2020",
+    type: "article",
     title: "The playground effect: How augmented reality drives creative customer engagement",
     authors: "Jessen, A., Hilken, T., Chylinski, M., Mahr, D., Heller, J., Keeling, D. I., de Ruyter, K.",
     year: 2020,
@@ -277,6 +320,7 @@ export const publications: Publication[] = [
   },
   {
     id: "ruyter2020",
+    type: "article",
     title: "Seeing with the customer\u2019s eye: Exploring the challenges and opportunities of AR advertising",
     authors: "de Ruyter, K., Heller, J., Hilken, T., Chylinski, M., Keeling, D. I., Mahr, D.",
     year: 2020,
@@ -285,6 +329,7 @@ export const publications: Publication[] = [
   },
   {
     id: "esch2020",
+    type: "chapter",
     title: "The moderating influence of country of origin information seeking on homophily and product satisfaction",
     authors: "Van Esch, P., Northey, G., Duffy, S., Heller, J., Striluk, M.",
     year: 2020,
@@ -294,6 +339,7 @@ export const publications: Publication[] = [
   // 2019
   {
     id: "heller2019",
+    type: "article",
     title: "Let me imagine that for you: transforming the retail frontline through augmenting customer mental imagery ability",
     authors: "Heller, J., Chylinski, M., de Ruyter, K., Mahr, D., Keeling, D. I.",
     year: 2019,
@@ -302,6 +348,7 @@ export const publications: Publication[] = [
   },
   {
     id: "heller2019b",
+    type: "article",
     title: "Touching the untouchable: exploring multi-sensory augmented reality in the context of online retailing",
     authors: "Heller, J., Chylinski, M., de Ruyter, K., Mahr, D., Keeling, D. I.",
     year: 2019,
@@ -310,6 +357,7 @@ export const publications: Publication[] = [
   },
   {
     id: "carrozzi2019",
+    type: "article",
     title: "What\u2019s mine is a hologram? How shared Augmented Reality augments psychological ownership",
     authors: "Carrozzi, A., Chylinski, M., Heller, J., Hilken, T., Keeling, D., de Ruyter, K.",
     year: 2019,
@@ -318,6 +366,7 @@ export const publications: Publication[] = [
   },
   {
     id: "esch2019",
+    type: "article",
     title: "The effects of inner packaging color on the desirability of food",
     authors: "Van Esch, P., Heller, J., Northey, G.",
     year: 2019,
@@ -326,6 +375,7 @@ export const publications: Publication[] = [
   },
   {
     id: "esch2019b",
+    type: "article",
     title: "ExerStart: helping seniors be active and independent for less",
     authors: "Van Esch, P., Duffy, S. M., Teufel, J., Northey, G., Elder, E., Frethey-Bentham, C., Cook, T. B., Heller, J.",
     year: 2019,
@@ -335,6 +385,7 @@ export const publications: Publication[] = [
   // 2018
   {
     id: "hilken2018",
+    type: "article",
     title: "Making omnichannel an augmented reality: the current and future state of the art",
     authors: "Hilken, T., Heller, J., Chylinski, M., Keeling, D. I., Mahr, D., de Ruyter, K.",
     year: 2018,
