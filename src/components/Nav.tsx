@@ -50,6 +50,8 @@ export default function Nav() {
     const onResize = () => { if (mq.matches) setMenuOpen(false); };
     document.addEventListener("keydown", onKey);
     mq.addEventListener("change", onResize);
+    // Move focus to the first menu item so keyboard users land inside the menu
+    document.querySelector<HTMLAnchorElement>("#mobile-menu a")?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
       mq.removeEventListener("change", onResize);
