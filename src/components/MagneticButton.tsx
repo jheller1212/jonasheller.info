@@ -72,7 +72,9 @@ export default function MagneticButton({
   };
 
   if (as === "a") {
-    return <a {...props} href={href} target={target} rel={rel}>{children}</a>;
+    // Safe by default: never open a new tab without noopener/noreferrer
+    const safeRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
+    return <a {...props} href={href} target={target} rel={safeRel}>{children}</a>;
   }
 
   return <button {...props} type={type ?? "button"}>{children}</button>;

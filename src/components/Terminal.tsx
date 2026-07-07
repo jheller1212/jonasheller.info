@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
 
@@ -15,10 +15,14 @@ export default function Terminal() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isTyping, setIsTyping] = useState(false);
 
-  const terminalLines = Array.from({ length: LINE_COUNT }, (_, i) => ({
-    prompt: INDENT_LINES.has(i) ? "" : ">",
-    text: t(`terminal.line.${i}`),
-  }));
+  const terminalLines = useMemo(
+    () =>
+      Array.from({ length: LINE_COUNT }, (_, i) => ({
+        prompt: INDENT_LINES.has(i) ? "" : ">",
+        text: t(`terminal.line.${i}`),
+      })),
+    [t]
+  );
 
   useEffect(() => {
     if (!isVisible) return;
@@ -48,7 +52,7 @@ export default function Terminal() {
       }, 200);
       return () => clearTimeout(timer);
     }
-  }, [isVisible, visibleLines, currentChar]);
+  }, [isVisible, visibleLines, currentChar, terminalLines]);
 
   return (
     <section id="about" className="scroll-mt-20 py-14 sm:py-16 px-6">
