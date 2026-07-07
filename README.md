@@ -6,10 +6,10 @@ Personal academic website for Dr. Jonas Heller — Tenured Assistant Professor o
 
 ## Tech stack
 
-- [Next.js 14](https://nextjs.org/) (App Router, static export)
+- [Next.js 16](https://nextjs.org/) (App Router, static prerendering)
 - TypeScript, Tailwind CSS
-- Framer Motion & GSAP for animations
-- Deployed via GitHub Pages with GitHub Actions
+- Framer Motion for animations, Lenis for smooth scrolling
+- Deployed on Vercel (auto-deploys on push to `main`)
 
 ## Local development
 
@@ -18,39 +18,50 @@ npm install
 npm run dev
 ```
 
-Build for production:
+Build check (the only gate — there is no test suite):
 
 ```bash
 npm run build
 ```
 
-Output is written to `out/` and deployed automatically on push to `main`.
+Lint:
+
+```bash
+npm run lint
+```
 
 ## Project structure
 
 ```
 src/
   app/
-    page.tsx          # Home (hero, bento grid, publications, speaking, contact)
-    cv/page.tsx       # Full curriculum vitae
-    layout.tsx        # Root layout, metadata, JSON-LD
+    page.tsx              # Home (hero, speaking, consulting, publications, contact)
+    speaking/             # Keynote topics (own metadata + Service JSON-LD)
+    consulting/           # Advisory & training (own metadata + Service JSON-LD)
+    projects/page.tsx     # Live products
+    cv/page.tsx           # Full curriculum vitae
+    layout.tsx            # Root layout, metadata, Person JSON-LD, skip link
+    sitemap.ts            # Sitemap (all routes)
+    opengraph-image.tsx   # Dynamic OG image (uses the .ttf fonts in src/app/)
   components/
-    Hero.tsx          # Animated hero section
-    Bento.tsx         # Bento-grid about/stats section
-    Publications.tsx  # Publication list (39 papers, Google Scholar links)
-    Speaking.tsx      # Keynotes & workshops
-    Contact.tsx       # Contact form (Formspree)
-    Footer.tsx        # Footer with Impressum & Privacy notice
-    Nav.tsx           # Navigation bar
-    Terminal.tsx      # Terminal-style animation
+    Hero.tsx              # Animated hero section
+    Speaking.tsx          # Keynotes & workshops
+    Consulting.tsx        # Advisory offering
+    Bento.tsx             # Bento-grid research/impact section
+    Publications.tsx      # Publication list (sort + type filter)
+    Contact.tsx           # Contact form (Formspree)
+    Footer.tsx            # Footer with Impressum & Privacy dialog
+    Nav.tsx               # Navigation bar
+    Terminal.tsx          # Terminal-style about animation
     MagneticButton.tsx
-    SmoothScroll.tsx
-    ThemeProvider.tsx  # Light/dark theme toggle
+    SmoothScroll.tsx      # Lenis wiring
+    ThemeProvider.tsx     # Light/dark theme toggle
+  data/
+    publications.ts       # Publication data (typed entries)
+  lib/
+    i18n.tsx              # EN/DE/NL translations (client-side)
 public/
-  CNAME             # Custom domain config
-  favicon.svg       # Site favicon
-  sitemap.xml       # Sitemap (home + CV)
-  robots.txt
+  robots.txt              # Points to /sitemap.xml
 ```
 
 ## License
