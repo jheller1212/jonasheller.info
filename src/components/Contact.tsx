@@ -100,7 +100,7 @@ export default function Contact() {
                     }}
                     placeholder={t("contact.namePlaceholder")}
                   />
-                  <ValidationError prefix="Name" field="name" errors={state.errors} />
+                  <div aria-live="polite"><ValidationError prefix="Name" field="name" errors={state.errors} /></div>
                 </div>
                 <div>
                   <label
@@ -122,7 +122,7 @@ export default function Contact() {
                     }}
                     placeholder="your@email.com"
                   />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                  <div aria-live="polite"><ValidationError prefix="Email" field="email" errors={state.errors} /></div>
                 </div>
               </div>
 
@@ -167,7 +167,7 @@ export default function Contact() {
                     </option>
                   ))}
                 </select>
-                <ValidationError prefix="Enquiry type" field="enquiry_type" errors={state.errors} />
+                <div aria-live="polite"><ValidationError prefix="Enquiry type" field="enquiry_type" errors={state.errors} /></div>
               </div>
 
               <div>
@@ -190,7 +190,7 @@ export default function Contact() {
                   }}
                   placeholder={t("contact.messagePlaceholder")}
                 />
-                <ValidationError prefix="Message" field="message" errors={state.errors} />
+                <div aria-live="polite"><ValidationError prefix="Message" field="message" errors={state.errors} /></div>
               </div>
 
               <label className="flex items-start gap-3 text-sm cursor-pointer" style={{ color: "var(--color-text-secondary)" }}>
