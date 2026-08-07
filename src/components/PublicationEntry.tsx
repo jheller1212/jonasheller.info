@@ -92,6 +92,12 @@ export default function PublicationEntry({ pub }: { pub: Publication }) {
           </Badge>
         )}
 
+        {/* Called out separately: German committees scan for Erstautorenschaft
+            as evidence of an independent contribution. */}
+        {pub.authorPosition === 1 && pub.authorCount > 1 && (
+          <Badge tone="accent">{t("pub.firstAuthor")}</Badge>
+        )}
+
         {pub.isOpenAccess === true && <Badge tone="accent">{t("pub.openAccess")}</Badge>}
 
         {pub.doi && (

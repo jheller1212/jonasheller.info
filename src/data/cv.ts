@@ -530,6 +530,19 @@ export const teaching: TeachingGroup[] = [
 
 /* ─────────────────────── supervision & service ─────────────────────── */
 
+/**
+ * Teaching and working languages.
+ *
+ * German is his first language (born in Velbert, DE) and he already delivers
+ * keynotes in German and English — see the speaking page. Dutch is
+ * deliberately listed as a working language only, not a teaching language,
+ * because that is a stronger claim and has not been confirmed.
+ */
+export const languages = {
+  teaching: ["German (native)", "English (fluent)"],
+  working: ["Dutch"],
+};
+
 export const supervision = {
   current: [
     'Maarten Ramaekers — "Preparing Procurement for an AI driven future" (with Prof. D. Mahr & Prof. F. Rozemeijer)',

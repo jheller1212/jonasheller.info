@@ -189,6 +189,22 @@ export const PUBLICATION_STATS = {
   researchOutputs: publications.filter((p) => !SPOKEN.includes(p.section)).length,
   /** Conference presentations and academic keynotes. */
   conferenceContributions: publications.filter((p) => SPOKEN.includes(p.section)).length,
+  /**
+   * Journal articles with Jonas as first author. German appointment
+   * committees ask for Kernpublikationen in Erstautorenschaft specifically, as
+   * evidence of independent contribution.
+   */
+  firstAuthored: publications.filter(
+    (p) => (p.section === "article" || p.section === "review") && p.authorPosition === 1,
+  ).length,
+  /**
+   * Journal articles published since the PhD was awarded (Sep 2019). The
+   * post-doctoral record is what a committee weighs when judging whether the
+   * output is habilitationsäquivalent.
+   */
+  articlesSincePhd: publications.filter(
+    (p) => (p.section === "article" || p.section === "review") && (p.year ?? 0) >= 2019,
+  ).length,
   /** Outputs deposited in ORCID; the rest come from the overlay. */
   orcidOutputs: orcidData.works.length,
 } as const;

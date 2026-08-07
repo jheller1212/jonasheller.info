@@ -16,6 +16,9 @@ export default function TeachingList() {
       <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
         {t("cv.teaching.pbl")}
       </p>
+      <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+        {t("cv.teaching.scale")}
+      </p>
 
       {teaching.map((group) => (
         <div key={group.institution} className="glass-card rounded-xl p-6 break-inside-avoid">

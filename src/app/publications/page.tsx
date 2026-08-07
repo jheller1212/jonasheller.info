@@ -60,6 +60,18 @@ export default function PublicationsPage() {
               </span>
               <span>
                 <strong style={{ color: "var(--color-accent-secondary)" }}>
+                  {PUBLICATION_STATS.firstAuthored}
+                </strong>{" "}
+                {t("pubPage.statFirstAuthored")}
+              </span>
+              <span>
+                <strong style={{ color: "var(--color-accent-secondary)" }}>
+                  {PUBLICATION_STATS.articlesSincePhd}
+                </strong>{" "}
+                {t("pubPage.sincePhd")}
+              </span>
+              <span>
+                <strong style={{ color: "var(--color-accent-secondary)" }}>
                   {SCHOLAR_METRICS.citations.toLocaleString("en-US")}
                 </strong>{" "}
                 {t("pubPage.statCitations")}

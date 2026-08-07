@@ -237,6 +237,17 @@ export const translations: TranslationMap = {
     nl: "Auteur {n} van {total}",
   },
   "pub.openAccess": { en: "Open Access", de: "Open Access", nl: "Open Access" },
+  "pub.firstAuthor": { en: "First author", de: "Erstautorenschaft", nl: "Eerste auteur" },
+  "pubPage.statFirstAuthored": {
+    en: "of them first-authored",
+    de: "davon in Erstautorenschaft",
+    nl: "daarvan als eerste auteur",
+  },
+  "pubPage.sincePhd": {
+    en: "published since the PhD (2019)",
+    de: "seit der Promotion (2019) veröffentlicht",
+    nl: "gepubliceerd sinds het promoveren (2019)",
+  },
   "pub.type.article": { en: "Article", de: "Artikel", nl: "Artikel" },
   "pub.type.review": { en: "Review", de: "Übersichtsarbeit", nl: "Review" },
   "pub.type.chapter": { en: "Chapter", de: "Buchbeitrag", nl: "Hoofdstuk" },
@@ -354,6 +365,25 @@ export const translations: TranslationMap = {
   },
   "cv.teaching.cohort": { en: "cohort", de: "Kohorte", nl: "cohort" },
   "cv.teaching.evaluation": { en: "evaluation", de: "Evaluation", nl: "evaluatie" },
+  // A German reader calibrated to a 1.0-is-best scale can misread "7.7/10"
+  // as a mediocre 77%. State the scale rather than the scores alone.
+  "cv.teaching.scale": {
+    en: "Evaluations use the Dutch 10-point scale, where 10 is best and 6 is a pass. UNSW courses were rated on a 6-point scale.",
+    de: "Die Evaluationen folgen der niederländischen 10-Punkte-Skala, bei der 10 die Bestnote und 6 die Bestehensgrenze ist. Die UNSW-Kurse wurden auf einer 6-Punkte-Skala bewertet.",
+    nl: "Evaluaties volgen de Nederlandse tienpuntsschaal, waarbij 10 het hoogst is en 6 voldoende. UNSW-cursussen werden op een zespuntsschaal beoordeeld.",
+  },
+  "cv.section.languages": { en: "Languages", de: "Sprachkenntnisse", nl: "Talen" },
+  "cv.languages.teaching": {
+    en: "Teaching and presentation languages",
+    de: "Lehr- und Vortragssprachen",
+    nl: "Onderwijs- en presentatietalen",
+  },
+  "cv.languages.working": { en: "Working language", de: "Arbeitssprache", nl: "Werktaal" },
+  "cv.supervision.roleNote": {
+    en: "In the Dutch system only full professors act as formal promotor. The roles below are day-to-day supervision as copromotor, with the promotores named.",
+    de: "Im niederländischen System sind ausschließlich Universitätsprofessoren formale Promotoren. Die folgenden Angaben bezeichnen die tägliche Betreuung als Copromotor; die Promotoren sind jeweils genannt.",
+    nl: "In het Nederlandse stelsel treden alleen hoogleraren op als formele promotor. Onderstaande rollen betreffen de dagelijkse begeleiding als copromotor, met vermelding van de promotores.",
+  },
 
   "cv.supervision.current": { en: "Current", de: "Laufend", nl: "Lopend" },
   "cv.supervision.completed": { en: "Completed", de: "Abgeschlossen", nl: "Afgerond" },
