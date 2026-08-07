@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PublicationList from "@/components/PublicationList";
 import { useI18n } from "@/lib/i18n";
 import { PUBLICATION_STATS, ORCID_URL, ORCID_LAST_SYNCED } from "@/data/publications";
+import { SCHOLAR_METRICS } from "@/data/cv";
 
 export default function PublicationsPage() {
   const { t } = useI18n();
@@ -57,6 +58,12 @@ export default function PublicationsPage() {
                 </strong>{" "}
                 {t("pubPage.statConference")}
               </span>
+              <span>
+                <strong style={{ color: "var(--color-accent-secondary)" }}>
+                  {SCHOLAR_METRICS.citations.toLocaleString("en-US")}
+                </strong>{" "}
+                {t("pubPage.statCitations")}
+              </span>
               <a
                 href={ORCID_URL}
                 target="_blank"
@@ -73,6 +80,12 @@ export default function PublicationsPage() {
 
           <p className="mt-14 text-xs" style={{ color: "var(--color-text-secondary)" }}>
             {t("pubPage.lastSynced")} {ORCID_LAST_SYNCED}
+            {" · "}
+            {t("pubPage.metricsAsOf")
+              .replace("{date}", SCHOLAR_METRICS.asOf)
+              .replace("{citations}", SCHOLAR_METRICS.citations.toLocaleString("en-US"))
+              .replace("{h}", String(SCHOLAR_METRICS.hIndex))
+              .replace("{i10}", String(SCHOLAR_METRICS.i10Index))}
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">

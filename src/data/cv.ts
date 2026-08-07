@@ -21,9 +21,27 @@ export const JOB_TITLE = "Tenured Assistant Professor (Universitair Docent 1), M
 // rendered on a trilingual page and so must not exist as an English constant
 // here.
 
+/* Profile links. Every surface imports these — hardcoding a profile URL is how
+   the job title silently went stale in three layouts. */
 export const ORCID = "0000-0002-3214-0724";
+export const ORCID_PROFILE_URL = `https://orcid.org/${ORCID}`;
 export const CRIS_URL = "https://cris.maastrichtuniversity.nl/en/persons/jonas-heller";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/hellerjonas/";
+export const SCHOLAR_URL = "https://scholar.google.com/citations?user=NOSPtp8AAAAJ";
+
+/**
+ * Google Scholar metrics.
+ *
+ * Hand-maintained and therefore dated: Scholar has no API, and an undated
+ * h-index on a CV goes stale silently. Always update `asOf` alongside the
+ * numbers. Verified against the live profile on the date shown.
+ */
+export const SCHOLAR_METRICS = {
+  citations: 4212,
+  hIndex: 25,
+  i10Index: 31,
+  asOf: "2026-08",
+} as const;
 
 /* ───────────────────────── experience ───────────────────────── */
 
