@@ -40,8 +40,11 @@ export default function FundingTables() {
         const showShare = has("totalVolume");
         const showDuration = has("duration");
 
+        // Deliberately NOT break-inside-avoid: these tables are taller than a
+        // printed page, and asking them not to break leaves most of a page
+        // blank. The print rules keep individual rows intact instead.
         return (
-          <section key={table.key} className="break-inside-avoid">
+          <section key={table.key}>
             <div className="flex items-baseline justify-between gap-4 mb-3">
               <h3 className="font-semibold" style={{ color: "var(--color-text)" }}>
                 {t(table.labelKey)}

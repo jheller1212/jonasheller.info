@@ -238,8 +238,26 @@ select:focus {
   }
 
   article,
-  table,
   li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* A funding table is taller than a page, so it MUST be allowed to break —
+     asking a too-tall element to avoid breaking just pushes it wholesale to
+     the next page and leaves most of a page blank. Instead let the table
+     flow, repeat its header on each page, and keep individual rows intact so
+     a grant never splits across the fold. */
+  table {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -262,7 +280,11 @@ select:focus {
     color: #555;
   }
 
+  /* Pin the sheet to A4. Browsers otherwise fall back to the user's locale
+     default, which on a US-configured machine is Letter — the wrong paper
+     size for a German or Dutch application dossier. */
   @page {
+    size: A4;
     margin: 18mm 16mm;
   }
 }
