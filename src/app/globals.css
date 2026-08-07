@@ -206,6 +206,22 @@ select:focus {
     max-width: none !important;
   }
 
+  /* Horizontal-scroll containers clip their tables on paper — let the
+     funding tables flow to full width instead, and shrink the type so the
+     widest (7-column) funding table fits within the A4 page margins. */
+  .overflow-x-auto {
+    overflow: visible !important;
+  }
+
+  table {
+    font-size: 0.7rem;
+  }
+
+  table th,
+  table td {
+    padding: 6px;
+  }
+
   .glass-card {
     background: transparent !important;
     backdrop-filter: none !important;

@@ -34,10 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    {
-      url: `${siteUrl}/academic`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
+    // /academic is deliberately absent: it is a printable restatement of /cv
+    // and /publications and is marked noindex, so listing it here would
+    // contradict that.
   ];
 }

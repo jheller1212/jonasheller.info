@@ -15,7 +15,6 @@ import {
   JOB_TITLE,
   LINKEDIN_URL,
   ORCID,
-  RESEARCH_STATEMENT,
   reviewingJournals,
   supervision,
 } from "@/data/cv";
@@ -135,7 +134,7 @@ export default function AcademicPage() {
           </div>
 
           <p className="text-sm mt-5 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-            {RESEARCH_STATEMENT}
+            {t("academic.research")}
           </p>
 
           <p className="text-sm mt-4" style={{ color: "var(--color-text-secondary)" }}>

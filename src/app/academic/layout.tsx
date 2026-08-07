@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/academic",
   },
+  // This view restates /cv and /publications in one printable page. It exists
+  // to be saved as a PDF for application dossiers — the dossier carries the
+  // PDF, not the link — so it stays reachable but out of the index rather than
+  // competing with /cv for the same queries.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: "Academic Profile — Dr. Jonas Heller",
     description:

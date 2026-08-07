@@ -13,17 +13,13 @@
  * as a non-tenured junior professorship to a German appointment committee.
  */
 export const JOB_TITLE = "Tenured Assistant Professor (Universitair Docent 1), Marketing";
-export const JOB_TITLE_SHORT = "Tenured Assistant Professor of Marketing";
 
 // The rank footnote shown beside the title lives in i18n as "cv.rankFootnote":
 // it needs translating, so it must not also exist as a constant here.
 
-/**
- * Research focus, taken from Jonas's own CV (July 2026) so the site and the
- * application dossier describe the work in the same terms.
- */
-export const RESEARCH_STATEMENT =
-  "Research on data-driven marketing decision making, combining experimental and econometric methods with digital and immersive technologies such as artificial intelligence, augmented reality, and virtual reality. Through DEXLab and the LIT Network, building research and innovation infrastructures that connect academia, industry, and small and medium-sized enterprises.";
+// The research-focus paragraph lives in i18n as "academic.research": it is
+// rendered on a trilingual page and so must not exist as an English constant
+// here.
 
 export const ORCID = "0000-0002-3214-0724";
 export const CRIS_URL = "https://cris.maastrichtuniversity.nl/en/persons/jonas-heller";
@@ -34,7 +30,7 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/hellerjonas/";
 export const experience = [
   {
     period: "Oct 2020 – Present",
-    title: "Assistant Professor (tenured, Universitair Docent 1)",
+    title: "Tenured Assistant Professor (Universitair Docent 1)",
     org: "Maastricht University",
     detail:
       "Department of Marketing & Supply Chain Management, School of Business and Economics",

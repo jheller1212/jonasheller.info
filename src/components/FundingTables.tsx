@@ -58,14 +58,14 @@ export default function FundingTables() {
                     className="text-left text-xs uppercase tracking-wide"
                     style={{ color: "var(--color-text-secondary)" }}
                   >
-                    <th className="p-3 font-medium">{t("cv.funding.col.year")}</th>
-                    <th className="p-3 font-medium">{t("cv.funding.col.funder")}</th>
-                    <th className="p-3 font-medium">{t("cv.funding.col.project")}</th>
-                    {showRole && <th className="p-3 font-medium">{t("cv.funding.col.role")}</th>}
-                    {showDuration && <th className="p-3 font-medium">{t("cv.funding.col.duration")}</th>}
-                    <th className="p-3 font-medium text-right">{t("cv.funding.col.amount")}</th>
+                    <th scope="col" className="p-3 font-medium">{t("cv.funding.col.year")}</th>
+                    <th scope="col" className="p-3 font-medium">{t("cv.funding.col.funder")}</th>
+                    <th scope="col" className="p-3 font-medium">{t("cv.funding.col.project")}</th>
+                    {showRole && <th scope="col" className="p-3 font-medium">{t("cv.funding.col.role")}</th>}
+                    {showDuration && <th scope="col" className="p-3 font-medium">{t("cv.funding.col.duration")}</th>}
+                    <th scope="col" className="p-3 font-medium text-right">{t("cv.funding.col.amount")}</th>
                     {showShare && (
-                      <th className="p-3 font-medium text-right">{t("cv.funding.col.share")}</th>
+                      <th scope="col" className="p-3 font-medium text-right">{t("cv.funding.col.share")}</th>
                     )}
                   </tr>
                 </thead>

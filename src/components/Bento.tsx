@@ -3,18 +3,7 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
-import { PUBLICATION_STATS } from "@/data/publications";
-import { FUNDING_STATS, formatEur } from "@/data/cv";
-
-/** Figures come from the data modules so every surface shows the same number. */
-function fillStats(text: string): string {
-  return text
-    .replace("{articles}", String(PUBLICATION_STATS.journalArticles))
-    .replace("{outputs}", String(PUBLICATION_STATS.researchOutputs))
-    .replace("{external}", formatEur(FUNDING_STATS.external))
-    .replace("{total}", formatEur(FUNDING_STATS.grantsTotal))
-    .replace("{count}", String(FUNDING_STATS.grantCount));
-}
+import { fillStats } from "@/lib/formatStats";
 
 const highlights = [
   { area: "a", titleKey: "bento.a.title", descKey: "bento.a.desc", link: "https://www.sbe-dexlab.com", linkKey: "bento.a.link", accent: true },
