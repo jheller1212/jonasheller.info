@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JOB_TITLE } from "@/data/cv";
 
 const siteUrl = "https://www.jonasheller.info";
 
@@ -43,7 +44,7 @@ const jsonLd = {
     "@type": "Person",
     name: "Jonas Heller",
     honorificPrefix: "Dr.",
-    jobTitle: "Assistant Professor of Marketing",
+    jobTitle: JOB_TITLE,
     url: siteUrl,
     worksFor: {
       "@type": "Organization",

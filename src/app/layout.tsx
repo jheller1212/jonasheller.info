@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { I18nProvider } from "@/lib/i18n";
+import { JOB_TITLE } from "@/data/cv";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -92,7 +93,7 @@ const jsonLd = {
   familyName: "Heller",
   honorificPrefix: "Dr.",
   url: siteUrl,
-  jobTitle: "Tenured Assistant Professor of Marketing",
+  jobTitle: JOB_TITLE,
   identifier: ORCID_URL,
   worksFor: {
     "@type": "Organization",

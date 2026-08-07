@@ -3,22 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
-import { PUBLICATION_STATS } from "@/data/publications";
-import { FUNDING_STATS, formatEur } from "@/data/cv";
+import { fillStats } from "@/lib/formatStats";
 
 const LINE_COUNT = 14;
 const INDENT_LINES = new Set([8, 9, 10, 11]);
-
-/**
- * Publication and funding figures come from the data modules, never from
- * hardcoded strings — the page used to show 36, 40 and 40 side by side.
- */
-function fillStats(text: string): string {
-  return text
-    .replace("{articles}", String(PUBLICATION_STATS.journalArticles))
-    .replace("{outputs}", String(PUBLICATION_STATS.researchOutputs))
-    .replace("{external}", formatEur(FUNDING_STATS.external));
-}
 
 export default function Terminal() {
   const { ref, isVisible } = useScrollAnimation(0.2);

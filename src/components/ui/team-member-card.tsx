@@ -2,11 +2,10 @@
 
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { clsx } from 'clsx'
+import { motion, useReducedMotion } from 'framer-motion'
+import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function cn(...inputs: any[]) { return twMerge(clsx(inputs)) }
+function cn(...inputs: ClassValue[]) { return twMerge(clsx(inputs)) }
 
 interface HeroCta {
   label: string
@@ -48,16 +47,19 @@ export default function TeamMemberCard({
 }: TeamMemberCardProps) {
   const fullName = `${firstName} ${lastName}`
   const isPositionRight = position === 'right'
+  // The CSS reduced-motion rule can't reach Framer's JS-driven animations,
+  // so skip the mount transitions entirely when the user asks for less motion.
+  const reducedMotion = useReducedMotion()
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={reducedMotion ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn('relative my-16 flex flex-col justify-center', className)}
     >
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
+        initial={reducedMotion ? false : { opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
@@ -74,7 +76,7 @@ export default function TeamMemberCard({
 
       <div className='flex flex-col md:flex-row items-center justify-end'>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          initial={reducedMotion ? false : { opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
@@ -94,7 +96,7 @@ export default function TeamMemberCard({
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 0, y: 20 }}
+          initial={reducedMotion ? false : { opacity: 0, x: 0, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
