@@ -35,9 +35,10 @@ export default function FundingTables() {
       {fundingTables.map((table) => {
         const has = (field: keyof Grant) => table.grants.some((g) => g[field] !== undefined);
         const showRole = has("role");
-        // Own share is only meaningful when some row reports a larger
-        // consortium volume than the amount attributable to Jonas.
-        const showShare = has("totalVolume");
+        // Always shown, even where it equals the total: German calls ask for
+        // Drittmittel "spezifiziert mit dem Gesamtbetrag [und] dem eigenen
+        // Anteil", so an absent column reads as an unanswered question.
+        const showShare = true;
         const showDuration = has("duration");
 
         // Deliberately NOT break-inside-avoid: these tables are taller than a

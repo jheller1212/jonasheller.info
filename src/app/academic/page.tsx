@@ -13,6 +13,7 @@ import {
   education,
   experience,
   JOB_TITLE,
+  languages,
   LINKEDIN_URL,
   ORCID,
   reviewingJournals,
@@ -249,6 +250,9 @@ export default function AcademicPage() {
         </Section>
 
         <Section id="supervision" title={t("cv.section.supervision")}>
+          <p className="text-sm mb-5 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+            {t("cv.supervision.roleNote")}
+          </p>
           <div className="space-y-5">
             <div>
               <h3 className="font-semibold text-sm mb-2" style={{ color: "var(--color-accent-secondary)" }}>
@@ -294,6 +298,17 @@ export default function AcademicPage() {
 
         <Section id="service" title={t("cv.section.service")}>
           <Bullets items={citizenship} />
+        </Section>
+
+        <Section id="languages" title={t("cv.section.languages")}>
+          <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+            <strong style={{ color: "var(--color-text)" }}>{t("cv.languages.teaching")}:</strong>{" "}
+            {languages.teaching.join(" · ")}
+          </p>
+          <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>
+            <strong style={{ color: "var(--color-text)" }}>{t("cv.languages.working")}:</strong>{" "}
+            {languages.working.join(" · ")}
+          </p>
         </Section>
 
         <Section id="reviewing" title={t("cv.section.reviewing")}>
