@@ -14,19 +14,25 @@
 import orcidData from "./orcid-works.json";
 import {
   authorPositionOverrides,
+  doiOverrides,
+  editorialIds,
   extraWorks,
+  pagesOverrides,
   reviewIds,
   selectedIds,
   titleOverrides,
   venueOverrides,
+  yearOverrides,
 } from "./publications-overlay";
 
 /** The section a work is listed under. */
 export type PublicationSection =
   | "article"
   | "review"
+  | "editorial"
   | "chapter"
   | "conference"
+  | "keynote"
   | "report"
   | "thesis"
   | "preprint";
@@ -67,32 +73,38 @@ export const ORCID_LAST_SYNCED = orcidData.fetchedAt;
 
 /* ─────────────────────────── assembly ─────────────────────────── */
 
-function citationOf(work: RawWork): string {
-  const venue = venueOverrides[work.id] ?? work.venue;
+function citationOf(work: RawWork, venue: string | null, pages: string | null): string {
   if (!venue) return "";
   let out = venue;
   if (work.volume) {
     out += ` ${work.volume}`;
     if (work.issue) out += ` (${work.issue})`;
   }
-  if (work.pages) out += `, ${work.pages}`;
+  if (pages) out += `, ${pages}`;
   return out;
 }
 
-function hrefOf(work: RawWork): string | null {
-  if (work.doi) return `https://doi.org/${work.doi}`;
-  return work.oaUrl ?? work.url ?? null;
+function sectionOf(work: RawWork): PublicationSection {
+  if (reviewIds.has(work.id)) return "review";
+  if (editorialIds.has(work.id)) return "editorial";
+  return work.type;
 }
 
 function enrich(work: RawWork): Publication {
+  const venue = venueOverrides[work.id] ?? work.venue;
+  const pages = pagesOverrides[work.id] ?? work.pages;
+  const doi = doiOverrides[work.id] ?? work.doi;
   return {
     ...work,
     title: titleOverrides[work.id] ?? work.title,
-    venue: venueOverrides[work.id] ?? work.venue,
+    year: yearOverrides[work.id] ?? work.year,
+    venue,
+    pages,
+    doi,
     authorPosition: authorPositionOverrides[work.id] ?? work.authorPosition,
-    section: reviewIds.has(work.id) ? "review" : work.type,
-    citation: citationOf(work),
-    href: hrefOf(work),
+    section: sectionOf(work),
+    citation: citationOf(work, venue, pages),
+    href: doi ? `https://doi.org/${doi}` : (work.oaUrl ?? work.url ?? null),
   };
 }
 
@@ -135,8 +147,13 @@ const SECTION_ORDER: { key: string; labelKey: string; sections: PublicationSecti
   { key: "articles", labelKey: "pub.section.articles", sections: ["article"] },
   { key: "reviews", labelKey: "pub.section.reviews", sections: ["review"] },
   { key: "chapters", labelKey: "pub.section.chapters", sections: ["chapter"] },
+  { key: "keynotes", labelKey: "pub.section.keynotes", sections: ["keynote"] },
   { key: "conference", labelKey: "pub.section.conference", sections: ["conference"] },
-  { key: "other", labelKey: "pub.section.other", sections: ["report", "thesis", "preprint"] },
+  {
+    key: "other",
+    labelKey: "pub.section.other",
+    sections: ["editorial", "report", "thesis", "preprint"],
+  },
 ];
 
 export const publicationGroups: PublicationGroup[] = SECTION_ORDER.map(
@@ -153,12 +170,25 @@ export const publicationGroups: PublicationGroup[] = SECTION_ORDER.map(
  * Every publication count on the site reads from here. Do not hardcode these
  * numbers anywhere else — the site previously showed 36, 40 and 40 on one page.
  */
+/** Talks are counted separately from written outputs, as a CV would. */
+const SPOKEN: PublicationSection[] = ["conference", "keynote"];
+
 export const PUBLICATION_STATS = {
-  /** Peer-reviewed journal articles, systematic reviews included. */
+  /**
+   * Peer-reviewed journal articles, systematic reviews included. Editorials
+   * are excluded — they are not peer-reviewed research articles.
+   */
   journalArticles: publications.filter((p) => p.section === "article" || p.section === "review")
     .length,
-  /** All research outputs, every type. */
-  researchOutputs: publications.length,
+  /**
+   * Written research outputs: articles, reviews, editorials, book chapters,
+   * reports and the dissertation. Deliberately excludes conference
+   * presentations and keynotes, which are counted on their own below so the
+   * headline figure is not inflated by talks.
+   */
+  researchOutputs: publications.filter((p) => !SPOKEN.includes(p.section)).length,
+  /** Conference presentations and academic keynotes. */
+  conferenceContributions: publications.filter((p) => SPOKEN.includes(p.section)).length,
   /** Outputs deposited in ORCID; the rest come from the overlay. */
   orcidOutputs: orcidData.works.length,
 } as const;

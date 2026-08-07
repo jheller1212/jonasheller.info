@@ -6,8 +6,10 @@ import type { Publication } from "@/data/publications";
 const typeLabelKey: Record<Publication["section"], string> = {
   article: "pub.type.article",
   review: "pub.type.review",
+  editorial: "pub.type.editorial",
   chapter: "pub.type.chapter",
   conference: "pub.type.conference",
+  keynote: "pub.type.keynote",
   report: "pub.type.report",
   thesis: "pub.type.thesis",
   preprint: "pub.type.preprint",

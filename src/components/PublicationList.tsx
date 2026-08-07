@@ -3,24 +3,89 @@
 import { useI18n } from "@/lib/i18n";
 import PublicationEntry from "./PublicationEntry";
 import { publicationGroups } from "@/data/publications";
-import { underReview, type ManuscriptStatus } from "@/data/publications-overlay";
+import {
+  inPreparation,
+  underReview,
+  type Manuscript,
+  type ManuscriptStatus,
+} from "@/data/publications-overlay";
 
 const statusKey: Record<ManuscriptStatus, string> = {
   "Under Review": "pub.status.underReview",
   "Revise and Resubmit": "pub.status.rr",
   Accepted: "pub.status.accepted",
+  "In Preparation": "pub.status.inPreparation",
 };
 
-function GroupHeading({ children, count }: { children: React.ReactNode; count: number }) {
+function GroupHeading({ id, title, count }: { id: string; title: string; count: number }) {
   return (
     <div className="flex items-baseline gap-3 mb-5">
-      <h2 className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: "var(--color-text)" }}>
-        {children}
+      <h2
+        id={id}
+        className="text-xl sm:text-2xl font-bold tracking-tight"
+        style={{ color: "var(--color-text)" }}
+      >
+        {title}
       </h2>
       <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
         {count}
       </span>
     </div>
+  );
+}
+
+function ManuscriptGroup({
+  id,
+  title,
+  items,
+}: {
+  id: string;
+  title: string;
+  items: Manuscript[];
+}) {
+  const { t } = useI18n();
+  if (items.length === 0) return null;
+
+  return (
+    <section aria-labelledby={id} className="scroll-mt-24">
+      <GroupHeading id={id} title={title} count={items.length} />
+      <div className="space-y-3">
+        {items.map((m) => (
+          <article key={m.title} className="glass-card rounded-xl p-5 break-inside-avoid">
+            <h3 className="font-semibold leading-snug mb-1" style={{ color: "var(--color-text)" }}>
+              {m.title}
+            </h3>
+            {m.authors && (
+              <p className="text-xs mb-2" style={{ color: "var(--color-text-secondary)" }}>
+                {m.authors}
+              </p>
+            )}
+            <div className="flex flex-wrap items-center gap-2 text-[11px]">
+              <span
+                className="px-2 py-0.5 rounded-full whitespace-nowrap"
+                style={{ backgroundColor: "var(--color-accent)", color: "#fff" }}
+              >
+                {t(statusKey[m.status])}
+              </span>
+              {m.note && (
+                <span
+                  className="px-2 py-0.5 rounded-full whitespace-nowrap"
+                  style={{
+                    backgroundColor: "var(--color-border)",
+                    color: "var(--color-text-secondary)",
+                  }}
+                >
+                  {m.note}
+                </span>
+              )}
+              <span style={{ color: "var(--color-text-secondary)" }}>
+                {t("pub.targetOutlet")}: <em>{m.outlet}</em>
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -37,51 +102,16 @@ export default function PublicationList() {
 
   return (
     <div className="space-y-14">
-      {underReview.length > 0 && (
-        <section aria-labelledby="under-review">
-          <div className="flex items-baseline gap-3 mb-5">
-            <h2
-              id="under-review"
-              className="text-xl sm:text-2xl font-bold tracking-tight"
-              style={{ color: "var(--color-text)" }}
-            >
-              {t("pub.underReview")}
-            </h2>
-            <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-              {underReview.length}
-            </span>
-          </div>
-          <div className="space-y-3">
-            {underReview.map((m, i) => (
-              <article key={i} className="glass-card rounded-xl p-5 break-inside-avoid">
-                <h3 className="font-semibold leading-snug mb-1" style={{ color: "var(--color-text)" }}>
-                  {m.title}
-                </h3>
-                {m.authors && (
-                  <p className="text-xs mb-2" style={{ color: "var(--color-text-secondary)" }}>
-                    {m.authors}
-                  </p>
-                )}
-                <div className="flex flex-wrap items-center gap-2 text-[11px]">
-                  <span
-                    className="px-2 py-0.5 rounded-full"
-                    style={{ backgroundColor: "var(--color-accent)", color: "#fff" }}
-                  >
-                    {t(statusKey[m.status])}
-                  </span>
-                  <span style={{ color: "var(--color-text-secondary)" }}>
-                    <em>{m.outlet}</em>
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
+      <ManuscriptGroup id="under-review" title={t("pub.underReview")} items={underReview} />
+      <ManuscriptGroup id="in-preparation" title={t("pub.inPreparation")} items={inPreparation} />
 
       {publicationGroups.map((group) => (
         <section key={group.key} id={group.key} className="scroll-mt-24">
-          <GroupHeading count={group.items.length}>{t(group.labelKey)}</GroupHeading>
+          <GroupHeading
+            id={`${group.key}-heading`}
+            title={t(group.labelKey)}
+            count={group.items.length}
+          />
           <div className="space-y-3">
             {group.items.map((pub) => (
               <PublicationEntry key={pub.id} pub={pub} />
