@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { I18nProvider } from "@/lib/i18n";
-import { JOB_TITLE } from "@/data/cv";
+import { JOB_TITLE, ORCID_PROFILE_URL, SCHOLAR_URL } from "@/data/cv";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -83,8 +83,6 @@ export const metadata: Metadata = {
   },
 };
 
-const ORCID_URL = "https://orcid.org/0000-0002-3214-0724";
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -94,7 +92,7 @@ const jsonLd = {
   honorificPrefix: "Dr.",
   url: siteUrl,
   jobTitle: JOB_TITLE,
-  identifier: ORCID_URL,
+  identifier: ORCID_PROFILE_URL,
   worksFor: {
     "@type": "Organization",
     name: "Maastricht University School of Business and Economics",
@@ -132,11 +130,14 @@ const jsonLd = {
     "Immersive Technologies",
     "Brain-Computer Interfaces",
   ],
-  // Google Scholar is deliberately omitted: the profile mixes in works by a
-  // same-named author. Add it back once that profile has been cleaned up.
+  // Google Scholar was removed on the assumption that the profile carried a
+  // same-named author's work. It does not: every entry on it was verified
+  // against ORCID and the CV in Aug 2026, so it is back as a strong identity
+  // signal.
   sameAs: [
-    ORCID_URL,
+    ORCID_PROFILE_URL,
     "https://cris.maastrichtuniversity.nl/en/persons/jonas-heller",
+    SCHOLAR_URL,
     "https://www.linkedin.com/in/hellerjonas/",
     "https://www.researchgate.net/profile/Jonas-Heller-2",
     "https://x.com/hellerjonas",

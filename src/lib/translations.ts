@@ -177,6 +177,16 @@ export const translations: TranslationMap = {
     de: "Forschungsoutputs insgesamt",
     nl: "onderzoeksoutputs in totaal",
   },
+  "pubPage.statCitations": {
+    en: "citations on Google Scholar",
+    de: "Zitationen laut Google Scholar",
+    nl: "citaties volgens Google Scholar",
+  },
+  "pubPage.metricsAsOf": {
+    en: "Citation metrics from Google Scholar, {date}: {citations} citations, h-index {h}, i10-index {i10}.",
+    de: "Zitationskennzahlen laut Google Scholar, Stand {date}: {citations} Zitationen, h-Index {h}, i10-Index {i10}.",
+    nl: "Citatiegegevens volgens Google Scholar, per {date}: {citations} citaties, h-index {h}, i10-index {i10}.",
+  },
   "pubPage.statConference": {
     en: "conference contributions and keynotes",
     de: "Konferenzbeiträge und Keynotes",

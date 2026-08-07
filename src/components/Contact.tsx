@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
+import { ORCID_PROFILE_URL, SCHOLAR_URL } from "@/data/cv";
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -255,9 +256,8 @@ export default function Contact() {
         >
           {[
             { label: "LinkedIn", href: "https://www.linkedin.com/in/hellerjonas/" },
-            // ORCID rather than Google Scholar: the Scholar profile mixes in
-            // works by a same-named author.
-            { label: "ORCID", href: "https://orcid.org/0000-0002-3214-0724" },
+            { label: "ORCID", href: ORCID_PROFILE_URL },
+            { label: "Google Scholar", href: SCHOLAR_URL },
             { label: "ResearchGate", href: "https://www.researchgate.net/profile/Jonas-Heller-2" },
             { label: "Substack", href: "https://jonasheller.substack.com" },
           ].map((link) => (
