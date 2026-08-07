@@ -10,7 +10,7 @@ const linkKeys = [
   { key: "nav.speaking", href: "#speaking" },
   { key: "nav.consulting", href: "#consulting" },
   { key: "nav.about", href: "#about" },
-  { key: "nav.publications", href: "#publications" },
+  { key: "nav.publications", href: "/publications" },
   { key: "nav.projects", href: "/projects" },
   { key: "nav.cv", href: "/cv" },
   { key: "nav.contact", href: "#contact" },

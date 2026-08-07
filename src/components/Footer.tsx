@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
 function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
@@ -129,6 +130,22 @@ export default function Footer() {
       >
         <p>
           © {new Date().getFullYear()} Dr. Jonas Heller. {t("footer.rights")}
+        </p>
+        <p className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <Link href="/publications" className="hover:opacity-70 transition-opacity">
+            {t("pubPage.heading")}
+          </Link>
+          <Link href="/academic" className="hover:opacity-70 transition-opacity">
+            {t("academic.heading")}
+          </Link>
+          <a
+            href="https://orcid.org/0000-0002-3214-0724"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-70 transition-opacity"
+          >
+            ORCID 0000-0002-3214-0724
+          </a>
         </p>
         <button
           ref={openBtnRef}

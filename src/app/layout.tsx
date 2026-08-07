@@ -82,6 +82,8 @@ export const metadata: Metadata = {
   },
 };
 
+const ORCID_URL = "https://orcid.org/0000-0002-3214-0724";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -90,7 +92,8 @@ const jsonLd = {
   familyName: "Heller",
   honorificPrefix: "Dr.",
   url: siteUrl,
-  jobTitle: "Assistant Professor of Marketing",
+  jobTitle: "Tenured Assistant Professor of Marketing",
+  identifier: ORCID_URL,
   worksFor: {
     "@type": "Organization",
     name: "Maastricht University School of Business and Economics",
@@ -128,12 +131,14 @@ const jsonLd = {
     "Immersive Technologies",
     "Brain-Computer Interfaces",
   ],
+  // Google Scholar is deliberately omitted: the profile mixes in works by a
+  // same-named author. Add it back once that profile has been cleaned up.
   sameAs: [
-    "https://scholar.google.com/citations?user=NOSPtp8AAAAJ",
-    "https://www.researchgate.net/profile/Jonas-Heller-2",
-    "https://www.linkedin.com/in/hellerjonas/",
-    "https://x.com/hellerjonas",
+    ORCID_URL,
     "https://cris.maastrichtuniversity.nl/en/persons/jonas-heller",
+    "https://www.linkedin.com/in/hellerjonas/",
+    "https://www.researchgate.net/profile/Jonas-Heller-2",
+    "https://x.com/hellerjonas",
   ],
 };
 

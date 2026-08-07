@@ -161,3 +161,92 @@ select:focus {
   --tw-ring-color: var(--color-accent);
   --tw-ring-offset-color: var(--color-bg);
 }
+
+/* ───────────────────────── print / PDF export ─────────────────────────
+   The /academic view is meant to be saved as a PDF for application
+   dossiers, so it prints on white regardless of the on-screen theme,
+   avoids breaking entries across pages, and carries a date-stamped
+   footer. */
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+@media print {
+  /* Force the light palette: a dark-theme PDF is unusable in print. */
+  :root,
+  html,
+  html[data-theme="dark"],
+  html.dark {
+    --color-bg: #ffffff;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;
+    --color-text-secondary: #333333;
+    --color-border: #cccccc;
+    --color-accent: #000000;
+    --color-accent-secondary: #333333;
+    --color-glass-bg: transparent;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Interactive chrome has no meaning on paper. */
+  nav,
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  .academic-view {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .glass-card {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep a heading with the entries it introduces. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  article,
+  table,
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Spell out link targets so a printed copy stays verifiable. */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  /* DOI chips already print the DOI; don't repeat the URL after them. */
+  a[href^="https://doi.org/"]::after {
+    content: "";
+  }
+
+  .print-datestamp {
+    font-size: 0.7rem;
+    color: #555;
+  }
+
+  @page {
+    margin: 18mm 16mm;
+  }
+}

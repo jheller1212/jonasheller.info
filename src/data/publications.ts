@@ -1,395 +1,164 @@
-export type PublicationType =
-  | 'article'
-  | 'review'
-  | 'chapter'
-  | 'thesis'
-  | 'comment'
-  | 'abstract'
-  | 'preprint'
-  | 'report';
+/**
+ * Publication list — single source of truth for every publication count and
+ * citation on the site.
+ *
+ * Data flow:
+ *   ORCID 0000-0002-3214-0724 --(npm run sync:orcid)--> orcid-works.json
+ *                                                        + publications-overlay.ts
+ *                                                        = this module
+ *
+ * Nothing is fetched at build time or in the browser, and Google Scholar is
+ * not a source: it mixes in works by same-named authors.
+ */
 
-export interface Publication {
+import orcidData from "./orcid-works.json";
+import {
+  authorPositionOverrides,
+  extraWorks,
+  reviewIds,
+  selectedIds,
+  titleOverrides,
+  venueOverrides,
+} from "./publications-overlay";
+
+/** The section a work is listed under. */
+export type PublicationSection =
+  | "article"
+  | "review"
+  | "chapter"
+  | "conference"
+  | "report"
+  | "thesis"
+  | "preprint";
+
+/** A work exactly as it comes out of the sync script or the overlay. */
+export interface RawWork {
   id: string;
   title: string;
-  authors: string;
-  year: number;
-  journal: string;
-  url?: string;
-  type: PublicationType;
+  year: number | null;
+  type: PublicationSection;
+  orcidType: string;
+  venue: string | null;
+  volume: string | null;
+  issue: string | null;
+  pages: string | null;
+  doi: string | null;
+  url?: string | null;
+  authors: string[];
+  authorPosition: number | null;
+  authorCount: number;
+  isOpenAccess: boolean | null;
+  oaStatus: string | null;
+  oaUrl: string | null;
 }
 
-function citationUrl(citationId: string): string {
-  return `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=NOSPtp8AAAAJ&citation_for_view=${citationId}`;
+export interface Publication extends RawWork {
+  /** Section after overlay reclassification (reviews split out of articles). */
+  section: PublicationSection;
+  /** "Journal of Retailing 95 (4), 219-234" */
+  citation: string;
+  /** Best link for the work: DOI, else the OA landing page, else nothing. */
+  href: string | null;
 }
 
+const ORCID_ID = orcidData.orcid;
+export const ORCID_URL = `https://orcid.org/${ORCID_ID}`;
+export const ORCID_LAST_SYNCED = orcidData.fetchedAt;
+
+/* ─────────────────────────── assembly ─────────────────────────── */
+
+function citationOf(work: RawWork): string {
+  const venue = venueOverrides[work.id] ?? work.venue;
+  if (!venue) return "";
+  let out = venue;
+  if (work.volume) {
+    out += ` ${work.volume}`;
+    if (work.issue) out += ` (${work.issue})`;
+  }
+  if (work.pages) out += `, ${work.pages}`;
+  return out;
+}
+
+function hrefOf(work: RawWork): string | null {
+  if (work.doi) return `https://doi.org/${work.doi}`;
+  return work.oaUrl ?? work.url ?? null;
+}
+
+function enrich(work: RawWork): Publication {
+  return {
+    ...work,
+    title: titleOverrides[work.id] ?? work.title,
+    venue: venueOverrides[work.id] ?? work.venue,
+    authorPosition: authorPositionOverrides[work.id] ?? work.authorPosition,
+    section: reviewIds.has(work.id) ? "review" : work.type,
+    citation: citationOf(work),
+    href: hrefOf(work),
+  };
+}
+
+/** Every output, newest first. */
 export const publications: Publication[] = [
-  // 2026
-  {
-    id: "becker2026",
-    type: "article",
-    title: "Using customized, conversational AI agents in leadership and management research: Benefits, practical illustrations, and best practices",
-    authors: "Becker, M., de Jong, D., Briker, R., Mennens, K., Heller, J., Mahr, D., Grewal, D.",
-    year: 2026,
-    journal: "The Leadership Quarterly 37 (3), 101952",
-    url: citationUrl("NOSPtp8AAAAJ:zA6iFVUQeVQC"),
-  },
-  {
-    id: "glebova2026",
-    type: "chapter",
-    title: "Immersive Environments",
-    authors: "Glebova, E., Heller, J.",
-    year: 2026,
-    journal: "International Encyclopedia of Business Management, 567-575",
-    url: "https://doi.org/10.1016/b978-0-443-13701-3.00395-9",
-  },
-  {
-    id: "bos2026",
-    type: "preprint",
-    title: "Perspective-taking and meaning-making among public policy professionals experiencing an immersive poverty narrative",
-    authors: "Bos, S. G., Br\u00fcggen, L., van der Werf, M., Heller, J.",
-    year: 2026,
-    journal: "Forthcoming",
-    url: citationUrl("NOSPtp8AAAAJ:rO6llkc54NcC"),
-  },
-  // 2025
-  {
-    id: "barrett2025",
-    type: "article",
-    title: "Customer engagement in utilitarian vs. hedonic service contexts",
-    authors: "Barrett, J. A. M., Jaakkola, E., Heller, J., Br\u00fcggen, E. C.",
-    year: 2025,
-    journal: "Journal of Service Research 28 (4), 614-633",
-    url: "https://doi.org/10.1177/10946705241242901",
-  },
-  {
-    id: "herold2025",
-    type: "article",
-    title: "Brave new procurement deals: An experimental study of how generative artificial intelligence reshapes buyer\u2013supplier negotiations",
-    authors: "Herold, S., Heller, J., Rozemeijer, F., Mahr, D.",
-    year: 2025,
-    journal: "Journal of Purchasing and Supply Management 31 (4), 101012",
-    url: "https://doi.org/10.1016/j.pursup.2025.101012",
-  },
-  {
-    id: "dong2025",
-    type: "article",
-    title: "Does using augmented reality in online shopping affect post-purchase product perceptions? A mixed design using machine-learning based sentiment analysis, lab experiments, and focus groups",
-    authors: "Dong, X., Hu, C., Heller, J., Deng, N.",
-    year: 2025,
-    journal: "International Journal of Information Management 82, 102872",
-    url: "https://doi.org/10.1016/j.ijinfomgt.2025.102872",
-  },
-  {
-    id: "palma2025",
-    type: "article",
-    title: "Does Using Virtual Reality to Enhance Students\u2019 Presentation Skills Work? The Role of Feedback and Presence",
-    authors: "Di Palma, R., Beausaert, S., Mahr, D., Heller, J., Hilken, T.",
-    year: 2025,
-    journal: "Journal of Computer Assisted Learning 41 (5), e70097",
-    url: "https://doi.org/10.1111/jcal.70097",
-  },
-  {
-    id: "becker2025",
-    type: "preprint",
-    title: "Introducing ResearchChatAI: An easy-to-use, open-source tool to build conversational AI agents for management and leadership research",
-    authors: "Becker, M., De Jong, D., Briker, R., Mennens, K., Heller, J., Mahr, D., Grewal, D.",
-    year: 2025,
-    journal: "Preprint",
-    url: "https://doi.org/10.2139/ssrn.5188853",
-  },
-  {
-    id: "mahr2025",
-    type: "report",
-    title: "Immersion and regulation: extended reality technologies, their impact on innovation and policy recommendations",
-    authors: "Mahr, D., Heller, J., Hilken, T., GUMBI Center",
-    year: 2025,
-    journal: "SEM Policy Brief Collection, 69-76",
-    url: citationUrl("NOSPtp8AAAAJ:pqnbT2bcN3wC"),
-  },
-  // 2024
-  {
-    id: "rauschnabel2024",
-    type: "article",
-    title: "The 4C framework: Towards a holistic understanding of consumer engagement with augmented reality",
-    authors: "Rauschnabel, P. A., Felix, R., Heller, J., Hinsch, C.",
-    year: 2024,
-    journal: "Computers in Human Behavior 154, 108105",
-    url: "https://doi.org/10.1016/j.chb.2023.108105",
-  },
-  {
-    id: "windhausen2024",
-    type: "article",
-    title: "Exploring the impact of augmented reality smart glasses on worker well-being in warehouse order picking",
-    authors: "Windhausen, A., Heller, J., Hilken, T., Mahr, D., Di Palma, R., Quintens, L.",
-    year: 2024,
-    journal: "Computers in Human Behavior 155, 108153",
-    url: "https://doi.org/10.1016/j.chb.2024.108153",
-  },
-  {
-    id: "moonen2024",
-    type: "article",
-    title: "Immersion or social presence? Investigating the effect of virtual reality immersive environments on sommelier learning experiences",
-    authors: "Moonen, N., Heller, J., Hilken, T., Danny Han, D. I., Mahr, D.",
-    year: 2024,
-    journal: "Journal of Wine Research 35 (2), 101-118",
-    url: "https://doi.org/10.1080/09571264.2024.2310297",
-  },
-  {
-    id: "werf2024",
-    type: "report",
-    title: "Challenges of Automated Financial Advice: Definition and Ethical Considerations",
-    authors: "Werf, M., Meacham, D., Br\u00fcggen, E., Hogreve, J., Heller, J., Gianni, R., Post, T.",
-    year: 2024,
-    journal: "Netspar",
-    url: citationUrl("NOSPtp8AAAAJ:ns9cj8rnVeAC"),
-  },
-  // 2023
-  {
-    id: "ciuchita2023",
-    type: "review",
-    title: "It is really not a game: an integrative review of gamification for service research",
-    authors: "Ciuchita, R., Heller, J., K\u00f6cher, S., K\u00f6cher, S., Leclercq, T., Sidaoui, K., Stead, S.",
-    year: 2023,
-    journal: "Journal of Service Research 26 (1), 3-20",
-    url: "https://doi.org/10.1177/10946705221076272",
-  },
-  {
-    id: "herold2023",
-    type: "review",
-    title: "Dynamic capabilities for digital procurement transformation: a systematic literature review",
-    authors: "Herold, S., Heller, J., Rozemeijer, F., Mahr, D.",
-    year: 2023,
-    journal: "International Journal of Physical Distribution & Logistics Management 53 (4)",
-    url: "https://doi.org/10.1108/IJPDLM-12-2021-0535",
-  },
-  {
-    id: "pfeifer2023",
-    type: "article",
-    title: "More than meets the eye: In-store retail experiences with augmented reality smart glasses",
-    authors: "Pfeifer, P., Hilken, T., Heller, J., Alimamy, S., Di Palma, R.",
-    year: 2023,
-    journal: "Computers in Human Behavior 146, 107816",
-    url: "https://doi.org/10.1016/j.chb.2023.107816",
-  },
-  {
-    id: "glebova2023",
-    type: "article",
-    title: "Sports Venue Digital Twin Technology from a Spectator Virtual Visiting Perspective",
-    authors: "Glebova, E., Book, R., Su, Y., Peri\u0107, M., Heller, J.",
-    year: 2023,
-    journal: "Frontiers in Sports and Active Living 5, 1289140",
-    url: "https://doi.org/10.3389/fspor.2023.1289140",
-  },
-  {
-    id: "heller2023",
-    type: "article",
-    title: "An interdisciplinary Co-authorship networking perspective on AR and human behavior: Taking stock and moving ahead",
-    authors: "Heller, J., Mahr, D., de Ruyter, K., Schaap, E., Hilken, T., Keeling, D. I., Chylinski, M., Flavi\u00e1n, C., Jung, T., Rauschnabel, P. A.",
-    year: 2023,
-    journal: "Computers in Human Behavior 143, 107697",
-    url: "https://doi.org/10.1016/j.chb.2023.107697",
-  },
-  {
-    id: "mahr2023",
-    type: "chapter",
-    title: "Augmented reality (AR): The blurring of reality in human-computer interaction",
-    authors: "Mahr, D., Heller, J., de Ruyter, K.",
-    year: 2023,
-    journal: "Book Chapter",
-    url: "https://doi.org/10.1016/j.chb.2023.107755",
-  },
-  {
-    id: "hilken2023",
-    type: "article",
-    title: "Closing the customer imagination gap with augmented and virtual reality",
-    authors: "Hilken, T., Heller, J., Mahr, D.",
-    year: 2023,
-    journal: "NIM Marketing Intelligence Review 15 (2), 30-35",
-    url: "https://doi.org/10.2478/nimmir-2023-0014",
-  },
-  {
-    id: "heller2023b",
-    type: "article",
-    title: "Zur aktuellen und zuk\u00fcnftigen wirtschaftlichen Lage von Selbst\u00e4ndigen",
-    authors: "Heller, J., Sauer, S., Wohlrabe, K.",
-    year: 2023,
-    journal: "ifo Schnelldienst 76 (01), 39-43",
-    url: citationUrl("NOSPtp8AAAAJ:ZHo1McVdvXMC"),
-  },
-  {
-    id: "mahr2023b",
-    type: "article",
-    title: "Die Innovation synthetischer Kundenerlebnisse: Machen ist wichtiger als Denken.",
-    authors: "Mahr, D., Heller, J., Hilken, T., Wigger, M.",
-    year: 2023,
-    journal: "Transfer: Zeitschrift f\u00fcr Kommunikation & Markenmanagement 69 (3)",
-    url: citationUrl("NOSPtp8AAAAJ:r0BpntZqJG4C"),
-  },
-  // 2022
-  {
-    id: "golf-papez2022",
-    type: "article",
-    title: "Embracing Falsity through the Metaverse: The Case of Synthetic Customer Experiences",
-    authors: "Golf-Papez, M., Heller, J., Hilken, T., Chylinski, M., de Ruyter, K., Keeling, D. I., Mahr, D.",
-    year: 2022,
-    journal: "Business Horizons",
-    url: "https://doi.org/10.1016/j.bushor.2022.07.007",
-  },
-  {
-    id: "hilken2022",
-    type: "article",
-    title: "How to strategically choose or combine augmented and virtual reality for improved online experiential retailing",
-    authors: "Hilken, T., Chylinski, M., Keeling, D. I., Heller, J., de Ruyter, K., Mahr, D.",
-    year: 2022,
-    journal: "Psychology & Marketing 39 (3), 495-507",
-    url: "https://doi.org/10.1002/mar.21600",
-  },
-  {
-    id: "hilken2022b",
-    type: "article",
-    title: "Disrupting marketing realities: A research agenda for investigating the psychological mechanisms of next generation experiences with reality enhancing technologies",
-    authors: "Hilken, T., Keeling, D. I., Chylinski, M., de Ruyter, K., Heller, J., Mahr, D., Alimamy, S.",
-    year: 2022,
-    journal: "Psychology & Marketing",
-    url: "https://doi.org/10.1002/mar.21678",
-  },
-  {
-    id: "hilken2022c",
-    type: "article",
-    title: "Exploring the frontiers in reality-enhanced service communication: from augmented and virtual reality to neuro-enhanced reality",
-    authors: "Hilken, T., Chylinski, M., de Ruyter, K., Heller, J., Keeling, D. I.",
-    year: 2022,
-    journal: "Journal of Service Management 33 (4-5), 657-674",
-    url: "https://doi.org/10.1108/JOSM-11-2021-0439",
-  },
-  {
-    id: "hilken2022d",
-    type: "article",
-    title: "Bridging imagination gaps on the path to purchase with augmented reality: Field and experimental evidence",
-    authors: "Hilken, T., Heller, J., Keeling, D. I., Chylinski, M., Mahr, D., de Ruyter, K.",
-    year: 2022,
-    journal: "Journal of Interactive Marketing 57 (2), 356-375",
-    url: "https://doi.org/10.1177/10949968221083555",
-  },
-  {
-    id: "chylinski2022",
-    type: "chapter",
-    title: "The customer loyalty journey-technology enabled loyalty touchpoints",
-    authors: "Chylinski, M., Heller, J.",
-    year: 2022,
-    journal: "Handbook of research on customer loyalty, 42-54",
-    url: "https://doi.org/10.4337/9781800371637.00009",
-  },
-  // 2021
-  {
-    id: "heller2021",
-    type: "article",
-    title: "Tangible service automation: Decomposing the technology-enabled engagement process (TEEP) for augmented reality",
-    authors: "Heller, J., Chylinski, M., de Ruyter, K., Keeling, D. I., Hilken, T., Mahr, D.",
-    year: 2021,
-    journal: "Journal of Service Research 24 (1), 84-103",
-    url: "https://doi.org/10.1177/1094670520933692",
-  },
-  {
-    id: "lammerding2021",
-    type: "chapter",
-    title: "Too real for comfort: Measuring consumers\u2019 augmented reality information privacy concerns",
-    authors: "Lammerding, L., Hilken, T., Mahr, D., Heller, J.",
-    year: 2021,
-    journal: "Augmented Reality and Virtual Reality, Springer",
-    url: "https://doi.org/10.1007/978-3-030-68086-2_8",
-  },
-  // 2020
-  {
-    id: "chylinski2020",
-    type: "article",
-    title: "Augmented reality marketing: A technology-enabled approach to situated customer experience",
-    authors: "Chylinski, M., Heller, J., Hilken, T., Keeling, D. I., Mahr, D., de Ruyter, K.",
-    year: 2020,
-    journal: "Australasian Marketing Journal 28 (4), 374-384",
-    url: "https://doi.org/10.1016/j.ausmj.2020.04.004",
-  },
-  {
-    id: "jessen2020",
-    type: "article",
-    title: "The playground effect: How augmented reality drives creative customer engagement",
-    authors: "Jessen, A., Hilken, T., Chylinski, M., Mahr, D., Heller, J., Keeling, D. I., de Ruyter, K.",
-    year: 2020,
-    journal: "Journal of Business Research 116, 85-98",
-    url: "https://doi.org/10.1016/j.jbusres.2020.05.002",
-  },
-  {
-    id: "ruyter2020",
-    type: "article",
-    title: "Seeing with the customer\u2019s eye: Exploring the challenges and opportunities of AR advertising",
-    authors: "de Ruyter, K., Heller, J., Hilken, T., Chylinski, M., Keeling, D. I., Mahr, D.",
-    year: 2020,
-    journal: "Journal of Advertising 49 (2), 109-124",
-    url: "https://doi.org/10.1080/00913367.2020.1740123",
-  },
-  {
-    id: "esch2020",
-    type: "chapter",
-    title: "The moderating influence of country of origin information seeking on homophily and product satisfaction",
-    authors: "Van Esch, P., Northey, G., Duffy, S., Heller, J., Striluk, M.",
-    year: 2020,
-    journal: "Country of Origin Effect, 40-56",
-    url: "https://doi.org/10.1080/10496491.2018.1378300",
-  },
-  // 2019
-  {
-    id: "heller2019",
-    type: "article",
-    title: "Let me imagine that for you: transforming the retail frontline through augmenting customer mental imagery ability",
-    authors: "Heller, J., Chylinski, M., de Ruyter, K., Mahr, D., Keeling, D. I.",
-    year: 2019,
-    journal: "Journal of Retailing 95 (2), 94-114",
-    url: "https://doi.org/10.1016/j.jretai.2019.03.005",
-  },
-  {
-    id: "heller2019b",
-    type: "article",
-    title: "Touching the untouchable: exploring multi-sensory augmented reality in the context of online retailing",
-    authors: "Heller, J., Chylinski, M., de Ruyter, K., Mahr, D., Keeling, D. I.",
-    year: 2019,
-    journal: "Journal of Retailing 95 (4), 228-244",
-    url: "https://doi.org/10.1016/j.jretai.2019.10.008",
-  },
-  {
-    id: "carrozzi2019",
-    type: "article",
-    title: "What\u2019s mine is a hologram? How shared Augmented Reality augments psychological ownership",
-    authors: "Carrozzi, A., Chylinski, M., Heller, J., Hilken, T., Keeling, D., de Ruyter, K.",
-    year: 2019,
-    journal: "Journal of Interactive Marketing 48, 71-88",
-    url: "https://doi.org/10.1016/j.intmar.2019.05.004",
-  },
-  {
-    id: "esch2019",
-    type: "article",
-    title: "The effects of inner packaging color on the desirability of food",
-    authors: "Van Esch, P., Heller, J., Northey, G.",
-    year: 2019,
-    journal: "Journal of Retailing and Consumer Services 50, 94-102",
-    url: "https://doi.org/10.1016/j.jretconser.2019.05.003",
-  },
-  {
-    id: "esch2019b",
-    type: "article",
-    title: "ExerStart: helping seniors be active and independent for less",
-    authors: "Van Esch, P., Duffy, S. M., Teufel, J., Northey, G., Elder, E., Frethey-Bentham, C., Cook, T. B., Heller, J.",
-    year: 2019,
-    journal: "Journal of Social Marketing 9 (2), 146-160",
-    url: "https://doi.org/10.1108/JSOCM-06-2018-0065",
-  },
-  // 2018
-  {
-    id: "hilken2018",
-    type: "article",
-    title: "Making omnichannel an augmented reality: the current and future state of the art",
-    authors: "Hilken, T., Heller, J., Chylinski, M., Keeling, D. I., Mahr, D., de Ruyter, K.",
-    year: 2018,
-    journal: "Journal of Research in Interactive Marketing 12 (4), 509-523",
-    url: "https://doi.org/10.1108/JRIM-01-2018-0023",
-  },
+  ...(orcidData.works as RawWork[]),
+  ...extraWorks,
+]
+  .map(enrich)
+  .sort((a, b) => (b.year ?? 0) - (a.year ?? 0) || a.title.localeCompare(b.title));
+
+const byId = new Map(publications.map((p) => [p.id, p]));
+
+// A re-sync can rename an id if a title or lead author changes. Fail the build
+// rather than quietly dropping a featured paper from the home page.
+const missingSelected = selectedIds.filter((id) => !byId.has(id));
+if (missingSelected.length > 0) {
+  throw new Error(
+    `publications-overlay: selectedIds not found in the publication list: ${missingSelected.join(", ")}. ` +
+      `Re-check the ids in src/data/orcid-works.json after the last sync.`,
+  );
+}
+
+/** The seven papers featured on the home page, in the curated order. */
+export const selectedPublications: Publication[] = selectedIds.map(
+  (id) => byId.get(id) as Publication,
+);
+
+/* ─────────────────────────── sections ─────────────────────────── */
+
+export interface PublicationGroup {
+  key: string;
+  /** i18n key for the heading. */
+  labelKey: string;
+  items: Publication[];
+}
+
+/** Section order follows academic CV convention: journals first, other last. */
+const SECTION_ORDER: { key: string; labelKey: string; sections: PublicationSection[] }[] = [
+  { key: "articles", labelKey: "pub.section.articles", sections: ["article"] },
+  { key: "reviews", labelKey: "pub.section.reviews", sections: ["review"] },
+  { key: "chapters", labelKey: "pub.section.chapters", sections: ["chapter"] },
+  { key: "conference", labelKey: "pub.section.conference", sections: ["conference"] },
+  { key: "other", labelKey: "pub.section.other", sections: ["report", "thesis", "preprint"] },
 ];
+
+export const publicationGroups: PublicationGroup[] = SECTION_ORDER.map(
+  ({ key, labelKey, sections }) => ({
+    key,
+    labelKey,
+    items: publications.filter((p) => sections.includes(p.section)),
+  }),
+).filter((group) => group.items.length > 0);
+
+/* ─────────────────────────── counts ─────────────────────────── */
+
+/**
+ * Every publication count on the site reads from here. Do not hardcode these
+ * numbers anywhere else — the site previously showed 36, 40 and 40 on one page.
+ */
+export const PUBLICATION_STATS = {
+  /** Peer-reviewed journal articles, systematic reviews included. */
+  journalArticles: publications.filter((p) => p.section === "article" || p.section === "review")
+    .length,
+  /** All research outputs, every type. */
+  researchOutputs: publications.length,
+  /** Outputs deposited in ORCID; the rest come from the overlay. */
+  orcidOutputs: orcidData.works.length,
+} as const;
