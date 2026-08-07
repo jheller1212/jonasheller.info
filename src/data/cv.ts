@@ -533,10 +533,10 @@ export const teaching: TeachingGroup[] = [
 /**
  * Teaching and working languages.
  *
- * German is his first language (born in Velbert, DE) and he already delivers
- * keynotes in German and English — see the speaking page. Dutch is
- * deliberately listed as a working language only, not a teaching language,
- * because that is a stronger claim and has not been confirmed.
+ * German is his first language and he already delivers keynotes in German and
+ * English — see the speaking page. Dutch is deliberately listed as a working
+ * language only, not a teaching language, because that is a stronger claim
+ * and has not been confirmed.
  */
 export const languages = {
   teaching: ["German (native)", "English (fluent)"],
