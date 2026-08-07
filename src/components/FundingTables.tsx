@@ -35,7 +35,9 @@ export default function FundingTables() {
       {fundingTables.map((table) => {
         const has = (field: keyof Grant) => table.grants.some((g) => g[field] !== undefined);
         const showRole = has("role");
-        const showShare = has("ownShare");
+        // Own share is only meaningful when some row reports a larger
+        // consortium volume than the amount attributable to Jonas.
+        const showShare = has("totalVolume");
         const showDuration = has("duration");
 
         return (
@@ -80,15 +82,25 @@ export default function FundingTables() {
                         {g.year}
                       </td>
                       <td className="p-3 align-top">{g.funder}</td>
-                      <td className="p-3 align-top">{g.project}</td>
-                      {showRole && <td className="p-3 align-top">{g.role ?? "—"}</td>}
+                      <td className="p-3 align-top">
+                        {g.project}
+                        {g.scope && (
+                          <span
+                            className="block text-xs mt-0.5"
+                            style={{ color: "var(--color-text-secondary)" }}
+                          >
+                            {g.scope}
+                          </span>
+                        )}
+                      </td>
+                      {showRole && <td className="p-3 align-top whitespace-nowrap">{g.role ?? "—"}</td>}
                       {showDuration && <td className="p-3 align-top whitespace-nowrap">{g.duration ?? "—"}</td>}
                       <td className="p-3 align-top text-right font-semibold whitespace-nowrap">
-                        {formatEurExact(g.amount)}
+                        {formatEurExact(g.totalVolume ?? g.amount)}
                       </td>
                       {showShare && (
                         <td className="p-3 align-top text-right whitespace-nowrap">
-                          {g.ownShare !== undefined ? formatEurExact(g.ownShare) : "—"}
+                          {formatEurExact(g.amount)}
                         </td>
                       )}
                     </tr>
@@ -100,11 +112,14 @@ export default function FundingTables() {
         );
       })}
 
-      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-        {t("cv.funding.industry")
-          .replace("{year}", industryFunding.since)
-          .replace("{amount}", formatEurExact(industryFunding.amount))}
-      </p>
+      <div className="space-y-2 text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+        <p>{t("cv.funding.subtotalNote")}</p>
+        <p>
+          {t("cv.funding.industry")
+            .replace("{year}", industryFunding.since)
+            .replace("{amount}", formatEurExact(industryFunding.amount))}
+        </p>
+      </div>
     </div>
   );
 }

@@ -15,9 +15,15 @@
 export const JOB_TITLE = "Tenured Assistant Professor (Universitair Docent 1), Marketing";
 export const JOB_TITLE_SHORT = "Tenured Assistant Professor of Marketing";
 
-/** Shown wherever the title appears; explains the Dutch rank. */
-export const RANK_FOOTNOTE =
-  "Universitair Docent 1 is the tenured senior rank below Associate Professor in the Dutch academic system.";
+// The rank footnote shown beside the title lives in i18n as "cv.rankFootnote":
+// it needs translating, so it must not also exist as a constant here.
+
+/**
+ * Research focus, taken from Jonas's own CV (July 2026) so the site and the
+ * application dossier describe the work in the same terms.
+ */
+export const RESEARCH_STATEMENT =
+  "Research on data-driven marketing decision making, combining experimental and econometric methods with digital and immersive technologies such as artificial intelligence, augmented reality, and virtual reality. Through DEXLab and the LIT Network, building research and innovation infrastructures that connect academia, industry, and small and medium-sized enterprises.";
 
 export const ORCID = "0000-0002-3214-0724";
 export const CRIS_URL = "https://cris.maastrichtuniversity.nl/en/persons/jonas-heller";
@@ -101,18 +107,57 @@ export const education = [
 ];
 
 export const awards = [
-  // The "within 5 years post-PhD" qualifier was removed deliberately (P3.2):
-  // self-labelling as early career undercuts a senior application.
-  { year: "2024", title: "SBE Junior Researcher Award" },
-  { year: "2022", title: "SBE Team Science Award", detail: "Awarded to research group 'AugmentedReseARch'" },
-  { year: "2020", title: "Dean's Award for Outstanding Dissertations, UNSW", detail: "Top 10% dissertation" },
-  { year: "2020", title: "SERVSIG Dissertation Award Finalist" },
-  { year: "2018", title: "ANZMAC Best Paper Award" },
-  { year: "2018", title: "UNSW Outstanding Research Student Award", detail: "Awarded to 4 students across all faculties" },
-  { year: "2018", title: "UNSW Business School Research Fair Winner" },
-  { year: "2017", title: "ANZMAC Strategy Challenge Award" },
-  { year: "2017", title: "CADE Best Paper Award" },
-  { year: "2016", title: "Excellence in Teaching Award, Maastricht University", detail: "Average above 8.5/10 across all courses (2014–2016)" },
+  // The "up to 5 years post-PhD" qualifier is deliberately not repeated (P3.2):
+  // self-labelling as early career undercuts a senior application. The
+  // selectivity of the award is stated instead.
+  {
+    year: "2024",
+    title: "SBE Junior Researcher Award",
+    detail: "Awarded to one researcher at the School of Business and Economics",
+  },
+  {
+    year: "2022",
+    title: "SBE Team Science Award",
+    detail: "Outstanding team science, awarded to the research group 'AugmentedReseARch'",
+  },
+  {
+    year: "2020",
+    title: "Dean's Award for Outstanding Dissertations, UNSW",
+    detail:
+      "Dissertation required no to minimal revisions and ranked in the best 10% according to all reviewers",
+  },
+  {
+    year: "2020",
+    title: "Service Special Interest Group (SERVSIG) Dissertation Award — Finalist",
+  },
+  {
+    year: "2018",
+    title: "Australian and New Zealand Marketing Academy (ANZMAC) Best Paper Award",
+  },
+  {
+    year: "2018",
+    title: "UNSW Postgraduate Council Outstanding Research Student Award",
+    detail: "One of four winners among all research students across all UNSW faculties",
+  },
+  {
+    year: "2018",
+    title: "Winner, UNSW Business School Research Fair",
+    detail: "PhD research presentation competition — 1st of 40 UNSW Business School PhD students",
+  },
+  {
+    year: "2017",
+    title: "Winner, ANZMAC Strategy Challenge Award",
+    detail: "International PhD competition — 1st of all Australian and New Zealand business schools",
+  },
+  {
+    year: "2017",
+    title: "Competitive Advantage in a Digital Economy (CADE) Best Paper Award",
+  },
+  {
+    year: "2016",
+    title: "Excellence in Teaching Award, Maastricht University",
+    detail: "Teaching evaluation average above 8.5/10 across all courses taught 2014–2016",
+  },
 ];
 
 /* ─────────────────────────── funding ─────────────────────────── */
@@ -122,12 +167,21 @@ export interface Grant {
   /** Funding body, kept separate from the project title so the table sorts. */
   funder: string;
   project: string;
-  /** Total volume of the grant in EUR. */
+  /**
+   * Amount attributable to Jonas / to Maastricht University, in EUR. This is
+   * the figure that feeds the subtotals — never the consortium total.
+   */
   amount: number;
-  /** PI · Co-PI · Work Package Lead · Supervisor · Holder. To be completed. */
+  /** PI · Co-PI · Work Package Lead · Co-Organizer. */
   role?: string;
-  /** Share attributable to Jonas, in EUR, where it differs from the total. */
-  ownShare?: number;
+  /**
+   * Consortium volume, where the project is larger than the attributable
+   * amount above. Rendered in the "total volume" column; `amount` then shows
+   * as the own share.
+   */
+  totalVolume?: number;
+  /** Free-text scope note, e.g. how a joint budget is split. */
+  scope?: string;
   /** e.g. "2021–2023" */
   duration?: string;
 }
@@ -144,52 +198,62 @@ const externalCompetitive: Grant[] = [
   {
     year: "2025",
     funder: "ERASMUS+",
-    project: "ATLAS.TI — AI-based Solutions for Teaching & Learning",
+    project: "ATLAS.TI — Assisting Teaching and Learning with AI-based Solutions",
     amount: 35_000,
+    role: "Work Package Lead (WP2)",
+    totalVolume: 400_000,
+    scope: "Maastricht University portion of a €400,000 consortium project",
   },
   {
     year: "2024",
     funder: "NETSPAR (via Institute GAK)",
     project: "Theme Grant: See4YourFutureSelf",
     amount: 350_000,
+    role: "PI",
   },
   {
     year: "2023",
-    funder: "SACM",
-    project: "PhD Project: Immersive Horizons",
+    funder: "Saudi Arabian Cultural Mission (SACM)",
+    project:
+      "PhD Project: Immersive Horizons — VR's Impact on Customer Engagement, Localization & Strategic Marketing",
     amount: 405_000,
+    role: "PI",
   },
   {
     year: "2023",
-    funder: "Zayed University",
-    project: "Research Incentive Fund: XR & Value Co-creation",
+    funder: "Zayed University, UAE",
+    project:
+      "Research Incentive Fund: Exploring how XR Technologies Support Value Co-creation in Service",
     amount: 80_000,
+    role: "Co-PI",
   },
   {
     year: "2022",
     funder: "China Scholarship Council (CSC)",
-    project: "PhD Grant: Digital Realities for Healthy & Sustainable Consumption",
+    project: "PhD Grant: Digital Realities for Healthy and Sustainable Consumption",
     amount: 220_000,
+    role: "Co-PI",
   },
   {
     year: "2022",
     funder: "Comenius (NRO)",
-    project: "Teaching Fellowship: Tech-enhanced Personalized Feedback",
+    project: "Teaching Fellowship: Technology-enhanced Personalized Feedback",
     amount: 50_000,
+    role: "Co-PI",
   },
   {
     year: "2021",
     funder: "European Commission — Marie Skłodowska-Curie",
     project: "Individual Fellowship: AugmentPension",
     amount: 190_000,
-    role: "PI (Fellow)",
+    role: "PI",
   },
   {
     year: "2016",
     funder: "Australian Government",
     project: "International Postgraduate Research Scholarship",
     amount: 180_000,
-    role: "Holder",
+    role: "PI",
   },
 ];
 
@@ -197,83 +261,97 @@ const externalCompetitive: Grant[] = [
 const internalStrategic: Grant[] = [
   {
     year: "2025",
-    funder: "UM–Zuyd Strategic Investment",
-    project: "Growing LIT Network (Year 2)",
+    funder: "UM–Zuyd Strategic Investment Budget",
+    project: "Growing Limburg Immersive Technologies Network (Year 2)",
     amount: 100_000,
+    role: "Co-PI",
+    scope: "50% Maastricht University / 50% Zuyd Hogeschool",
   },
   {
     year: "2025",
     funder: "GSBE",
-    project: "PhD Co-funding — Maarten Ramaekers",
+    project: "PhD Co-funding — Maarten Ramaekers: Preparing Procurement for an AI Driven Future",
     amount: 50_000,
+    role: "Co-PI",
   },
   {
     year: "2025",
     funder: "GSBE",
-    project: "PhD Co-funding — Joana Fernandes Duhamel",
+    project:
+      "PhD Co-funding — Joana Fernandes Duhamel: Emerging Technologies & Future Self",
     amount: 72_637,
+    role: "PI",
   },
   {
     year: "2024",
-    funder: "UM–Zuyd Strategic Investment",
-    project: "LIT Network (Year 1)",
+    funder: "UM–Zuyd Strategic Investment Budget",
+    project: "Limburg Immersive Technologies Network (Year 1)",
     amount: 164_000,
+    role: "Co-PI",
+    scope: "50% Maastricht University / 50% Zuyd Hogeschool",
   },
   {
     year: "2023",
     funder: "SBE",
-    project: "Education Innovation Voucher: AR & VR in Research",
+    project: "Education Innovation Voucher: Realistic Research Settings with AR and VR",
     amount: 10_000,
+    role: "Co-PI",
   },
   {
     year: "2022",
-    funder: "UM EDLAB",
+    funder: "Maastricht University EDLAB",
     project: "VR Enhanced PBL",
     amount: 50_000,
+    role: "Co-PI",
   },
   {
     year: "2022",
     funder: "SBE",
-    project: "Education Innovation Voucher: Automated Student Feedback",
+    project: "Education Innovation Voucher: Reality Check — Automated Student Feedback at SBE",
     amount: 10_000,
+    role: "Co-PI",
   },
   {
     year: "2022",
     funder: "GSBE",
-    project: "PhD Co-funding — Roberta di Palma",
+    project: "PhD Co-funding — Roberta di Palma: VR in Education",
     amount: 82_126,
+    role: "Co-PI",
   },
   {
     year: "2021",
     funder: "GSBE",
-    project: "PhD Co-funding — Silke Herold",
+    project: "PhD Co-funding — Silke Herold: Digital Procurement",
     amount: 46_649,
+    role: "Co-PI",
   },
   {
     year: "2020",
     funder: "GSBE",
     project: "Small Scale Research Grant MSCM",
     amount: 4_000,
+    role: "PI",
   },
   {
     year: "2019",
     funder: "UNSW",
     project: "Placement Scholarship for Research Excellence",
     amount: 1_900,
-    role: "Holder",
+    role: "PI",
   },
   {
     year: "2016",
     funder: "UNSW BizLab",
     project: "4× Higher Degree Research Grants",
     amount: 7_500,
+    role: "PI",
   },
   {
     year: "2016",
     funder: "UNSW Business School",
     project: "Supplementary Scholarship",
     amount: 22_000,
-    role: "Holder",
+    role: "PI",
   },
 ];
 
@@ -282,14 +360,16 @@ const eventFunding: Grant[] = [
   {
     year: "2025",
     funder: "SWOL",
-    project: "Scientific Event Grant: 10th Intl. XR Metaverse Conference",
+    project: "Scientific Event Grant: 10th International XR Metaverse Conference",
     amount: 2_500,
+    role: "Co-Organizer",
   },
   {
     year: "2025",
     funder: "GSBE",
-    project: "Conference Funding: 10th Intl. XR Metaverse Conference",
+    project: "Conference Funding: 10th International XR Metaverse Conference",
     amount: 2_500,
+    role: "Co-Organizer",
   },
 ];
 
@@ -301,7 +381,7 @@ export const fundingTables: FundingTable[] = [
 
 /**
  * Contract income rather than a grant, so it is reported separately and never
- * folded into the competitive total.
+ * folded into the competitive total. Role: Co-PI.
  */
 export const industryFunding = { since: "2022", amount: 50_000 };
 
@@ -358,16 +438,22 @@ export interface TeachingGroup {
 
 export const teaching: TeachingGroup[] = [
   {
-    institution: "Maastricht University — School of Business and Economics",
+    institution: "Maastricht University — Course Coordination & Tutoring (since 2020)",
     courses: [
+      {
+        name: "Bachelor's Thesis Supervision",
+        years: "2025",
+        role: "Course Coordinator",
+        evaluation: "9.2/10",
+      },
       {
         name: "B.Sc. Marketing Management",
         years: "2024, 2025",
         role: "Coordinator & Tutor",
-        evaluation: "8.2/10",
+        evaluation: "6.4/10",
       },
       {
-        name: "B.Sc. Marketing Research & Supply Chain Management",
+        name: "B.Sc. Marketing Research and Supply Chain Management",
         years: "2024",
         role: "Coordinator & Tutor",
         evaluation: "8.2/10",
@@ -387,29 +473,43 @@ export const teaching: TeachingGroup[] = [
     ],
   },
   {
-    institution: "Maastricht University — Tutor",
-    note: "Average 8.5/10 across all courses",
+    institution: "Maastricht University — Tutor (2014–2016)",
+    note: "Average 8.5/10 across all courses (10 is best)",
     courses: [
-      { name: "Fundamentals of Supply Chain Management", years: "2014–2016", role: "Tutor" },
-      { name: "Management of Organizations & Marketing", years: "2014–2016", role: "Tutor" },
-      { name: "Marketing Management", years: "2014–2016", role: "Tutor" },
-      { name: "Marketing & Supply Chain Management Tutorial", years: "2014–2016", role: "Tutor" },
+      { name: "Fundamentals of Supply Chain Management", years: "2014, 2015", role: "Tutor" },
+      { name: "Management of Organizations & Marketing", years: "2014, 2015", role: "Tutor" },
+      { name: "Marketing Management", years: "2014, 2015", role: "Tutor" },
+      { name: "Marketing & Supply Chain Management Tutorial", years: "2015", role: "Tutor" },
     ],
   },
   {
-    institution: "University of New South Wales",
-    note: "Average 5.4/6",
+    institution: "University of New South Wales — Lecturer (2016–2019)",
+    note: "Average 5.4/6 (6 is best)",
     courses: [
-      { name: "Consumer Behavior seminar", years: "2016–2019", role: "Lecturer", evaluation: "5.3/6" },
-      { name: "Marketing Research seminar", years: "2016–2019", role: "Lecturer", evaluation: "5.5/6" },
-      { name: "Laboratory Staff Training on Emerging Technologies", years: "2016–2019", role: "Lecturer" },
+      {
+        name: "Consumer Behavior seminar",
+        years: "2016, 2017, 2018",
+        role: "Lecturer",
+        evaluation: "5.3/6",
+      },
+      {
+        name: "Marketing Research seminar",
+        years: "2016, S1 2018, S2 2018",
+        role: "Lecturer",
+        evaluation: "5.5/6",
+      },
+      { name: "Laboratory Staff Training on Emerging Technologies", years: "2018", role: "Lecturer" },
     ],
   },
   {
     institution: "Executive Education (via DEXLab)",
+    note: "Selected clients: Allianz Insurance, APG, ANWR, CBS, Dutch Ministry of I&W, MSM, UM, UMIO",
     courses: [
       { name: "MBA Digital Strategy", role: "Lecturer" },
-      { name: "Executive workshops and in-company training on emerging technologies" },
+      {
+        name: "Executive workshops and in-company training on emerging technologies",
+        role: "Lecturer",
+      },
     ],
   },
 ];
@@ -420,16 +520,16 @@ export const supervision = {
   current: [
     'Maarten Ramaekers — "Preparing Procurement for an AI driven future" (with Prof. D. Mahr & Prof. F. Rozemeijer)',
     'Joana Duhamel — "Emerging Technologies for future-self connectedness" (with Dr. Tim Hilken & Prof. Max Louwerse)',
-    'Ibrahim Humdi — "VR in hedonic service settings" (with Prof. D. Mahr & Dr. Tim Hilken)',
-    'Stefan Bos — "Immersive Technologies to combat poverty" (with Prof. E. Bruggen & Dr. Minou Werf)',
+    'Imbrahim Humdi — "VR in hedonic service settings" (with Prof. D. Mahr & Dr. Tim Hilken)',
+    'Stefan Bos — "Immersive Technologies to combat poverty" (with Prof. E. Brüggen & Dr. Minou van der Werf)',
     'Roberta di Palma — "VR in Education & Service Marketing" (with Prof. D. Mahr, Dr. Tim Hilken & Prof. Simon Beausaert)',
   ],
   completed: [
     'Silke Herold — "Digital Procurement" (with Prof. D. Mahr & Prof. F. Rozemeijer) — Graduated 2025',
   ],
   other: [
-    "50+ Master thesis students supervised on marketing, service, and SCM topics",
-    "Co-supervised UNSW honors student (A. Carrozzi) — thesis published in Journal of Interactive Marketing",
+    "50+ Master's and 10+ Bachelor's thesis students supervised on marketing, service, and supply chain management topics (since 2020)",
+    "Co-supervised UNSW honours student (A. Carrozzi, 2018–2019) — thesis published in the Journal of Interactive Marketing",
     "International co-supervision and project-level doctoral collaboration beyond Maastricht University",
   ],
 };

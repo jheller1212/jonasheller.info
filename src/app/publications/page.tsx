@@ -51,6 +51,12 @@ export default function PublicationsPage() {
                 </strong>{" "}
                 {t("pubPage.statOutputs")}
               </span>
+              <span>
+                <strong style={{ color: "var(--color-accent-secondary)" }}>
+                  {PUBLICATION_STATS.conferenceContributions}
+                </strong>{" "}
+                {t("pubPage.statConference")}
+              </span>
               <a
                 href={ORCID_URL}
                 target="_blank"

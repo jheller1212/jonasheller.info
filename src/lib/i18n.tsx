@@ -203,6 +203,11 @@ const translations: TranslationMap = {
     de: "Forschungsoutputs insgesamt",
     nl: "onderzoeksoutputs in totaal",
   },
+  "pubPage.statConference": {
+    en: "conference contributions and keynotes",
+    de: "Konferenzbeiträge und Keynotes",
+    nl: "congresbijdragen en keynotes",
+  },
   "pubPage.lastSynced": {
     en: "Synced from ORCID on",
     de: "Aus ORCID übernommen am",
@@ -230,6 +235,11 @@ const translations: TranslationMap = {
     de: "Konferenzbeiträge",
     nl: "Congresbijdragen",
   },
+  "pub.section.keynotes": {
+    en: "Academic Keynotes",
+    de: "Eingeladene Keynotes",
+    nl: "Academische keynotes",
+  },
   "pub.section.other": {
     en: "Reports & Other Contributions",
     de: "Berichte und sonstige Beiträge",
@@ -248,6 +258,8 @@ const translations: TranslationMap = {
   "pub.type.review": { en: "Review", de: "Übersichtsarbeit", nl: "Review" },
   "pub.type.chapter": { en: "Chapter", de: "Buchbeitrag", nl: "Hoofdstuk" },
   "pub.type.conference": { en: "Conference", de: "Konferenzbeitrag", nl: "Congresbijdrage" },
+  "pub.type.keynote": { en: "Keynote", de: "Keynote", nl: "Keynote" },
+  "pub.type.editorial": { en: "Editorial", de: "Editorial", nl: "Editorial" },
   "pub.type.report": { en: "Report", de: "Bericht", nl: "Rapport" },
   "pub.type.thesis": { en: "Dissertation", de: "Dissertation", nl: "Proefschrift" },
   "pub.type.preprint": { en: "Preprint", de: "Preprint", nl: "Preprint" },
@@ -258,9 +270,20 @@ const translations: TranslationMap = {
     de: "Manuskripte im Begutachtungsverfahren",
     nl: "Manuscripten in beoordeling",
   },
+  "pub.inPreparation": {
+    en: "Manuscripts in Preparation",
+    de: "Manuskripte in Vorbereitung",
+    nl: "Manuscripten in voorbereiding",
+  },
+  "pub.targetOutlet": {
+    en: "Target journal",
+    de: "Zieljournal",
+    nl: "Doeltijdschrift",
+  },
   "pub.status.underReview": { en: "Under Review", de: "Under Review", nl: "Under review" },
   "pub.status.rr": { en: "Revise and Resubmit", de: "Revise and Resubmit", nl: "Revise and resubmit" },
   "pub.status.accepted": { en: "Accepted", de: "Angenommen", nl: "Geaccepteerd" },
+  "pub.status.inPreparation": { en: "In Preparation", de: "In Vorbereitung", nl: "In voorbereiding" },
 
   // ── CV / academic record ──
   // German uses the established academic vocabulary here (Drittmittel,
@@ -308,6 +331,11 @@ const translations: TranslationMap = {
     nl: "Congres- en evenementfinanciering",
   },
   "cv.funding.subtotal": { en: "Subtotal", de: "Zwischensumme", nl: "Subtotaal" },
+  "cv.funding.subtotalNote": {
+    en: "Subtotals sum the amount attributable to Jonas Heller / Maastricht University, not the full consortium volume.",
+    de: "Die Zwischensummen beziehen sich auf den Jonas Heller bzw. der Universität Maastricht zurechenbaren Anteil, nicht auf das gesamte Konsortialvolumen.",
+    nl: "Subtotalen tellen het aan Jonas Heller / Maastricht University toe te rekenen bedrag, niet het volledige consortiumvolume.",
+  },
   "cv.funding.total": { en: "Total across all tables", de: "Summe aller Tabellen", nl: "Totaal alle tabellen" },
   "cv.funding.headline": {
     en: "external competitive funding",

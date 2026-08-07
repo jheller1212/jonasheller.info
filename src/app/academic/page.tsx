@@ -15,7 +15,7 @@ import {
   JOB_TITLE,
   LINKEDIN_URL,
   ORCID,
-  RANK_FOOTNOTE,
+  RESEARCH_STATEMENT,
   reviewingJournals,
   supervision,
 } from "@/data/cv";
@@ -134,9 +134,14 @@ export default function AcademicPage() {
             </a>
           </div>
 
+          <p className="text-sm mt-5 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+            {RESEARCH_STATEMENT}
+          </p>
+
           <p className="text-sm mt-4" style={{ color: "var(--color-text-secondary)" }}>
             {PUBLICATION_STATS.journalArticles} {t("pubPage.statArticles")} ·{" "}
-            {PUBLICATION_STATS.researchOutputs} {t("pubPage.statOutputs")}
+            {PUBLICATION_STATS.researchOutputs} {t("pubPage.statOutputs")} ·{" "}
+            {PUBLICATION_STATS.conferenceContributions} {t("pubPage.statConference")}
           </p>
 
           <div className="mt-6 no-print">
