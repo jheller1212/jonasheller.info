@@ -83,10 +83,16 @@ export const yearOverrides: Record<string, number> = {
   heller2020a: 2021,
 };
 
-/** DOIs missing from the ORCID record. */
-export const doiOverrides: Record<string, string> = {
-  mahr2025: "10.26481/mup.rep.sem.2501.10",
-};
+/**
+ * DOIs missing from the ORCID record.
+ *
+ * Empty on purpose. The CV lists 10.26481/mup.rep.sem.2501.10 for the SEM
+ * policy brief, but that DOI is not registered — doi.org reports "DOI does not
+ * exist", and neither Crossref nor DataCite hold a record. A DOI link that
+ * 404s is worse than none on a page a committee checks, so the chapter is
+ * cited without one until a registered DOI exists.
+ */
+export const doiOverrides: Record<string, string> = {};
 
 /** Pages missing from the ORCID record. */
 export const pagesOverrides: Record<string, string> = {
