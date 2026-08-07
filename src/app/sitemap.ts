@@ -29,5 +29,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/publications`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/academic`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }

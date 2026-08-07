@@ -255,7 +255,9 @@ export default function Contact() {
         >
           {[
             { label: "LinkedIn", href: "https://www.linkedin.com/in/hellerjonas/" },
-            { label: "Google Scholar", href: "https://scholar.google.com/citations?user=NOSPtp8AAAAJ" },
+            // ORCID rather than Google Scholar: the Scholar profile mixes in
+            // works by a same-named author.
+            { label: "ORCID", href: "https://orcid.org/0000-0002-3214-0724" },
             { label: "ResearchGate", href: "https://www.researchgate.net/profile/Jonas-Heller-2" },
             { label: "Substack", href: "https://jonasheller.substack.com" },
           ].map((link) => (

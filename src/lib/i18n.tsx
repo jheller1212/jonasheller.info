@@ -62,11 +62,19 @@ const translations: TranslationMap = {
 
   // Terminal lines
   "terminal.line.0": { en: 'name: "Dr. Jonas Heller"', de: 'Name: "Dr. Jonas Heller"', nl: 'naam: "Dr. Jonas Heller"' },
-  "terminal.line.1": { en: 'role: "Assistant Professor of Marketing"', de: 'Rolle: "Assistant Professor für Marketing"', nl: 'functie: "Assistant Professor Marketing"' },
+  "terminal.line.1": {
+    en: 'role: "Tenured Assistant Professor (Universitair Docent 1), Marketing"',
+    de: 'Rolle: "Tenured Assistant Professor (Universitair Docent 1), Marketing"',
+    nl: 'functie: "Universitair Docent 1, Marketing (vast)"',
+  },
   "terminal.line.2": { en: 'affiliation: "Maastricht University, SBE"', de: 'Universität: "Maastricht University, SBE"', nl: 'universiteit: "Maastricht University, SBE"' },
   "terminal.line.3": { en: 'labs: ["DEXLab", "LIT Network"]', de: 'Labs: ["DEXLab", "LIT Network"]', nl: 'labs: ["DEXLab", "LIT Network"]' },
   "terminal.line.4": { en: 'research: ["AR/VR", "AI", "Digital Marketing", "Consumer Behavior"]', de: 'Forschung: ["AR/VR", "KI", "Digitales Marketing", "Konsumentenverhalten"]', nl: 'onderzoek: ["AR/VR", "AI", "Digitale Marketing", "Consumentengedrag"]' },
-  "terminal.line.5": { en: 'funding: "Marie Curie Fellow | €2.1M+ in competitive grants"', de: 'Förderung: "Marie-Curie-Stipendiat | €2,1 Mio.+ kompetitive Drittmittel"', nl: 'financiering: "Marie Curie Fellow | €2,1 mln.+ competitieve subsidies"' },
+  "terminal.line.5": {
+    en: 'funding: "Marie Skłodowska-Curie Fellow | {external} external competitive funding"',
+    de: 'Drittmittel: "Marie-Skłodowska-Curie-Fellow | {external} externe kompetitive Mittel"',
+    nl: 'financiering: "Marie Skłodowska-Curie Fellow | {external} externe competitieve financiering"',
+  },
   "terminal.line.6": { en: 'awards: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', de: 'Auszeichnungen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', nl: 'prijzen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]' },
   "terminal.line.7": { en: 'education: [', de: 'Ausbildung: [', nl: 'opleiding: [' },
   "terminal.line.8": { en: '  "PhD Digital Marketing @ UNSW",', de: '  "PhD Digital Marketing @ UNSW",', nl: '  "PhD Digital Marketing @ UNSW",' },
@@ -74,13 +82,17 @@ const translations: TranslationMap = {
   "terminal.line.10": { en: '  "B.Sc. International Business @ Maastricht University"', de: '  "B.Sc. International Business @ Universität Maastricht"', nl: '  "B.Sc. International Business @ Universiteit Maastricht"' },
   "terminal.line.11": { en: ']', de: ']', nl: ']' },
   "terminal.line.12": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
-  "terminal.line.13": { en: 'publications: "36 peer-reviewed articles | h-index 23"', de: 'Publikationen: "36 peer-reviewed Artikel | h-Index 23"', nl: 'publicaties: "36 peer-reviewed artikelen | h-index 23"' },
+  "terminal.line.13": {
+    en: 'publications: "{articles} peer-reviewed journal articles | {outputs} research outputs"',
+    de: 'Publikationen: "{articles} peer-reviewte Zeitschriftenartikel | {outputs} Forschungsoutputs"',
+    nl: 'publicaties: "{articles} peer-reviewed tijdschriftartikelen | {outputs} onderzoeksoutputs"',
+  },
 
   // About bio
   "about.bio": {
-    en: "Jonas Heller is an Assistant Professor of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured over \u20AC2.1M in competitive research funding, published 36 peer-reviewed papers, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
-    de: "Jonas Heller ist Assistant Professor f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat \u00fcber 2,1 Mio. \u20AC an kompetitiven Forschungsmitteln eingeworben, 36 peer-reviewed Artikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
-    nl: "Jonas Heller is Assistant Professor Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft meer dan \u20AC2,1 miljoen aan competitieve onderzoeksfinanciering verworven, 36 peer-reviewed artikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
+    en: "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured {external} in external competitive research funding, published {articles} peer-reviewed journal articles, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
+    de: "Jonas Heller ist entfristeter Assistant Professor (Universitair Docent 1) f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat {external} an externen kompetitiven Drittmitteln eingeworben, {articles} peer-reviewte Zeitschriftenartikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
+    nl: "Jonas Heller is universitair docent 1 (vast) Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft {external} aan externe competitieve onderzoeksfinanciering verworven, {articles} peer-reviewed tijdschriftartikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
   },
 
   // Bento
@@ -94,14 +106,14 @@ const translations: TranslationMap = {
   },
   "bento.a.link": { en: "Visit DEXLab →", de: "DEXLab besuchen →", nl: "Bezoek DEXLab →" },
   "bento.b.title": {
-    en: "€2.1M+ Research Funding",
-    de: "€2,1 Mio.+ Forschungsförderung",
-    nl: "€2,1 mln.+ onderzoeksfinanciering",
+    en: "{external} External Competitive Funding",
+    de: "{external} externe kompetitive Drittmittel",
+    nl: "{external} externe competitieve financiering",
   },
   "bento.b.desc": {
-    en: "Secured competitive grants including Marie Curie, Comenius, NETSPAR, ERASMUS+, and international PhD funding from CSC and SACM.",
-    de: "Kompetitive Drittmittel eingeworben, u.a. Marie Curie, Comenius, NETSPAR, ERASMUS+ sowie internationale PhD-Förderungen von CSC und SACM.",
-    nl: "Competitieve subsidies verworven, waaronder Marie Curie, Comenius, NETSPAR, ERASMUS+ en internationale PhD-financiering van CSC en SACM.",
+    en: "External competitive grants including Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+, and international PhD funding from CSC and SACM. Including internal and strategic funding, {total} across {count} grants.",
+    de: "Externe kompetitive Drittmittel, u.a. Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ sowie internationale Promotionsförderungen von CSC und SACM. Einschließlich interner und strategischer Mittel {total} aus {count} Bewilligungen.",
+    nl: "Externe competitieve subsidies, waaronder Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ en internationale PhD-financiering van CSC en SACM. Inclusief interne en strategische middelen {total} uit {count} toekenningen.",
   },
   "bento.c.title": { en: "Immersive Technologies", de: "Immersive Technologien", nl: "Immersieve Technologieën" },
   "bento.c.desc": {
@@ -122,11 +134,15 @@ const translations: TranslationMap = {
     nl: "Medeoprichter van het Limburg Immersive Technologies Network dat wetenschap, industrie en mkb verbindt.",
   },
   "bento.e.link": { en: "Learn more →", de: "Mehr erfahren →", nl: "Meer informatie →" },
-  "bento.f.title": { en: "{count} Publications", de: "{count} Publikationen", nl: "{count} Publicaties" },
+  "bento.f.title": {
+    en: "{articles} Peer-Reviewed Articles",
+    de: "{articles} peer-reviewte Artikel",
+    nl: "{articles} peer-reviewed artikelen",
+  },
   "bento.f.desc": {
-    en: "Published in journals including Journal of Retailing, Journal of Service Research, and Computers in Human Behavior.",
-    de: "Veröffentlichungen u.a. in Journal of Retailing, Journal of Service Research und Computers in Human Behavior.",
-    nl: "Gepubliceerd in o.a. Journal of Retailing, Journal of Service Research en Computers in Human Behavior.",
+    en: "Published in journals including Journal of Retailing, Journal of Service Research, The Leadership Quarterly, and Computers in Human Behavior — {outputs} research outputs in total.",
+    de: "Veröffentlichungen u.a. in Journal of Retailing, Journal of Service Research, The Leadership Quarterly und Computers in Human Behavior — insgesamt {outputs} Forschungsoutputs.",
+    nl: "Gepubliceerd in o.a. Journal of Retailing, Journal of Service Research, The Leadership Quarterly en Computers in Human Behavior — {outputs} onderzoeksoutputs in totaal.",
   },
   "bento.g.title": { en: "Executive Education", de: "Executive Education", nl: "Executive Education" },
   "bento.g.desc": {
@@ -154,6 +170,201 @@ const translations: TranslationMap = {
   "pub.preprint": { en: "Preprints", de: "Preprints", nl: "Preprints" },
   "pub.report": { en: "Reports", de: "Berichte", nl: "Rapporten" },
   "pub.citations": { en: "citations", de: "Zitationen", nl: "citaties" },
+  "pub.conference": { en: "Conference", de: "Konferenzbeiträge", nl: "Congresbijdragen" },
+  "pub.selectedNote": {
+    en: "Seven selected papers. The complete list is on the publications page.",
+    de: "Sieben ausgewählte Arbeiten. Das vollständige Schriftenverzeichnis finden Sie auf der Publikationsseite.",
+    nl: "Zeven geselecteerde publicaties. De volledige lijst staat op de publicatiepagina.",
+  },
+  "pub.viewAll": {
+    en: "Full list of publications →",
+    de: "Vollständiges Schriftenverzeichnis →",
+    nl: "Volledige publicatielijst →",
+  },
+
+  // Publications page
+  "pubPage.heading": {
+    en: "Publications",
+    de: "Schriftenverzeichnis",
+    nl: "Publicaties",
+  },
+  "pubPage.intro": {
+    en: "Complete list of research outputs, grouped by type and ordered by year. The authoritative record is ORCID; this page is generated from it.",
+    de: "Vollständiges Verzeichnis aller Forschungsoutputs, nach Publikationsform gegliedert und chronologisch absteigend sortiert. Maßgeblich ist das ORCID-Profil, aus dem diese Seite erzeugt wird.",
+    nl: "Volledig overzicht van alle onderzoeksoutput, gegroepeerd per type en chronologisch aflopend. Het ORCID-profiel is leidend; deze pagina wordt daaruit gegenereerd.",
+  },
+  "pubPage.statArticles": {
+    en: "peer-reviewed journal articles",
+    de: "peer-reviewte Zeitschriftenartikel",
+    nl: "peer-reviewed tijdschriftartikelen",
+  },
+  "pubPage.statOutputs": {
+    en: "research outputs in total",
+    de: "Forschungsoutputs insgesamt",
+    nl: "onderzoeksoutputs in totaal",
+  },
+  "pubPage.lastSynced": {
+    en: "Synced from ORCID on",
+    de: "Aus ORCID übernommen am",
+    nl: "Overgenomen uit ORCID op",
+  },
+
+  // Publication sections (P2.5)
+  "pub.section.articles": {
+    en: "Journal Articles",
+    de: "Zeitschriftenartikel",
+    nl: "Tijdschriftartikelen",
+  },
+  "pub.section.reviews": {
+    en: "Review Articles",
+    de: "Übersichtsarbeiten",
+    nl: "Overzichtsartikelen",
+  },
+  "pub.section.chapters": {
+    en: "Book Chapters",
+    de: "Buchbeiträge",
+    nl: "Boekbijdragen",
+  },
+  "pub.section.conference": {
+    en: "Conference Contributions",
+    de: "Konferenzbeiträge",
+    nl: "Congresbijdragen",
+  },
+  "pub.section.other": {
+    en: "Reports & Other Contributions",
+    de: "Berichte und sonstige Beiträge",
+    nl: "Rapporten en overige bijdragen",
+  },
+
+  // Publication entry metadata (P2.4)
+  "pub.authorPosition": {
+    en: "Author {n} of {total}",
+    de: "Autorenposition {n} von {total}",
+    nl: "Auteur {n} van {total}",
+  },
+  "pub.openAccess": { en: "Open Access", de: "Open Access", nl: "Open Access" },
+  "pub.closedAccess": { en: "Subscription", de: "Closed Access", nl: "Closed access" },
+  "pub.type.article": { en: "Article", de: "Artikel", nl: "Artikel" },
+  "pub.type.review": { en: "Review", de: "Übersichtsarbeit", nl: "Review" },
+  "pub.type.chapter": { en: "Chapter", de: "Buchbeitrag", nl: "Hoofdstuk" },
+  "pub.type.conference": { en: "Conference", de: "Konferenzbeitrag", nl: "Congresbijdrage" },
+  "pub.type.report": { en: "Report", de: "Bericht", nl: "Rapport" },
+  "pub.type.thesis": { en: "Dissertation", de: "Dissertation", nl: "Proefschrift" },
+  "pub.type.preprint": { en: "Preprint", de: "Preprint", nl: "Preprint" },
+
+  // Under review (P2.6)
+  "pub.underReview": {
+    en: "Manuscripts Under Review",
+    de: "Manuskripte im Begutachtungsverfahren",
+    nl: "Manuscripten in beoordeling",
+  },
+  "pub.status.underReview": { en: "Under Review", de: "Under Review", nl: "Under review" },
+  "pub.status.rr": { en: "Revise and Resubmit", de: "Revise and Resubmit", nl: "Revise and resubmit" },
+  "pub.status.accepted": { en: "Accepted", de: "Angenommen", nl: "Geaccepteerd" },
+
+  // ── CV / academic record ──
+  // German uses the established academic vocabulary here (Drittmittel,
+  // Betreuung, akademische Selbstverwaltung), not literal translations of the
+  // English headings (P3.6).
+  "cv.rankFootnote": {
+    en: "Universitair Docent 1 is the tenured senior rank below Associate Professor in the Dutch academic system.",
+    de: "Universitair Docent 1 ist die entfristete Senior-Position unterhalb der Associate Professur im niederländischen Hochschulsystem.",
+    nl: "Universitair Docent 1 is de vaste seniorrang onder Universitair Hoofddocent in het Nederlandse stelsel.",
+  },
+
+  "cv.section.experience": { en: "Professional Experience", de: "Beruflicher Werdegang", nl: "Loopbaan" },
+  "cv.section.education": { en: "Academic Degrees", de: "Akademische Abschlüsse", nl: "Academische graden" },
+  "cv.section.awards": { en: "Awards & Honors", de: "Auszeichnungen", nl: "Onderscheidingen" },
+  "cv.section.funding": { en: "Grants & Third-Party Funding", de: "Drittmittel", nl: "Onderzoeksfinanciering" },
+  "cv.section.teaching": { en: "Teaching", de: "Lehre und Lehrdeputat", nl: "Onderwijs" },
+  "cv.section.supervision": { en: "Doctoral Supervision", de: "Promotionsbetreuung", nl: "Promotiebegeleiding" },
+  "cv.section.service": { en: "Academic Service", de: "Akademische Selbstverwaltung", nl: "Bestuurlijke taken" },
+  "cv.section.reviewing": { en: "Peer Reviewing", de: "Gutachtertätigkeit", nl: "Peer review" },
+  "cv.section.publications": { en: "Publications", de: "Schriftenverzeichnis", nl: "Publicaties" },
+
+  "cv.eyebrow.experience": { en: "Experience", de: "Werdegang", nl: "Loopbaan" },
+  "cv.eyebrow.education": { en: "Education", de: "Ausbildung", nl: "Opleiding" },
+  "cv.eyebrow.awards": { en: "Recognition", de: "Anerkennung", nl: "Erkenning" },
+  "cv.eyebrow.funding": { en: "Funding", de: "Drittmittel", nl: "Financiering" },
+  "cv.eyebrow.teaching": { en: "Teaching", de: "Lehre", nl: "Onderwijs" },
+  "cv.eyebrow.supervision": { en: "Supervision", de: "Betreuung", nl: "Begeleiding" },
+  "cv.eyebrow.service": { en: "Service", de: "Selbstverwaltung", nl: "Bestuur" },
+  "cv.eyebrow.reviewing": { en: "Reviewing", de: "Begutachtung", nl: "Review" },
+
+  // Funding tables (P3.3)
+  "cv.funding.external": {
+    en: "External Competitive Funding",
+    de: "Externe kompetitive Drittmittel",
+    nl: "Externe competitieve financiering",
+  },
+  "cv.funding.internal": {
+    en: "Internal & Strategic Funding",
+    de: "Interne und strategische Mittel",
+    nl: "Interne en strategische middelen",
+  },
+  "cv.funding.events": {
+    en: "Conference & Event Funding",
+    de: "Konferenz- und Eventförderung",
+    nl: "Congres- en evenementfinanciering",
+  },
+  "cv.funding.subtotal": { en: "Subtotal", de: "Zwischensumme", nl: "Subtotaal" },
+  "cv.funding.total": { en: "Total across all tables", de: "Summe aller Tabellen", nl: "Totaal alle tabellen" },
+  "cv.funding.headline": {
+    en: "external competitive funding",
+    de: "externe kompetitive Drittmittel",
+    nl: "externe competitieve financiering",
+  },
+  "cv.funding.acrossGrants": {
+    en: "total funding across {n} grants, external and internal combined",
+    de: "Gesamtvolumen aus {n} Bewilligungen, extern und intern zusammen",
+    nl: "totale financiering uit {n} toekenningen, extern en intern samen",
+  },
+  "cv.funding.col.year": { en: "Year", de: "Jahr", nl: "Jaar" },
+  "cv.funding.col.funder": { en: "Funder", de: "Geldgeber", nl: "Financier" },
+  "cv.funding.col.project": { en: "Project", de: "Projekttitel", nl: "Project" },
+  "cv.funding.col.role": { en: "Role", de: "Rolle", nl: "Rol" },
+  "cv.funding.col.amount": { en: "Total volume", de: "Gesamtvolumen", nl: "Totaalvolume" },
+  "cv.funding.col.share": { en: "Own share", de: "Eigener Anteil", nl: "Eigen aandeel" },
+  "cv.funding.col.duration": { en: "Duration", de: "Laufzeit", nl: "Looptijd" },
+  "cv.funding.industry": {
+    en: "In addition, ongoing industry contract income for DEXLab workshops since {year} (approx. {amount}). Reported separately, as contract income is not competitively awarded funding.",
+    de: "Hinzu kommen laufende Industrieerträge für DEXLab-Workshops seit {year} (rund {amount}). Diese werden gesondert ausgewiesen, da Auftragserträge keine kompetitiv eingeworbenen Drittmittel sind.",
+    nl: "Daarnaast lopende opdrachtinkomsten voor DEXLab-workshops sinds {year} (circa {amount}). Deze worden apart vermeld, omdat opdrachtinkomsten geen competitief verworven financiering zijn.",
+  },
+
+  // Teaching (P3.4)
+  "cv.teaching.pbl": {
+    en: "Courses are taught in Maastricht University's Problem-Based Learning format, combining plenary lectures with tutorial groups.",
+    de: "Die Lehrveranstaltungen finden im Problem-Based-Learning-Format der Universität Maastricht statt und verbinden Vorlesungen mit Tutorien in Kleingruppen.",
+    nl: "Het onderwijs volgt het Problem-Based Learning-format van Maastricht University, met hoorcolleges en tutorgroepen.",
+  },
+  "cv.teaching.role": { en: "Role", de: "Rolle", nl: "Rol" },
+  "cv.teaching.cohort": { en: "cohort", de: "Kohorte", nl: "cohort" },
+  "cv.teaching.evaluation": { en: "evaluation", de: "Evaluation", nl: "evaluatie" },
+
+  "cv.supervision.current": { en: "Current", de: "Laufend", nl: "Lopend" },
+  "cv.supervision.completed": { en: "Completed", de: "Abgeschlossen", nl: "Afgerond" },
+  "cv.supervision.other": { en: "Additional", de: "Weitere Betreuung", nl: "Overig" },
+
+  // Academic view (P3.5)
+  "academic.link": {
+    en: "Academic profile →",
+    de: "Akademisches Profil →",
+    nl: "Academisch profiel →",
+  },
+  "academic.heading": { en: "Academic Profile", de: "Akademisches Profil", nl: "Academisch profiel" },
+  "academic.intro": {
+    en: "Full academic record: profile, publications, third-party funding, teaching, doctoral supervision, and academic service.",
+    de: "Vollständiges akademisches Profil: Werdegang, Schriftenverzeichnis, Drittmittel, Lehre, Promotionsbetreuung und akademische Selbstverwaltung.",
+    nl: "Volledig academisch profiel: loopbaan, publicaties, onderzoeksfinanciering, onderwijs, promotiebegeleiding en bestuurlijke taken.",
+  },
+  "academic.print": { en: "Download as PDF", de: "Als PDF herunterladen", nl: "Downloaden als pdf" },
+  "academic.printHint": {
+    en: "Opens your browser's print dialogue — choose “Save as PDF”.",
+    de: "Öffnet den Druckdialog des Browsers — dort „Als PDF sichern“ wählen.",
+    nl: "Opent het afdrukvenster van uw browser — kies “Opslaan als pdf”.",
+  },
+  "academic.generated": { en: "Generated on", de: "Erstellt am", nl: "Gegenereerd op" },
 
   // Speaking
   "speaking.eyebrow": { en: "Speaking", de: "Vorträge", nl: "Lezingen" },
