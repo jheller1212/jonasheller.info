@@ -231,11 +231,6 @@ export const translations: TranslationMap = {
   },
 
   // Publication entry metadata (P2.4)
-  "pub.authorPosition": {
-    en: "Author {n} of {total}",
-    de: "Autorenposition {n} von {total}",
-    nl: "Auteur {n} van {total}",
-  },
   "pub.openAccess": { en: "Open Access", de: "Open Access", nl: "Open Access" },
   "pub.firstAuthor": { en: "First author", de: "Erstautorenschaft", nl: "Eerste auteur" },
   "pubPage.statFirstAuthored": {
