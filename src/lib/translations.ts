@@ -72,16 +72,16 @@ export const translations: TranslationMap = {
   "terminal.line.11": { en: ']', de: ']', nl: ']' },
   "terminal.line.12": { en: 'industry: ["Zalando", "Jimdo"]', de: 'Industrie: ["Zalando", "Jimdo"]', nl: 'industrie: ["Zalando", "Jimdo"]' },
   "terminal.line.13": {
-    en: 'publications: "{articles} peer-reviewed journal articles | {outputs} research outputs"',
-    de: 'Publikationen: "{articles} peer-reviewte Zeitschriftenartikel | {outputs} Forschungsoutputs"',
-    nl: 'publicaties: "{articles} peer-reviewed tijdschriftartikelen | {outputs} onderzoeksoutputs"',
+    en: 'publications: ["Journal of Retailing", "J. of Service Research", "Leadership Quarterly"]',
+    de: 'Publikationen: ["Journal of Retailing", "J. of Service Research", "Leadership Quarterly"]',
+    nl: 'publicaties: ["Journal of Retailing", "J. of Service Research", "Leadership Quarterly"]',
   },
 
   // About bio
   "about.bio": {
-    en: "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured {total} in research funding across {count} grants, published {articles} peer-reviewed journal articles, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
-    de: "Jonas Heller ist entfristeter Assistant Professor (Universitair Docent 1) f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat {total} an Forschungsmitteln aus {count} Bewilligungen eingeworben, {articles} peer-reviewte Zeitschriftenartikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
-    nl: "Jonas Heller is universitair docent 1 (vast) Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft {total} aan onderzoeksfinanciering uit {count} toekenningen verworven, {articles} peer-reviewed tijdschriftartikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
+    en: "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured {total} in research funding across {count} grants, published in leading international marketing and service journals, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
+    de: "Jonas Heller ist entfristeter Assistant Professor (Universitair Docent 1) f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat {total} an Forschungsmitteln aus {count} Bewilligungen eingeworben, in f\u00fchrenden internationalen Marketing- und Service-Journals ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
+    nl: "Jonas Heller is universitair docent 1 (vast) Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft {total} aan onderzoeksfinanciering uit {count} toekenningen verworven, gepubliceerd in toonaangevende internationale marketing- en servicetijdschriften en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
   },
 
   // Bento
@@ -126,14 +126,14 @@ export const translations: TranslationMap = {
   },
   "bento.e.link": { en: "Learn more →", de: "Mehr erfahren →", nl: "Meer informatie →" },
   "bento.f.title": {
-    en: "{articles} Peer-Reviewed Articles",
-    de: "{articles} peer-reviewte Artikel",
-    nl: "{articles} peer-reviewed artikelen",
+    en: "Peer-Reviewed Research",
+    de: "Peer-reviewte Forschung",
+    nl: "Peer-reviewed onderzoek",
   },
   "bento.f.desc": {
-    en: "Published in journals including Journal of Retailing, Journal of Service Research, The Leadership Quarterly, and Computers in Human Behavior — {outputs} research outputs in total.",
-    de: "Veröffentlichungen u.a. in Journal of Retailing, Journal of Service Research, The Leadership Quarterly und Computers in Human Behavior — insgesamt {outputs} Forschungsoutputs.",
-    nl: "Gepubliceerd in o.a. Journal of Retailing, Journal of Service Research, The Leadership Quarterly en Computers in Human Behavior — {outputs} onderzoeksoutputs in totaal.",
+    en: "Published in journals including Journal of Retailing, Journal of Service Research, The Leadership Quarterly, and Computers in Human Behavior.",
+    de: "Veröffentlichungen u.a. in Journal of Retailing, Journal of Service Research, The Leadership Quarterly und Computers in Human Behavior.",
+    nl: "Gepubliceerd in o.a. Journal of Retailing, Journal of Service Research, The Leadership Quarterly en Computers in Human Behavior.",
   },
   "bento.g.title": { en: "Executive Education", de: "Executive Education", nl: "Executive Education" },
   "bento.g.desc": {
@@ -166,26 +166,6 @@ export const translations: TranslationMap = {
     en: "Complete list of research outputs, grouped by type and ordered by year.",
     de: "Vollständiges Verzeichnis aller Forschungsoutputs, nach Publikationsform gegliedert und chronologisch absteigend sortiert.",
     nl: "Volledig overzicht van alle onderzoeksoutput, gegroepeerd per type en chronologisch aflopend.",
-  },
-  "pubPage.statArticles": {
-    en: "peer-reviewed journal articles",
-    de: "peer-reviewte Zeitschriftenartikel",
-    nl: "peer-reviewed tijdschriftartikelen",
-  },
-  "pubPage.statOutputs": {
-    en: "research outputs in total",
-    de: "Forschungsoutputs insgesamt",
-    nl: "onderzoeksoutputs in totaal",
-  },
-  "pubPage.metricsAsOf": {
-    en: "Citation metrics from Google Scholar, {date}: {citations} citations, h-index {h}, i10-index {i10}.",
-    de: "Zitationskennzahlen laut Google Scholar, Stand {date}: {citations} Zitationen, h-Index {h}, i10-Index {i10}.",
-    nl: "Citatiegegevens volgens Google Scholar, per {date}: {citations} citaties, h-index {h}, i10-index {i10}.",
-  },
-  "pubPage.statConference": {
-    en: "conference contributions and keynotes",
-    de: "Konferenzbeiträge und Keynotes",
-    nl: "congresbijdragen en keynotes",
   },
   "pubPage.lastSynced": {
     en: "Synced from ORCID on",
@@ -227,7 +207,6 @@ export const translations: TranslationMap = {
 
   // Publication entry metadata (P2.4)
   "pub.openAccess": { en: "Open Access", de: "Open Access", nl: "Open Access" },
-  "pub.firstAuthor": { en: "First author", de: "Erstautorenschaft", nl: "Eerste auteur" },
   "pub.type.article": { en: "Article", de: "Artikel", nl: "Artikel" },
   "pub.type.review": { en: "Review", de: "Übersichtsarbeit", nl: "Review" },
   "pub.type.chapter": { en: "Chapter", de: "Buchbeitrag", nl: "Hoofdstuk" },

@@ -17,11 +17,10 @@ import {
   LINKEDIN_URL,
   ORCID,
   reviewingJournals,
-  SCHOLAR_METRICS,
   SCHOLAR_URL,
   supervision,
 } from "@/data/cv";
-import { PUBLICATION_STATS, ORCID_URL } from "@/data/publications";
+import { ORCID_URL } from "@/data/publications";
 
 /**
  * Standalone academic view (P3.5).
@@ -148,18 +147,6 @@ export default function AcademicPage() {
             {t("academic.research")}
           </p>
 
-          <p className="text-sm mt-4" style={{ color: "var(--color-text-secondary)" }}>
-            {PUBLICATION_STATS.journalArticles} {t("pubPage.statArticles")} ·{" "}
-            {PUBLICATION_STATS.researchOutputs} {t("pubPage.statOutputs")} ·{" "}
-            {PUBLICATION_STATS.conferenceContributions} {t("pubPage.statConference")}
-          </p>
-          <p className="text-xs mt-1" style={{ color: "var(--color-text-secondary)" }}>
-            {t("pubPage.metricsAsOf")
-              .replace("{date}", SCHOLAR_METRICS.asOf)
-              .replace("{citations}", SCHOLAR_METRICS.citations.toLocaleString("en-US"))
-              .replace("{h}", String(SCHOLAR_METRICS.hIndex))
-              .replace("{i10}", String(SCHOLAR_METRICS.i10Index))}
-          </p>
 
           <div className="mt-6 no-print">
             <button

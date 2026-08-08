@@ -20,7 +20,7 @@ import {
   reviewingJournals,
   supervision,
 } from "@/data/cv";
-import { ORCID_URL, PUBLICATION_STATS } from "@/data/publications";
+import { ORCID_URL } from "@/data/publications";
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -242,16 +242,6 @@ export default function CVPage() {
           <section className="mb-16">
             <SectionHeading eyebrow={t("pub.eyebrow")} title={t("cv.section.publications")} />
             <div className="glass-card rounded-xl p-6">
-              <p className="text-sm mb-3" style={{ color: "var(--color-text-secondary)" }}>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.journalArticles}
-                </strong>{" "}
-                {t("pubPage.statArticles")},{" "}
-                <strong style={{ color: "var(--color-text)" }}>
-                  {PUBLICATION_STATS.researchOutputs}
-                </strong>{" "}
-                {t("pubPage.statOutputs")}.
-              </p>
               <Link
                 href="/publications"
                 className="text-sm font-semibold hover:opacity-70 transition-opacity"
