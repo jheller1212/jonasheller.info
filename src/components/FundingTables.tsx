@@ -4,7 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import {
   FUNDING_STATS,
   fundingTables,
-  formatEur,
+  formatEurApprox,
   formatEurExact,
   industryFunding,
   subtotalFor,
@@ -27,10 +27,10 @@ export default function FundingTables() {
           visible without two competing headline figures. */}
       <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
         <strong style={{ color: "var(--color-accent-secondary)" }}>
-          {formatEur(FUNDING_STATS.grantsTotal)}
+          {formatEurApprox(FUNDING_STATS.grantsTotal)}
         </strong>{" "}
         {t("cv.funding.headline").replace("{n}", String(FUNDING_STATS.grantCount))} ·{" "}
-        <strong style={{ color: "var(--color-text)" }}>{formatEur(FUNDING_STATS.external)}</strong>{" "}
+        <strong style={{ color: "var(--color-text)" }}>{formatEurApprox(FUNDING_STATS.external)}</strong>{" "}
         {t("cv.funding.externalShare")}
       </p>
 
