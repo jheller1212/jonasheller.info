@@ -29,20 +29,6 @@ export const CRIS_URL = "https://cris.maastrichtuniversity.nl/en/persons/jonas-h
 export const LINKEDIN_URL = "https://www.linkedin.com/in/hellerjonas/";
 export const SCHOLAR_URL = "https://scholar.google.com/citations?user=NOSPtp8AAAAJ";
 
-/**
- * Google Scholar metrics.
- *
- * Hand-maintained and therefore dated: Scholar has no API, and an undated
- * h-index on a CV goes stale silently. Always update `asOf` alongside the
- * numbers. Verified against the live profile on the date shown.
- */
-export const SCHOLAR_METRICS = {
-  citations: 4212,
-  hIndex: 25,
-  i10Index: 31,
-  asOf: "2026-08",
-} as const;
-
 /* ───────────────────────── experience ───────────────────────── */
 
 export const experience = [

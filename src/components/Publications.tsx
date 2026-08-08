@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
 import PublicationEntry from "./PublicationEntry";
-import { selectedPublications, PUBLICATION_STATS, ORCID_URL } from "@/data/publications";
+import { selectedPublications, ORCID_URL } from "@/data/publications";
 
 /**
  * Home-page publications section: a fixed, curated set of seven papers.
@@ -40,10 +40,6 @@ export default function Publications() {
           </h2>
           <p className="text-sm max-w-2xl" style={{ color: "var(--color-text-secondary)" }}>
             {t("pub.selectedNote")}
-          </p>
-          <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)" }}>
-            {PUBLICATION_STATS.journalArticles} {t("pubPage.statArticles")} ·{" "}
-            {PUBLICATION_STATS.researchOutputs} {t("pubPage.statOutputs")}
           </p>
         </motion.div>
 

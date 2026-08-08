@@ -17,20 +17,15 @@ const statusKey: Record<ManuscriptStatus, string> = {
   "In Preparation": "pub.status.inPreparation",
 };
 
-function GroupHeading({ id, title, count }: { id: string; title: string; count: number }) {
+function GroupHeading({ id, title }: { id: string; title: string }) {
   return (
-    <div className="flex items-baseline gap-3 mb-5">
-      <h2
-        id={id}
-        className="text-xl sm:text-2xl font-bold tracking-tight"
-        style={{ color: "var(--color-text)" }}
-      >
-        {title}
-      </h2>
-      <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-        {count}
-      </span>
-    </div>
+    <h2
+      id={id}
+      className="text-xl sm:text-2xl font-bold tracking-tight mb-5"
+      style={{ color: "var(--color-text)" }}
+    >
+      {title}
+    </h2>
   );
 }
 
@@ -48,7 +43,7 @@ function ManuscriptGroup({
 
   return (
     <section aria-labelledby={id} className="scroll-mt-24">
-      <GroupHeading id={id} title={title} count={items.length} />
+      <GroupHeading id={id} title={title} />
       <div className="space-y-3">
         {items.map((m) => (
           <article key={m.title} className="glass-card rounded-xl p-5 break-inside-avoid">
@@ -107,11 +102,7 @@ export default function PublicationList() {
 
       {publicationGroups.map((group) => (
         <section key={group.key} id={group.key} className="scroll-mt-24">
-          <GroupHeading
-            id={`${group.key}-heading`}
-            title={t(group.labelKey)}
-            count={group.items.length}
-          />
+          <GroupHeading id={`${group.key}-heading`} title={t(group.labelKey)} />
           <div className="space-y-3">
             {group.items.map((pub) => (
               <PublicationEntry key={pub.id} pub={pub} />
