@@ -84,16 +84,9 @@ export default function PublicationEntry({ pub }: { pub: Publication }) {
       <div className="flex flex-wrap items-center gap-2 text-[11px]">
         <Badge>{t(typeLabelKey[pub.section])}</Badge>
 
-        {pub.authorPosition !== null && pub.authorCount > 1 && (
-          <Badge>
-            {t("pub.authorPosition")
-              .replace("{n}", String(pub.authorPosition))
-              .replace("{total}", String(pub.authorCount))}
-          </Badge>
-        )}
-
-        {/* Called out separately: German committees scan for Erstautorenschaft
-            as evidence of an independent contribution. */}
+        {/* No "author n of m" badge: the author list above already shows the
+            position, with Jonas emphasised. First authorship is still called
+            out, because German committees scan for Erstautorenschaft. */}
         {pub.authorPosition === 1 && pub.authorCount > 1 && (
           <Badge tone="accent">{t("pub.firstAuthor")}</Badge>
         )}
