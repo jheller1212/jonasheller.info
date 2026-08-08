@@ -9,30 +9,6 @@ import { useI18n } from "@/lib/i18n";
 
 const projects = [
   {
-    titleKey: "projects.ai2ai.title",
-    descKey: "projects.ai2ai.desc",
-    url: "https://www.ai2aichat.com",
-    gradient: "from-orange-500 to-sky-500",
-    logoContent: (
-      <div className="flex items-center gap-1">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="10" rx="2" />
-          <circle cx="9" cy="16" r="1" />
-          <circle cx="15" cy="16" r="1" />
-          <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-        </svg>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: -10 }}>
-          <rect x="3" y="11" width="18" height="10" rx="2" />
-          <circle cx="9" cy="16" r="1" />
-          <circle cx="15" cy="16" r="1" />
-          <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-        </svg>
-      </div>
-    ),
-    nameDisplay: "AI2AI-Chat",
-    tags: ["React", "TypeScript", "Supabase", "OpenAI", "Anthropic", "Gemini"],
-  },
-  {
     titleKey: "projects.scholarfolio.title",
     descKey: "projects.scholarfolio.desc",
     url: "https://www.scholarfolio.org",
@@ -63,6 +39,30 @@ const projects = [
     ),
     nameDisplay: "ResearchChatAI",
     tags: ["Chatbot Platform", "AI Agents", "No-Code", "Research Studies"],
+  },
+  {
+    titleKey: "projects.ai2ai.title",
+    descKey: "projects.ai2ai.desc",
+    url: "https://www.ai2aichat.com",
+    gradient: "from-orange-500 to-sky-500",
+    logoContent: (
+      <div className="flex items-center gap-1">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="11" width="18" height="10" rx="2" />
+          <circle cx="9" cy="16" r="1" />
+          <circle cx="15" cy="16" r="1" />
+          <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+        </svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: -10 }}>
+          <rect x="3" y="11" width="18" height="10" rx="2" />
+          <circle cx="9" cy="16" r="1" />
+          <circle cx="15" cy="16" r="1" />
+          <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+        </svg>
+      </div>
+    ),
+    nameDisplay: "AI2AI-Chat",
+    tags: ["React", "TypeScript", "Supabase", "OpenAI", "Anthropic", "Gemini"],
   },
 ];
 
