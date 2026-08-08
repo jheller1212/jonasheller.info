@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Projects — Dr. Jonas Heller",
@@ -8,12 +9,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/projects",
   },
-  openGraph: {
+  ...socialMeta({
     title: "Projects — Dr. Jonas Heller",
-    description:
-      "Tools and platforms built by Jonas Heller: ScholarFolio, ResearchChatAI, and AI2AI-Chat.",
-    url: "https://www.jonasheller.info/projects",
-  },
+    description: "Tools and platforms built by Jonas Heller: ScholarFolio, ResearchChatAI, and AI2AI-Chat.",
+    path: "/projects",
+  }),
 };
 
 export default function ProjectsLayout({ children }: { children: React.ReactNode }) {

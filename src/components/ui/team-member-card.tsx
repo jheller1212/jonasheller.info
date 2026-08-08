@@ -109,7 +109,10 @@ export default function TeamMemberCard({
             className='text-3xl md:text-5xl leading-[1.1] font-extralight tracking-tight'
             style={{ color: 'var(--color-text)' }}
           >
-            {firstName}
+            {/* The space before the <br /> is load-bearing: without it a
+                crawler that strips tags without substituting whitespace reads
+                the h1 as "Dr. JonasHeller". */}
+            {firstName}{' '}
             <br />
             <span className='font-normal'>{lastName}</span>
           </h1>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "CV — Dr. Jonas Heller",
@@ -7,12 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/cv",
   },
-  openGraph: {
+  ...socialMeta({
     title: "CV — Dr. Jonas Heller",
-    description:
-      "Full academic CV: professional experience, education, awards, external competitive and internal funding, teaching, doctoral supervision, and academic service.",
-    url: "https://www.jonasheller.info/cv",
-  },
+    description: "Full academic CV of Dr. Jonas Heller: professional experience, education, awards, third-party funding, teaching, and doctoral supervision.",
+    path: "/cv",
+  }),
 };
 
 export default function CVLayout({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Academic Profile — Dr. Jonas Heller",
@@ -15,12 +16,11 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
-  openGraph: {
+  ...socialMeta({
     title: "Academic Profile — Dr. Jonas Heller",
-    description:
-      "Publications, third-party funding, teaching, doctoral supervision, and academic service.",
-    url: "https://www.jonasheller.info/academic",
-  },
+    description: "Academic record of Dr. Jonas Heller: publications, third-party funding, teaching, doctoral supervision, and academic service.",
+    path: "/academic",
+  }),
 };
 
 export default function AcademicLayout({ children }: { children: React.ReactNode }) {

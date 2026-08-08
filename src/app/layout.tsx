@@ -21,9 +21,11 @@ const siteUrl = "https://www.jonasheller.info";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Dr. Jonas Heller | AR, VR & AI Marketing Expert | Keynote Speaker & Consultant",
+  // Kept under ~60 characters so it is not truncated in search results, with
+  // the name first because that is the query this site has to win.
+  title: "Dr. Jonas Heller — Marketing Professor, AR, VR & AI",
   description:
-    "Dr. Jonas Heller is a marketing professor at Maastricht University and keynote speaker specializing in AR, VR, AI and consumer behavior. Available for speaking, consulting, and research collaboration.",
+    "Dr. Jonas Heller is a tenured Assistant Professor of Marketing at Maastricht University, researching augmented reality, virtual reality and AI in consumer behaviour. Keynote speaker and consultant.",
   keywords: [
     "Jonas Heller",
     "Jonas Heller professor",
@@ -93,6 +95,16 @@ const jsonLd = {
   url: siteUrl,
   jobTitle: JOB_TITLE,
   identifier: ORCID_PROFILE_URL,
+  // A plain factual sentence: this is what a knowledge panel and a language
+  // model quote when asked who Jonas Heller is, so it states role, institution
+  // and subject without marketing language.
+  description:
+    "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University's School of Business and Economics, and Co-Founder and Scientific Director of DEXLab. His research covers augmented reality, virtual reality, artificial intelligence, and consumer behaviour in retail and service settings.",
+  image: `${siteUrl}/images/jonas.webp`,
+  mainEntityOfPage: siteUrl,
+  // Deliberately no `email`: the footer obfuscates the address to avoid
+  // harvesting, and publishing it here in machine-readable form would undo
+  // that. No `nationality` either — personal data with no search value.
   worksFor: {
     "@type": "Organization",
     name: "Maastricht University School of Business and Economics",

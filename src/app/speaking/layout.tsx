@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/seo";
 import { JOB_TITLE } from "@/data/cv";
 
 const siteUrl = "https://www.jonasheller.info";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     siteName: "Jonas Heller",
     type: "website",
     locale: "en_US",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
