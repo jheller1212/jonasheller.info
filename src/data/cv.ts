@@ -424,6 +424,21 @@ export function formatEur(amount: number): string {
   return `€${amount}`;
 }
 
+/**
+ * Rounded headline figure: "€2.1M+".
+ *
+ * Always rounds DOWN, so the "or more" claim cannot overstate: €2,135,812
+ * becomes €2.1M+, never €2.2M+. Use this for summary lines only — the tables
+ * and subtotals carry the exact amounts.
+ */
+export function formatEurApprox(amount: number): string {
+  if (amount >= 1_000_000) {
+    return `€${(Math.floor(amount / 100_000) / 10).toFixed(1)}M+`;
+  }
+  if (amount >= 1_000) return `€${Math.floor(amount / 10_000) * 10}K+`;
+  return `€${amount}`;
+}
+
 /** "€190,000" — exact, for table rows. */
 export function formatEurExact(amount: number): string {
   return `€${amount.toLocaleString("en-US")}`;
