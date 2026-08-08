@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/seo";
 import { JOB_TITLE } from "@/data/cv";
 
 const siteUrl = "https://www.jonasheller.info";
 
 export const metadata: Metadata = {
-  title: "Consulting & Executive Education — AR, VR & AI | Dr. Jonas Heller",
+  title: "Consulting & Executive Education — Dr. Jonas Heller",
   description:
     "Strategic consulting, workshops, and executive education on AR, VR, AI, and digital transformation by Dr. Jonas Heller — as delivered for Allianz, APG, and the Dutch Ministry of Infrastructure and Water Management.",
   alternates: {
     canonical: "/consulting",
   },
   openGraph: {
-    title: "Consulting & Executive Education — AR, VR & AI | Dr. Jonas Heller",
+    title: "Consulting & Executive Education — Dr. Jonas Heller",
     description:
       "Strategic consulting, workshops, and executive education on AR, VR, AI, and digital transformation.",
     url: `${siteUrl}/consulting`,
     siteName: "Jonas Heller",
     type: "website",
     locale: "en_US",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Consulting & Executive Education — AR, VR & AI | Dr. Jonas Heller",
+    title: "Consulting & Executive Education — Dr. Jonas Heller",
     description:
       "Strategic consulting, workshops, and executive education on AR, VR, AI, and digital transformation.",
   },
