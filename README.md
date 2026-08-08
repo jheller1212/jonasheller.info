@@ -81,7 +81,14 @@ ORCID [0000-0002-3214-0724](https://orcid.org/0000-0002-3214-0724) is the
 authoritative source. Google Scholar is not used: that profile mixes in works
 by a same-named author.
 
-After adding or correcting a work in ORCID, refresh the local snapshot:
+A scheduled workflow (`.github/workflows/sync-orcid.yml`) runs the sync every
+Monday and opens a pull request **only when the ORCID record actually changed** —
+the sync rewrites a `fetchedAt` stamp on every run, so the workflow compares the
+`works` array rather than the file, and discards a no-op refetch. It type-checks
+and builds before proposing anything, so a change that would break the site never
+becomes a PR. Nothing reaches the site without a merge.
+
+To refresh by hand, or after adding a work to ORCID yourself:
 
 ```bash
 npm run sync:orcid
