@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PublicationList from "@/components/PublicationList";
 import { useI18n } from "@/lib/i18n";
-import { PUBLICATION_STATS, ORCID_URL, ORCID_LAST_SYNCED } from "@/data/publications";
+import { ORCID_URL, ORCID_LAST_SYNCED } from "@/data/publications";
 import { SCHOLAR_METRICS } from "@/data/cv";
 
 export default function PublicationsPage() {
@@ -39,43 +39,9 @@ export default function PublicationsPage() {
               {t("pubPage.intro")}
             </p>
 
+            {/* No summary-statistics row: the list itself is the record, and
+                each section already carries its own count. */}
             <div className="flex flex-wrap gap-6 text-sm" style={{ color: "var(--color-text-secondary)" }}>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.journalArticles}
-                </strong>{" "}
-                {t("pubPage.statArticles")}
-              </span>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.researchOutputs}
-                </strong>{" "}
-                {t("pubPage.statOutputs")}
-              </span>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.conferenceContributions}
-                </strong>{" "}
-                {t("pubPage.statConference")}
-              </span>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.firstAuthored}
-                </strong>{" "}
-                {t("pubPage.statFirstAuthored")}
-              </span>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {PUBLICATION_STATS.articlesSincePhd}
-                </strong>{" "}
-                {t("pubPage.sincePhd")}
-              </span>
-              <span>
-                <strong style={{ color: "var(--color-accent-secondary)" }}>
-                  {SCHOLAR_METRICS.citations.toLocaleString("en-US")}
-                </strong>{" "}
-                {t("pubPage.statCitations")}
-              </span>
               <a
                 href={ORCID_URL}
                 target="_blank"

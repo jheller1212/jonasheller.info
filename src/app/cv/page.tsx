@@ -79,8 +79,11 @@ export default function CVPage() {
               className="text-lg leading-relaxed max-w-3xl"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              {JOB_TITLE} at Maastricht University. Co-Founder &amp; Scientific Director of DEXLab
-              and Co-Founder of the Limburg Immersive Technologies Network.
+              {/* Explicit {" "}: JSX trims the leading space of a multi-line
+                  text node, which silently joined "Marketing" to "at". */}
+              {JOB_TITLE}{" "}
+              at Maastricht University. Co-Founder &amp; Scientific Director of DEXLab and
+              Co-Founder of the Limburg Immersive Technologies Network.
             </p>
             <p className="text-xs mt-2 italic" style={{ color: "var(--color-text-secondary)" }}>
               {t("cv.rankFootnote")}

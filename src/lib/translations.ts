@@ -163,9 +163,9 @@ export const translations: TranslationMap = {
     nl: "Publicaties",
   },
   "pubPage.intro": {
-    en: "Complete list of research outputs, grouped by type and ordered by year. The authoritative record is ORCID; this page is generated from it.",
-    de: "Vollständiges Verzeichnis aller Forschungsoutputs, nach Publikationsform gegliedert und chronologisch absteigend sortiert. Maßgeblich ist das ORCID-Profil, aus dem diese Seite erzeugt wird.",
-    nl: "Volledig overzicht van alle onderzoeksoutput, gegroepeerd per type en chronologisch aflopend. Het ORCID-profiel is leidend; deze pagina wordt daaruit gegenereerd.",
+    en: "Complete list of research outputs, grouped by type and ordered by year.",
+    de: "Vollständiges Verzeichnis aller Forschungsoutputs, nach Publikationsform gegliedert und chronologisch absteigend sortiert.",
+    nl: "Volledig overzicht van alle onderzoeksoutput, gegroepeerd per type en chronologisch aflopend.",
   },
   "pubPage.statArticles": {
     en: "peer-reviewed journal articles",
@@ -176,11 +176,6 @@ export const translations: TranslationMap = {
     en: "research outputs in total",
     de: "Forschungsoutputs insgesamt",
     nl: "onderzoeksoutputs in totaal",
-  },
-  "pubPage.statCitations": {
-    en: "citations on Google Scholar",
-    de: "Zitationen laut Google Scholar",
-    nl: "citaties volgens Google Scholar",
   },
   "pubPage.metricsAsOf": {
     en: "Citation metrics from Google Scholar, {date}: {citations} citations, h-index {h}, i10-index {i10}.",
@@ -233,16 +228,6 @@ export const translations: TranslationMap = {
   // Publication entry metadata (P2.4)
   "pub.openAccess": { en: "Open Access", de: "Open Access", nl: "Open Access" },
   "pub.firstAuthor": { en: "First author", de: "Erstautorenschaft", nl: "Eerste auteur" },
-  "pubPage.statFirstAuthored": {
-    en: "of them first-authored",
-    de: "davon in Erstautorenschaft",
-    nl: "daarvan als eerste auteur",
-  },
-  "pubPage.sincePhd": {
-    en: "published since the PhD (2019)",
-    de: "seit der Promotion (2019) veröffentlicht",
-    nl: "gepubliceerd sinds het promoveren (2019)",
-  },
   "pub.type.article": { en: "Article", de: "Artikel", nl: "Artikel" },
   "pub.type.review": { en: "Review", de: "Übersichtsarbeit", nl: "Review" },
   "pub.type.chapter": { en: "Chapter", de: "Buchbeitrag", nl: "Hoofdstuk" },
