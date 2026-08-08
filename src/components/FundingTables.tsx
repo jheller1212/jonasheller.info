@@ -23,13 +23,15 @@ export default function FundingTables() {
 
   return (
     <div className="space-y-10">
+      {/* Total leads; the external subtotal follows so the composition stays
+          visible without two competing headline figures. */}
       <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
         <strong style={{ color: "var(--color-accent-secondary)" }}>
-          {formatEur(FUNDING_STATS.external)}
+          {formatEur(FUNDING_STATS.grantsTotal)}
         </strong>{" "}
-        {t("cv.funding.headline")} ·{" "}
-        <strong style={{ color: "var(--color-text)" }}>{formatEur(FUNDING_STATS.grantsTotal)}</strong>{" "}
-        {t("cv.funding.acrossGrants").replace("{n}", String(FUNDING_STATS.grantCount))}
+        {t("cv.funding.headline").replace("{n}", String(FUNDING_STATS.grantCount))} ·{" "}
+        <strong style={{ color: "var(--color-text)" }}>{formatEur(FUNDING_STATS.external)}</strong>{" "}
+        {t("cv.funding.externalShare")}
       </p>
 
       {fundingTables.map((table) => {

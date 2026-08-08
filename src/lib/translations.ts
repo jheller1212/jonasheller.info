@@ -60,9 +60,9 @@ export const translations: TranslationMap = {
   "terminal.line.3": { en: 'labs: ["DEXLab", "LIT Network"]', de: 'Labs: ["DEXLab", "LIT Network"]', nl: 'labs: ["DEXLab", "LIT Network"]' },
   "terminal.line.4": { en: 'research: ["AR/VR", "AI", "Digital Marketing", "Consumer Behavior"]', de: 'Forschung: ["AR/VR", "KI", "Digitales Marketing", "Konsumentenverhalten"]', nl: 'onderzoek: ["AR/VR", "AI", "Digitale Marketing", "Consumentengedrag"]' },
   "terminal.line.5": {
-    en: 'funding: "Marie Skłodowska-Curie Fellow | {external} external competitive funding"',
-    de: 'Drittmittel: "Marie-Skłodowska-Curie-Fellow | {external} externe kompetitive Mittel"',
-    nl: 'financiering: "Marie Skłodowska-Curie Fellow | {external} externe competitieve financiering"',
+    en: 'funding: "Marie Skłodowska-Curie Fellow | {total} in research funding"',
+    de: 'Forschungsmittel: "Marie-Skłodowska-Curie-Fellow | {total} eingeworben"',
+    nl: 'financiering: "Marie Skłodowska-Curie Fellow | {total} verworven"',
   },
   "terminal.line.6": { en: 'awards: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', de: 'Auszeichnungen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]', nl: 'prijzen: ["SBE Junior Researcher 2024", "Dean\'s Award UNSW"]' },
   "terminal.line.7": { en: 'education: [', de: 'Ausbildung: [', nl: 'opleiding: [' },
@@ -79,9 +79,9 @@ export const translations: TranslationMap = {
 
   // About bio
   "about.bio": {
-    en: "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured {external} in external competitive research funding, published {articles} peer-reviewed journal articles, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
-    de: "Jonas Heller ist entfristeter Assistant Professor (Universitair Docent 1) f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat {external} an externen kompetitiven Drittmitteln eingeworben, {articles} peer-reviewte Zeitschriftenartikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
-    nl: "Jonas Heller is universitair docent 1 (vast) Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft {external} aan externe competitieve onderzoeksfinanciering verworven, {articles} peer-reviewed tijdschriftartikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
+    en: "Jonas Heller is a tenured Assistant Professor (Universitair Docent 1) of Marketing at Maastricht University\u2019s School of Business and Economics, where he directs DEXLab \u2014 a research lab specializing in immersive technologies, AI, and consumer neuroscience. He has secured {total} in research funding across {count} grants, published {articles} peer-reviewed journal articles, and advises organizations ranging from Allianz to government ministries on the behavioral science of digital transformation. He speaks internationally on AR, VR, AI, and the future of human-technology interaction.",
+    de: "Jonas Heller ist entfristeter Assistant Professor (Universitair Docent 1) f\u00fcr Marketing an der School of Business and Economics der Universit\u00e4t Maastricht, wo er das DEXLab leitet \u2014 ein Forschungslabor f\u00fcr immersive Technologien, KI und Konsumenten-Neurowissenschaften. Er hat {total} an Forschungsmitteln aus {count} Bewilligungen eingeworben, {articles} peer-reviewte Zeitschriftenartikel ver\u00f6ffentlicht und ber\u00e4t Organisationen von Allianz bis zu Regierungsministerien zur Verhaltenswissenschaft der digitalen Transformation. Er h\u00e4lt international Vortr\u00e4ge \u00fcber AR, VR, KI und die Zukunft der Mensch-Technologie-Interaktion.",
+    nl: "Jonas Heller is universitair docent 1 (vast) Marketing aan de School of Business and Economics van de Universiteit Maastricht, waar hij DEXLab leidt \u2014 een onderzoekslab gespecialiseerd in immersieve technologie\u00ebn, AI en consumentenneurowetenschappen. Hij heeft {total} aan onderzoeksfinanciering uit {count} toekenningen verworven, {articles} peer-reviewed tijdschriftartikelen gepubliceerd en adviseert organisaties van Allianz tot overheidsministeries over de gedragswetenschap van digitale transformatie. Hij spreekt internationaal over AR, VR, AI en de toekomst van mens-technologie-interactie.",
   },
 
   // Bento
@@ -95,16 +95,16 @@ export const translations: TranslationMap = {
   },
   "bento.a.link": { en: "Visit DEXLab →", de: "DEXLab besuchen →", nl: "Bezoek DEXLab →" },
   "bento.b.title": {
-    en: "{external} External Competitive Funding",
-    de: "{external} externe kompetitive Drittmittel",
-    nl: "{external} externe competitieve financiering",
+    en: "{total} in Research Funding",
+    de: "{total} eingeworbene Forschungsmittel",
+    nl: "{total} aan onderzoeksfinanciering",
   },
   // {total}/{count} span all three funding tables (external, internal, events),
   // so the copy must not claim "internal only" — see FUNDING_STATS in data/cv.ts.
   "bento.b.desc": {
-    en: "External competitive grants including Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+, and international PhD funding from CSC and SACM. Including internal, strategic, and event funding, {total} across {count} grants.",
-    de: "Externe kompetitive Drittmittel, u.a. Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ sowie internationale Promotionsförderungen von CSC und SACM. Einschließlich interner und strategischer Mittel sowie Konferenzförderung {total} aus {count} Bewilligungen.",
-    nl: "Externe competitieve subsidies, waaronder Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ en internationale PhD-financiering van CSC en SACM. Inclusief interne en strategische middelen en congresfinanciering {total} uit {count} toekenningen.",
+    en: "Across {count} grants, of which {external} is external competitive funding — Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+, and international PhD funding from CSC and SACM. The remainder is internal, strategic, and event funding.",
+    de: "Aus {count} Bewilligungen, davon {external} externe kompetitive Drittmittel — u.a. Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ sowie internationale Promotionsförderungen von CSC und SACM. Der übrige Anteil entfällt auf interne, strategische und Konferenzmittel.",
+    nl: "Uit {count} toekenningen, waarvan {external} externe competitieve financiering — Marie Skłodowska-Curie, Comenius, NETSPAR, ERASMUS+ en internationale PhD-financiering van CSC en SACM. Het overige deel betreft interne, strategische en congresmiddelen.",
   },
   "bento.c.title": { en: "Immersive Technologies", de: "Immersive Technologien", nl: "Immersieve Technologieën" },
   "bento.c.desc": {
@@ -332,17 +332,19 @@ export const translations: TranslationMap = {
     de: "Die Zwischensummen beziehen sich auf den Jonas Heller bzw. der Universität Maastricht zurechenbaren Anteil, nicht auf das gesamte Konsortialvolumen.",
     nl: "Subtotalen tellen het aan Jonas Heller / Maastricht University toe te rekenen bedrag, niet het volledige consortiumvolume.",
   },
+  // The headline figure is the total across all three tables ({n} matches
+  // FUNDING_STATS.grantCount). "Drittmittel" is reserved for the external
+  // subtotal below: in German it means third-party money specifically, so
+  // applying it to the internal and strategic funding too would be wrong.
   "cv.funding.headline": {
-    en: "external competitive funding",
-    de: "externe kompetitive Drittmittel",
-    nl: "externe competitieve financiering",
+    en: "in research funding across {n} grants",
+    de: "an Forschungsmitteln aus {n} Bewilligungen",
+    nl: "aan onderzoeksfinanciering uit {n} toekenningen",
   },
-  // {n} counts all three tables (external, internal, events) — keep the copy
-  // matching FUNDING_STATS.grantCount in data/cv.ts.
-  "cv.funding.acrossGrants": {
-    en: "total funding across {n} grants, all categories combined",
-    de: "Gesamtvolumen aus {n} Bewilligungen über alle Kategorien",
-    nl: "totale financiering uit {n} toekenningen, alle categorieën samen",
+  "cv.funding.externalShare": {
+    en: "of it external competitive third-party funding",
+    de: "davon externe kompetitive Drittmittel",
+    nl: "daarvan externe competitieve financiering",
   },
   "cv.funding.col.year": { en: "Year", de: "Jahr", nl: "Jaar" },
   "cv.funding.col.funder": { en: "Funder", de: "Geldgeber", nl: "Financier" },
