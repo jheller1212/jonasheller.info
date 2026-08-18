@@ -20,6 +20,7 @@ export default function Contact() {
   }, [state.submitting]);
 
   const succeeded = state.succeeded && !dismissed;
+  const hasFormError = (state.errors?.getFormErrors().length ?? 0) > 0;
 
   return (
     <section id="contact" className="scroll-mt-20 py-14 sm:py-16 px-6">
@@ -80,6 +81,21 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="space-y-6"
             >
+              {/* Form-level failures (network, CSP, form disabled) carry no field,
+                  so the per-field ValidationErrors below never surface them */}
+              {hasFormError && (
+                <div
+                  role="alert"
+                  className="rounded-lg border px-4 py-3 text-sm"
+                  style={{
+                    borderColor: "var(--color-accent-secondary)",
+                    color: "var(--color-text)",
+                  }}
+                >
+                  {t("contact.error")}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label
