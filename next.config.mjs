@@ -8,7 +8,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.formspree.io; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io https://api.formspree.io; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
