@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
@@ -21,6 +22,16 @@ export default function Contact() {
 
   const succeeded = state.succeeded && !dismissed;
   const hasFormError = (state.errors?.getFormErrors().length ?? 0) > 0;
+
+  // Attempt/outcome are tracked separately on purpose: a gap between them is
+  // exactly what a silently broken form looks like from the dashboard.
+  useEffect(() => {
+    if (state.succeeded) track("contact_send_success");
+  }, [state.succeeded]);
+
+  useEffect(() => {
+    if (hasFormError) track("contact_send_error");
+  }, [hasFormError]);
 
   return (
     <section id="contact" className="scroll-mt-20 py-14 sm:py-16 px-6">
@@ -78,7 +89,10 @@ export default function Contact() {
             </div>
           ) : (
             <form
-              onSubmit={handleSubmit}
+              onSubmit={(e) => {
+                track("contact_send_attempt");
+                return handleSubmit(e);
+              }}
               className="space-y-6"
             >
               {/* Form-level failures (network, CSP, form disabled) carry no field,

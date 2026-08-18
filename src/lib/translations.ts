@@ -681,9 +681,9 @@ export const translations: TranslationMap = {
     nl: "Geen cookies of tracking",
   },
   "legal.cookiesText": {
-    en: "This website uses no cookies, analytics, or third-party tracking. Language preference is stored in localStorage (functional, exempt from consent requirements).",
-    de: "Diese Website verwendet keine Cookies, keine Analyse-Tools und kein Tracking durch Dritte. Die Spracheinstellung wird im localStorage gespeichert (funktional, nicht einwilligungspflichtig).",
-    nl: "Deze website gebruikt geen cookies, analytics of tracking door derden. De taalvoorkeur wordt opgeslagen in localStorage (functioneel, vrijgesteld van toestemmingsvereisten).",
+    en: "This website uses no cookies and no third-party tracking. Visitor numbers are measured with Vercel Web Analytics, which is cookieless: it stores nothing on your device, sets no identifier, and cannot be used to identify you or follow you across sites. Vercel already hosts this site, so no additional party receives your data. Language preference is stored in localStorage (functional). Both are exempt from consent requirements.",
+    de: "Diese Website verwendet keine Cookies und kein Tracking durch Dritte. Die Besucherzahlen werden mit Vercel Web Analytics erfasst, das ohne Cookies arbeitet: Es speichert nichts auf Ihrem Gerät, setzt keine Kennung und lässt weder eine Identifizierung noch eine websiteübergreifende Verfolgung zu. Vercel hostet diese Website ohnehin, sodass keine weiteren Dritten Ihre Daten erhalten. Die Spracheinstellung wird im localStorage gespeichert (funktional). Beides ist nicht einwilligungspflichtig.",
+    nl: "Deze website gebruikt geen cookies en geen tracking door derden. Bezoekersaantallen worden gemeten met Vercel Web Analytics, dat cookieloos werkt: het slaat niets op uw apparaat op, stelt geen identificatie in en kan u niet identificeren of over websites heen volgen. Vercel host deze website al, dus geen enkele extra partij ontvangt uw gegevens. De taalvoorkeur wordt opgeslagen in localStorage (functioneel). Beide zijn vrijgesteld van toestemmingsvereisten.",
   },
   "legal.rights": { en: "Your rights", de: "Ihre Rechte", nl: "Uw rechten" },
   "legal.rightsText": {
