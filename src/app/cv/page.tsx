@@ -7,6 +7,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import FundingTables from "@/components/FundingTables";
 import TeachingList from "@/components/TeachingList";
+import ManuscriptList from "@/components/ManuscriptList";
 import { useI18n } from "@/lib/i18n";
 import {
   awards,
@@ -238,10 +239,11 @@ export default function CVPage() {
             </div>
           </section>
 
-          {/* Publications pointer — the full record lives on its own route */}
+          {/* Published record lives on its own route; work in progress lives
+              here, so the two pages stay cleanly separated */}
           <section className="mb-16">
             <SectionHeading eyebrow={t("pub.eyebrow")} title={t("cv.section.publications")} />
-            <div className="glass-card rounded-xl p-6">
+            <div className="glass-card rounded-xl p-6 mb-8">
               <Link
                 href="/publications"
                 className="text-sm font-semibold hover:opacity-70 transition-opacity"
@@ -250,6 +252,7 @@ export default function CVPage() {
                 {t("pub.viewAll")}
               </Link>
             </div>
+            <ManuscriptList />
           </section>
 
           {/* Awards */}
