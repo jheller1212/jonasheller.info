@@ -95,6 +95,16 @@ export default function Contact() {
               }}
               className="space-y-6"
             >
+              {/* Honeypot — hidden from real users, filled only by bots; Formspree drops submissions with _gotcha set */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               {/* Form-level failures (network, CSP, form disabled) carry no field,
                   so the per-field ValidationErrors below never surface them */}
               {hasFormError && (
