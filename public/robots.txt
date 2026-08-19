@@ -48,3 +48,5 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://www.jonasheller.info/sitemap.xml
+
+# Structured summary for answer engines: https://www.jonasheller.info/llms.txt
