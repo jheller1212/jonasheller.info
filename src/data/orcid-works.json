@@ -1,6 +1,6 @@
 {
   "orcid": "0000-0002-3214-0724",
-  "fetchedAt": "2026-08-07",
+  "fetchedAt": "2026-08-17",
   "works": [
     {
       "id": "glebova2026",
@@ -677,7 +677,7 @@
       "authorCount": 6,
       "isOpenAccess": true,
       "oaStatus": "green",
-      "oaUrl": "https://figshare.com/articles/journal_contribution/Augmented_reality_marketing_a_technology-enabled_approach_to_situated_customer_experience/23476409"
+      "oaUrl": "http://sro.sussex.ac.uk/id/eprint/90824/1/AMJ%20April%202020%20ARM%20Accepted%20Version.pdf"
     },
     {
       "id": "heller2020",
@@ -904,7 +904,7 @@
       "authorCount": 6,
       "isOpenAccess": true,
       "oaStatus": "green",
-      "oaUrl": "https://figshare.com/articles/journal_contribution/What_s_mine_is_a_hologram_How_shared_Augmented_Reality_augments_psychological_ownership/23468054"
+      "oaUrl": "http://sro.sussex.ac.uk/id/eprint/83827/1/JIM%20Whats%20mines%20a%20hologram%20noncorrected%20accepted%20version.pdf"
     },
     {
       "id": "rozemeijer2018",
