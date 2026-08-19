@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import { I18nProvider } from "@/lib/i18n";
 import { JOB_TITLE, ORCID_PROFILE_URL, SCHOLAR_URL } from "@/data/cv";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -185,6 +186,7 @@ export default function RootLayout({
             domain, so 'self' in the CSP already covers it. No device storage,
             so no consent banner is required. */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
