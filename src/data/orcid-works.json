@@ -1,6 +1,6 @@
 {
   "orcid": "0000-0002-3214-0724",
-  "fetchedAt": "2026-08-17",
+  "fetchedAt": "2026-08-31",
   "works": [
     {
       "id": "glebova2026",
@@ -852,7 +852,7 @@
       "authorPosition": 2,
       "authorCount": 3,
       "isOpenAccess": true,
-      "oaStatus": "green",
+      "oaStatus": "gold",
       "oaUrl": "http://hdl.handle.net/10072/396980"
     },
     {
