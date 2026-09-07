@@ -1,6 +1,6 @@
 {
   "orcid": "0000-0002-3214-0724",
-  "fetchedAt": "2026-08-17",
+  "fetchedAt": "2026-09-07",
   "works": [
     {
       "id": "glebova2026",
@@ -804,7 +804,7 @@
       "authorPosition": 8,
       "authorCount": 8,
       "isOpenAccess": true,
-      "oaStatus": "gold",
+      "oaStatus": "green",
       "oaUrl": "http://hdl.handle.net/10072/396981"
     },
     {
@@ -976,9 +976,9 @@
       ],
       "authorPosition": 4,
       "authorCount": 5,
-      "isOpenAccess": false,
-      "oaStatus": "closed",
-      "oaUrl": null
+      "isOpenAccess": true,
+      "oaStatus": "green",
+      "oaUrl": "http://hdl.handle.net/10072/394784"
     },
     {
       "id": "heller2017",
