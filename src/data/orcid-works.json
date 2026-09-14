@@ -1,6 +1,6 @@
 {
   "orcid": "0000-0002-3214-0724",
-  "fetchedAt": "2026-08-17",
+  "fetchedAt": "2026-09-14",
   "works": [
     {
       "id": "glebova2026",
@@ -245,9 +245,9 @@
       ],
       "authorPosition": 2,
       "authorCount": 6,
-      "isOpenAccess": false,
-      "oaStatus": "closed",
-      "oaUrl": null
+      "isOpenAccess": true,
+      "oaStatus": "hybrid",
+      "oaUrl": "https://doi.org/10.1016/j.chb.2024.108153"
     },
     {
       "id": "moonen2024",
@@ -271,7 +271,7 @@
       "authorPosition": 2,
       "authorCount": 5,
       "isOpenAccess": true,
-      "oaStatus": "bronze",
+      "oaStatus": "hybrid",
       "oaUrl": "https://doi.org/10.1080/09571264.2024.2310297"
     },
     {
@@ -446,9 +446,9 @@
       ],
       "authorPosition": 3,
       "authorCount": 5,
-      "isOpenAccess": false,
-      "oaStatus": "closed",
-      "oaUrl": null
+      "isOpenAccess": true,
+      "oaStatus": "hybrid",
+      "oaUrl": "https://doi.org/10.1016/j.chb.2023.107816"
     },
     {
       "id": "glebova2023",
@@ -499,7 +499,7 @@
       "authorCount": 6,
       "isOpenAccess": true,
       "oaStatus": "green",
-      "oaUrl": "https://cris.maastrichtuniversity.nl/en/publications/95c85ca2-6144-4e51-8952-af656f85abfd"
+      "oaUrl": "http://sro.sussex.ac.uk/id/eprint/103766/1/JIM%20Dec%202021%20Accepted%20Version.pdf"
     },
     {
       "id": "hilken2022a",
@@ -804,7 +804,7 @@
       "authorPosition": 8,
       "authorCount": 8,
       "isOpenAccess": true,
-      "oaStatus": "gold",
+      "oaStatus": "green",
       "oaUrl": "http://hdl.handle.net/10072/396981"
     },
     {
@@ -976,9 +976,9 @@
       ],
       "authorPosition": 4,
       "authorCount": 5,
-      "isOpenAccess": false,
-      "oaStatus": "closed",
-      "oaUrl": null
+      "isOpenAccess": true,
+      "oaStatus": "green",
+      "oaUrl": "http://hdl.handle.net/10072/394784"
     },
     {
       "id": "heller2017",
