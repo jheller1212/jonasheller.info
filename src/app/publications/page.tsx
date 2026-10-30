@@ -50,6 +50,16 @@ export default function PublicationsPage() {
               >
                 ORCID {ORCID_URL.replace("https://orcid.org/", "")} →
               </a>
+            {/* Live badge served by ScholarFolio; falls back to a plain label when its cache has lapsed. */}
+            <a
+              href="https://scholarfolio.org/scholar/NOSPtp8AAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://scholarfolio.org/badge/NOSPtp8AAAAJ.svg" alt="Citation metrics on ScholarFolio" height={20} className="inline-block h-5 w-auto" />
+            </a>
             </div>
           </header>
 
