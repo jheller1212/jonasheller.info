@@ -34,6 +34,7 @@ brain-computer interfaces.
 - [Publications](https://www.jonasheller.info/publications): complete peer-reviewed record, generated from ORCID.
 - [CV](https://www.jonasheller.info/cv): experience, education, awards, funding, teaching, and manuscripts under review or in preparation.
 - [Keynote speaking](https://www.jonasheller.info/speaking): talks on AR, VR, AI and consumer behaviour, in English or German.
+- [Speaker kit](https://www.jonasheller.info/speaker-kit.md): bios in 50, 100 and 200 words, headshot, keynote topics, languages, how to book. Canonical copy for organisers.
 - [Consulting](https://www.jonasheller.info/consulting): strategic consulting, workshops, and executive education.
 - [Projects](https://www.jonasheller.info/projects): research tools and platforms.
 
