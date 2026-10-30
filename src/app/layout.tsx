@@ -28,22 +28,6 @@ export const metadata: Metadata = {
   title: "Dr. Jonas Heller — Marketing Professor, AR, VR & AI",
   description:
     "Dr. Jonas Heller is a tenured Assistant Professor of Marketing at Maastricht University, researching augmented reality, virtual reality and AI in consumer behaviour. Keynote speaker and consultant.",
-  keywords: [
-    "Jonas Heller",
-    "Jonas Heller professor",
-    "Jonas Heller academic",
-    "Jonas Heller consultant",
-    "Jonas Heller speaker",
-    "Jonas Heller Maastricht University",
-    "Jonas Heller marketing",
-    "Jonas Heller augmented reality",
-    "Jonas Heller researcher",
-    "DEXLab",
-    "LIT Network",
-    "augmented reality marketing",
-    "digital marketing professor",
-    "AR VR research",
-  ],
   authors: [{ name: "Jonas Heller", url: siteUrl }],
   creator: "Jonas Heller",
   icons: {
