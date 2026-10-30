@@ -8,11 +8,31 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
 import { ORCID_PROFILE_URL, SCHOLAR_URL } from "@/data/cv";
+import { keynoteTopics, KEYNOTE_COUNT } from "@/lib/speakerKit";
+
+// WebMCP declarative attributes. Browsers without WebMCP ignore them and agents
+// get a typed tool from the same form. Deliberately no toolautosubmit: the visitor
+// reviews what an agent filled in and sends it themselves, and Formspree's spam
+// handling applies exactly as it does to a person.
+const webmcpForm = {
+  toolname: "send_enquiry",
+  tooldescription:
+    "Send Dr. Jonas Heller an enquiry about a keynote, workshop, consulting, executive education or research collaboration. For a keynote, also give the event date, audience size, topic and organisation.",
+};
+const param = (toolparamdescription: string) => ({ toolparamdescription });
+
+const fieldClass =
+  "w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1";
+const fieldStyle = { borderColor: "var(--color-border)", color: "var(--color-text)" };
+const labelClass = "block text-sm font-medium mb-2";
+const labelStyle = { color: "var(--color-text-secondary)" };
+const optionStyle = { backgroundColor: "var(--color-bg-secondary)", color: "var(--color-text)" };
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [state, handleSubmit] = useForm("mgonaray");
   const [dismissed, setDismissed] = useState(false);
+  const [enquiryType, setEnquiryType] = useState("");
   const { t } = useI18n();
 
   // Reset dismissed flag when a new submission starts
@@ -94,6 +114,7 @@ export default function Contact() {
                 return handleSubmit(e);
               }}
               className="space-y-6"
+              {...webmcpForm}
             >
               {/* Honeypot — hidden from real users, filled only by bots; Formspree drops submissions with _gotcha set */}
               <input
@@ -103,6 +124,7 @@ export default function Contact() {
                 autoComplete="off"
                 aria-hidden="true"
                 className="hidden"
+                {...param("Spam trap. Always leave this empty.")}
               />
 
               {/* Form-level failures (network, CSP, form disabled) carry no field,
@@ -140,6 +162,7 @@ export default function Contact() {
                       color: "var(--color-text)",
                     }}
                     placeholder={t("contact.namePlaceholder")}
+                    {...param("Full name of the person enquiring")}
                   />
                   <div aria-live="polite"><ValidationError prefix="Name" field="name" errors={state.errors} /></div>
                 </div>
@@ -162,6 +185,7 @@ export default function Contact() {
                       color: "var(--color-text)",
                     }}
                     placeholder="your@email.com"
+                    {...param("Email address to reply to")}
                   />
                   <div aria-live="polite"><ValidationError prefix="Email" field="email" errors={state.errors} /></div>
                 </div>
@@ -180,6 +204,8 @@ export default function Contact() {
                   name="enquiry_type"
                   required
                   defaultValue=""
+                  onChange={(e) => setEnquiryType(e.target.value)}
+                  {...param("Kind of enquiry")}
                   className="w-full pl-4 pr-10 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 appearance-none"
                   style={{
                     borderColor: "var(--color-border)",
@@ -211,6 +237,35 @@ export default function Contact() {
                 <div aria-live="polite"><ValidationError prefix="Enquiry type" field="enquiry_type" errors={state.errors} /></div>
               </div>
 
+              {/* Stays in the DOM when collapsed so agents can see these parameters. */}
+              <div className={enquiryType === "keynote" ? "grid grid-cols-1 sm:grid-cols-2 gap-6" : "hidden"}>
+                <div>
+                  <label htmlFor="event_date" className={labelClass} style={labelStyle}>{t("contact.eventDate")}</label>
+                  <input id="event_date" name="event_date" type="date" className={fieldClass} style={fieldStyle}
+                    {...param("Keynote only: event date as YYYY-MM-DD")} />
+                </div>
+                <div>
+                  <label htmlFor="audience_size" className={labelClass} style={labelStyle}>{t("contact.audienceSize")}</label>
+                  <input id="audience_size" name="audience_size" type="number" min={1} step={1} className={fieldClass} style={fieldStyle}
+                    {...param("Keynote only: expected number of attendees")} />
+                </div>
+                <div>
+                  <label htmlFor="organisation" className={labelClass} style={labelStyle}>{t("contact.organisation")}</label>
+                  <input id="organisation" name="organisation" type="text" className={fieldClass} style={fieldStyle}
+                    {...param("Keynote only: organisation hosting the event")} />
+                </div>
+                <div>
+                  <label htmlFor="keynote_topic" className={labelClass} style={labelStyle}>{t("contact.keynoteTopic")}</label>
+                  <select id="keynote_topic" name="keynote_topic" defaultValue="" className={fieldClass} style={fieldStyle}
+                    {...param("Keynote only: preferred keynote topic")}>
+                    <option value="" style={optionStyle}>{t("contact.keynoteTopic.any")}</option>
+                    {Array.from({ length: KEYNOTE_COUNT }, (_, i) => (
+                      <option key={i} value={keynoteTopics[i].title} style={optionStyle}>{t(`speaking.${i}.title`)}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
               <div>
                 <label
                   htmlFor="message"
@@ -230,6 +285,7 @@ export default function Contact() {
                     color: "var(--color-text)",
                   }}
                   placeholder={t("contact.messagePlaceholder")}
+                  {...param("The enquiry itself, including anything not covered by the other fields")}
                 />
                 <div aria-live="polite"><ValidationError prefix="Message" field="message" errors={state.errors} /></div>
               </div>
@@ -239,6 +295,7 @@ export default function Contact() {
                   type="checkbox"
                   name="gdpr_consent"
                   required
+                  {...param("Consent to processing this enquiry. Must be confirmed by the person the agent acts for; do not tick it on their behalf without asking.")}
                   className="mt-0.5 accent-[var(--color-accent)]"
                 />
                 <span>
