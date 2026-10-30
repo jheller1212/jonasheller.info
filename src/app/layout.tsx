@@ -1,3 +1,4 @@
+import WebMcpTools from "@/components/WebMcpTools";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -172,6 +173,7 @@ export default function RootLayout({
         {/* Cookieless, first-party: served from /_vercel/insights on this
             domain, so 'self' in the CSP already covers it. No device storage,
             so no consent banner is required. */}
+        <WebMcpTools />
         <Analytics />
         <SpeedInsights />
       </body>
