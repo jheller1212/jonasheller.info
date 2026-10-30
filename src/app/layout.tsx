@@ -101,10 +101,12 @@ const jsonLd = {
       "@type": "Organization",
       name: "DEXLab",
       description: "Digital Experience Lab",
+      url: "https://www.sbe-dexlab.com",
     },
     {
       "@type": "Organization",
       name: "LIT Network",
+      url: "https://www.litnetwork.nl",
     },
   ],
   alumniOf: [
@@ -139,6 +141,7 @@ const jsonLd = {
     "https://www.linkedin.com/in/hellerjonas/",
     "https://www.researchgate.net/profile/Jonas-Heller-2",
     "https://x.com/hellerjonas",
+    "https://jonasheller.substack.com",
   ],
 };
 

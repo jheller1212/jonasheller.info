@@ -39,7 +39,7 @@ const scholarlyWorks = publications
       isPartOf: p.venue ? { "@type": "Periodical", name: p.venue } : undefined,
       author: p.authors.map((name) => ({ "@type": "Person", name })),
       ...(p.doi
-        ? { sameAs: `https://doi.org/${p.doi}`, identifier: `https://doi.org/${p.doi}` }
+        ? { "@id": `https://doi.org/${p.doi}`, sameAs: `https://doi.org/${p.doi}`, identifier: `https://doi.org/${p.doi}` }
         : {}),
       isAccessibleForFree: p.isOpenAccess ?? undefined,
     },
