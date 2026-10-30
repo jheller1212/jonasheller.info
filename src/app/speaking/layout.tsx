@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { OG_IMAGE } from "@/lib/seo";
 import { JOB_TITLE } from "@/data/cv";
+import { translations } from "@/lib/translations";
 
 const siteUrl = "https://www.jonasheller.info";
 
@@ -29,6 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
+const KEYNOTE_COUNT = 6;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -41,6 +44,20 @@ const jsonLd = {
   availableChannel: {
     "@type": "ServiceChannel",
     availableLanguage: ["English", "German"],
+  },
+  // Generated from the page's own copy so the two cannot drift.
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Keynote topics",
+    itemListElement: Array.from({ length: KEYNOTE_COUNT }, (_, i) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        serviceType: "Keynote",
+        name: translations[`speaking.${i}.title`].en,
+        description: translations[`speaking.${i}.desc`].en,
+      },
+    })),
   },
   provider: {
     "@type": "Person",
