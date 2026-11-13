@@ -138,6 +138,9 @@ export default function Footer() {
           <Link href="/academic" className="hover:opacity-70 transition-opacity">
             {t("academic.heading")}
           </Link>
+          <Link href="/phd" className="hover:opacity-70 transition-opacity">
+            {t("phd.link")}
+          </Link>
           <a
             href="https://orcid.org/0000-0002-3214-0724"
             target="_blank"
