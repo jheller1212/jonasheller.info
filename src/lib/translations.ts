@@ -534,15 +534,95 @@ export const translations: TranslationMap = {
     nl: "Van het lab naar uw inbox",
   },
   "newsletter.desc": {
-    en: "Essays on what AR, VR, and AI actually do to customers and organizations \u2014 research-backed, hype-free.",
-    de: "Essays dar\u00fcber, was AR, VR und KI bei Kunden und Organisationen wirklich bewirken \u2014 forschungsbasiert, ohne Hype.",
-    nl: "Essays over wat AR, VR en AI echt doen met klanten en organisaties \u2014 onderbouwd door onderzoek, zonder hype.",
+    en: "Bytes and minds: what AI and new technology do to people, and to academia. Experiments, evidence, and a European view, every two weeks.",
+    de: "Bytes and minds: was KI und neue Technologien mit Menschen und mit der Wissenschaft machen. Experimente, Evidenz und ein europ\u00e4ischer Blick, alle zwei Wochen.",
+    nl: "Bytes and minds: wat AI en nieuwe technologie doen met mensen, en met de wetenschap. Experimenten, bewijs en een Europese blik, elke twee weken.",
   },
   "newsletter.cta": {
-    en: "Read on Substack",
-    de: "Auf Substack lesen",
-    nl: "Lees op Substack",
+    en: "Subscribe on LinkedIn",
+    de: "Auf LinkedIn abonnieren",
+    nl: "Abonneer op LinkedIn",
   },
+  "newsletter.archive": {
+    en: "Archive on Substack",
+    de: "Archiv auf Substack",
+    nl: "Archief op Substack",
+  },
+
+  // PhD page
+  "phd.link": { en: "PhD with me", de: "Promotion bei mir", nl: "Promoveren bij mij" },
+  "phd.eyebrow": { en: "PhD", de: "Promotion", nl: "Promotie" },
+  "phd.heading": {
+    en: "Doing a PhD with me",
+    de: "Promovieren bei mir",
+    nl: "Promoveren bij mij",
+  },
+  "phd.intro": {
+    en: "I supervise PhD candidates in marketing at Maastricht University School of Business and Economics. The work is experimental: how AI and immersive technology change the decisions of consumers and workers, tested in our lab, DEXLab.",
+    de: "Ich betreue Promovierende im Marketing an der School of Business and Economics der Universität Maastricht. Die Arbeit ist experimentell: wie KI und immersive Technologien die Entscheidungen von Konsumenten und Beschäftigten verändern, getestet in unserem Labor, dem DEXLab.",
+    nl: "Ik begeleid promovendi in marketing aan de School of Business and Economics van de Universiteit Maastricht. Het werk is experimenteel: hoe AI en immersieve technologie de beslissingen van consumenten en werknemers veranderen, getest in ons lab, DEXLab.",
+  },
+  "phd.funded.title": {
+    en: "Funded positions",
+    de: "Finanzierte Stellen",
+    nl: "Gefinancierde posities",
+  },
+  "phd.funded.text": {
+    en: "When I have a funded PhD position, it is posted on AcademicTransfer. I do not have open positions outside these calls. To hear about the next one, follow me or DEXLab on LinkedIn.",
+    de: "Wenn ich eine finanzierte Promotionsstelle habe, wird sie auf AcademicTransfer ausgeschrieben. Außerhalb dieser Ausschreibungen habe ich keine offenen Stellen. Wer von der nächsten erfahren will, folgt mir oder dem DEXLab auf LinkedIn.",
+    nl: "Als ik een gefinancierde promotieplek heb, staat die op AcademicTransfer. Buiten die vacatures heb ik geen open plekken. Wie de volgende niet wil missen, volgt mij of DEXLab op LinkedIn.",
+  },
+  "phd.linkedinJonas": { en: "Jonas on LinkedIn", de: "Jonas auf LinkedIn", nl: "Jonas op LinkedIn" },
+  "phd.linkedinDexlab": { en: "DEXLab on LinkedIn", de: "DEXLab auf LinkedIn", nl: "DEXLab op LinkedIn" },
+  "phd.own.title": {
+    en: "Coming with your own funding",
+    de: "Mit eigener Finanzierung",
+    nl: "Met eigen financiering",
+  },
+  "phd.own.text": {
+    en: "Most PhD enquiries I receive come without funding, and I have to turn them down for that reason alone. If you hold, or are applying for, a scholarship or a funded leave from your employer, the situation is different, and I am happy to talk. Previous doctoral candidates in my group have come with funding from national scholarship programmes such as the China Scholarship Council.",
+    de: "Die meisten Promotionsanfragen, die ich erhalte, kommen ohne Finanzierung, und allein deshalb muss ich sie ablehnen. Wer ein Stipendium hat oder sich darauf bewirbt, oder von seinem Arbeitgeber finanziert freigestellt wird, ist in einer anderen Lage, und darüber spreche ich gern. Frühere Promovierende in meiner Gruppe kamen mit Finanzierung aus nationalen Stipendienprogrammen wie dem China Scholarship Council.",
+    nl: "De meeste promotieaanvragen die ik krijg, komen zonder financiering, en alleen al daarom moet ik ze afwijzen. Wie een beurs heeft of aanvraagt, of door de werkgever betaald wordt vrijgesteld, zit in een andere situatie, en daar praat ik graag over. Eerdere promovendi in mijn groep kwamen met financiering uit nationale beursprogramma's zoals de China Scholarship Council.",
+  },
+  "phd.own.note": {
+    en: "Funding does not replace admission: the School's regular PhD admission requirements apply to every candidate.",
+    de: "Finanzierung ersetzt keine Zulassung: Die regulären Promotionsvoraussetzungen der Fakultät gelten für alle.",
+    nl: "Financiering vervangt geen toelating: de reguliere toelatingseisen van de faculteit gelden voor iedereen.",
+  },
+  "phd.fit.title": { en: "Who fits", de: "Wer passt", nl: "Wie past" },
+  "phd.fit.text": {
+    en: "A research master or master in marketing, consumer research, or psychology, a clear interest in experiments, and a question that connects to my work on AI, immersive technology, or multisensory consumer behaviour.",
+    de: "Ein Research Master oder Master in Marketing, Konsumentenforschung oder Psychologie, echtes Interesse an Experimenten und eine Frage, die an meine Arbeit zu KI, immersiven Technologien oder multisensorischem Konsumentenverhalten anschließt.",
+    nl: "Een research master of master in marketing, consumentenonderzoek of psychologie, echte interesse in experimenten en een vraag die aansluit bij mijn werk over AI, immersieve technologie of multisensorisch consumentengedrag.",
+  },
+  "phd.fit.not": {
+    en: "I do not supervise PhDs without a background in marketing or a closely related social science, regardless of funding. If your background is computer science or engineering, a lab in those fields will serve you better.",
+    de: "Ohne Hintergrund in Marketing oder einer eng verwandten Sozialwissenschaft betreue ich keine Promotion, unabhängig von der Finanzierung. Wer aus der Informatik oder den Ingenieurwissenschaften kommt, ist in einem Labor dieser Fächer besser aufgehoben.",
+    nl: "Zonder achtergrond in marketing of een nauw verwante sociale wetenschap begeleid ik geen promotie, ongeacht de financiering. Wie uit de informatica of de techniek komt, is beter af in een lab in die vakgebieden.",
+  },
+  "phd.send.title": { en: "What to send", de: "Was Sie schicken", nl: "Wat u stuurt" },
+  "phd.send.0": { en: "Your CV and master transcripts", de: "Lebenslauf und Master-Zeugnisse", nl: "Uw cv en mastercijferlijst" },
+  "phd.send.1": {
+    en: "Your funding: source, amount, duration, and status",
+    de: "Ihre Finanzierung: Quelle, Höhe, Dauer und Stand",
+    nl: "Uw financiering: bron, bedrag, looptijd en status",
+  },
+  "phd.send.2": {
+    en: "A research idea of at most two pages, linked to my work",
+    de: "Eine Forschungsidee von höchstens zwei Seiten, mit Bezug zu meiner Arbeit",
+    nl: "Een onderzoeksidee van hooguit twee pagina's, gekoppeld aan mijn werk",
+  },
+  "phd.send.3": {
+    en: "One paper of mine you read, and what you would test next",
+    de: "Ein Paper von mir, das Sie gelesen haben, und was Sie als Nächstes testen würden",
+    nl: "Eén paper van mij dat u las, en wat u als volgende zou testen",
+  },
+  "phd.send.how": {
+    en: "Use the contact form and start your message with \u201cPhD, own funding\u201d. Enquiries without the funding details do not get a reply.",
+    de: "Nutzen Sie das Kontaktformular und beginnen Sie Ihre Nachricht mit \u201ePhD, own funding\u201c. Anfragen ohne Angaben zur Finanzierung bleiben unbeantwortet.",
+    nl: "Gebruik het contactformulier en begin uw bericht met \u201cPhD, own funding\u201d. Aanvragen zonder gegevens over de financiering krijgen geen antwoord.",
+  },
+  "phd.cta": { en: "Go to the contact form", de: "Zum Kontaktformular", nl: "Naar het contactformulier" },
 
   // Contact
   "contact.eyebrow": { en: "Contact", de: "Kontakt", nl: "Contact" },

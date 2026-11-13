@@ -38,10 +38,21 @@ export default function Newsletter() {
             >
               {t("newsletter.desc")}
             </p>
+            <p className="mt-3 text-sm">
+              <a
+                href="https://jonasheller.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
+                style={{ color: "var(--color-text-secondary)", textDecorationColor: "var(--color-border)" }}
+              >
+                {t("newsletter.archive")}
+              </a>
+            </p>
           </div>
 
           <a
-            href="https://jonasheller.substack.com"
+            href="https://www.linkedin.com/newsletters/bytes-and-minds-7522039347542478848/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${t("newsletter.cta")} ${t("a11y.newTab")}`}
