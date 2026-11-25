@@ -193,67 +193,58 @@ export interface FundingTable {
   grants: Grant[];
 }
 
+/**
+ * Amounts follow the rule used in all application documents since Nov 2026
+ * (HHU request for clarification): `amount` is the personal share, i.e. the
+ * full amount for funding acquired alone, and for joint projects the share
+ * received by Maastricht University divided by the number of UM applicants or
+ * supervisors. `totalVolume` is the full project volume. Keep in sync with
+ * Dropbox "CV & Bewerbungen/_Master/10_Drittmittelprojekte".
+ */
+
 /** 1. External, competitively awarded funding. */
 const externalCompetitive: Grant[] = [
   {
     year: "2025",
-    funder: "ERASMUS+",
-    project: "ATLAS.TI — Assisting Teaching and Learning with AI-based Solutions",
-    amount: 35_000,
-    role: "Work Package Lead (WP2)",
+    funder: "ERASMUS+ KA220",
+    project: "ATLAS — Assisting Teaching and Learning with AI-based Solutions",
+    amount: 11_200,
+    role: "Co-applicant",
     totalVolume: 400_000,
-    scope: "Maastricht University portion of a €400,000 consortium project",
+    scope: "Consortium of 10 partners; UM share €44,800 (with Hilken, Frissen, Wils)",
   },
   {
     year: "2024",
-    funder: "NETSPAR (via Institute GAK)",
+    funder: "NETSPAR (via Instituut Gak)",
     project: "Theme Grant: See4YourFutureSelf",
-    amount: 350_000,
+    amount: 349_743,
     role: "PI",
-  },
-  {
-    year: "2023",
-    funder: "Saudi Arabian Cultural Mission (SACM)",
-    project:
-      "PhD Project: Immersive Horizons — VR's Impact on Customer Engagement, Localization & Strategic Marketing",
-    amount: 405_000,
-    role: "PI",
-  },
-  {
-    year: "2023",
-    funder: "Zayed University, UAE",
-    project:
-      "Research Incentive Fund: Exploring how XR Technologies Support Value Co-creation in Service",
-    amount: 80_000,
-    role: "Co-PI",
   },
   {
     year: "2022",
-    funder: "China Scholarship Council (CSC)",
-    project: "PhD Grant: Digital Realities for Healthy and Sustainable Consumption",
-    amount: 220_000,
+    funder: "Zayed University, UAE",
+    project:
+      "Research Incentive Fund: Exploring how XR Technologies Support Value Co-creation in Service",
+    amount: 19_020,
     role: "Co-PI",
+    totalVolume: 78_000,
+    scope: "PI: S. Al-Imamy (Zayed University); UM share €38,040 (with Hilken)",
   },
   {
     year: "2022",
     funder: "Comenius (NRO)",
     project: "Teaching Fellowship: Technology-enhanced Personalized Feedback",
-    amount: 50_000,
-    role: "Co-PI",
+    amount: 12_500,
+    role: "Co-applicant",
+    totalVolume: 50_000,
+    scope: "Fellow: R. di Palma",
   },
   {
     year: "2021",
     funder: "European Commission — Marie Skłodowska-Curie",
     project: "Individual Fellowship: AugmentPension",
-    amount: 190_000,
-    role: "PI",
-  },
-  {
-    year: "2016",
-    funder: "Australian Government",
-    project: "International Postgraduate Research Scholarship",
-    amount: 180_000,
-    role: "PI",
+    amount: 187_572,
+    role: "PI (Fellow)",
   },
 ];
 
@@ -262,68 +253,69 @@ const internalStrategic: Grant[] = [
   {
     year: "2025",
     funder: "UM–Zuyd Strategic Investment Budget",
-    project: "Growing Limburg Immersive Technologies Network (Year 2)",
-    amount: 100_000,
-    role: "Co-PI",
-    scope: "50% Maastricht University / 50% Zuyd Hogeschool",
+    project: "Growing the Limburg Immersive Technologies Network (Year 2)",
+    amount: 16_667,
+    role: "Co-applicant",
+    totalVolume: 100_000,
+    scope: "Joint UM–Zuyd grant; UM share €50,000",
   },
   {
     year: "2025",
     funder: "GSBE",
     project: "PhD Co-funding — Maarten Ramaekers: Preparing Procurement for an AI Driven Future",
-    amount: 50_000,
-    role: "Co-PI",
+    amount: 16_667,
+    role: "Co-applicant",
+    totalVolume: 50_000,
   },
   {
     year: "2025",
     funder: "GSBE",
     project:
       "PhD Co-funding — Joana Fernandes Duhamel: Emerging Technologies & Future Self",
-    amount: 72_637,
-    role: "PI",
+    amount: 24_212,
+    role: "Co-applicant",
+    totalVolume: 72_637,
   },
   {
     year: "2024",
     funder: "UM–Zuyd Strategic Investment Budget",
-    project: "Limburg Immersive Technologies Network (Year 1)",
-    amount: 164_000,
-    role: "Co-PI",
-    scope: "50% Maastricht University / 50% Zuyd Hogeschool",
+    project: "Developing the Limburg Immersive Technology Network (Year 1)",
+    amount: 27_333,
+    role: "Co-applicant",
+    totalVolume: 164_000,
+    scope: "Joint UM–Zuyd grant; UM share €82,000",
   },
   {
     year: "2023",
     funder: "SBE",
-    project: "Education Innovation Voucher: Realistic Research Settings with AR and VR",
-    amount: 10_000,
-    role: "Co-PI",
+    project: "Education Innovation Voucher: AR-VR in Master Thesis",
+    amount: 5_000,
+    role: "Co-applicant",
+    totalVolume: 10_000,
   },
   {
     year: "2022",
     funder: "Maastricht University EDLAB",
-    project: "VR Enhanced PBL",
-    amount: 50_000,
-    role: "Co-PI",
-  },
-  {
-    year: "2022",
-    funder: "SBE",
-    project: "Education Innovation Voucher: Reality Check — Automated Student Feedback at SBE",
-    amount: 10_000,
-    role: "Co-PI",
+    project: "VR-enhanced PBL",
+    amount: 12_500,
+    role: "Co-applicant",
+    totalVolume: 50_000,
   },
   {
     year: "2022",
     funder: "GSBE",
-    project: "PhD Co-funding — Roberta di Palma: VR in Education",
-    amount: 82_126,
-    role: "Co-PI",
+    project: "PhD Co-funding — Roberta di Palma: VR in Education & Service Marketing",
+    amount: 20_532,
+    role: "Co-applicant",
+    totalVolume: 82_126,
   },
   {
     year: "2021",
     funder: "GSBE",
     project: "PhD Co-funding — Silke Herold: Digital Procurement",
-    amount: 46_649,
-    role: "Co-PI",
+    amount: 15_550,
+    role: "Co-applicant",
+    totalVolume: 46_649,
   },
   {
     year: "2020",
@@ -333,25 +325,11 @@ const internalStrategic: Grant[] = [
     role: "PI",
   },
   {
-    year: "2019",
-    funder: "UNSW",
-    project: "Placement Scholarship for Research Excellence",
-    amount: 1_900,
-    role: "PI",
-  },
-  {
     year: "2016",
     funder: "UNSW BizLab",
     project: "4× Higher Degree Research Grants",
     amount: 7_500,
-    role: "PI",
-  },
-  {
-    year: "2016",
-    funder: "UNSW Business School",
-    project: "Supplementary Scholarship",
-    amount: 22_000,
-    role: "PI",
+    role: "Applicant",
   },
 ];
 
@@ -362,14 +340,49 @@ const eventFunding: Grant[] = [
     funder: "SWOL",
     project: "Scientific Event Grant: 10th International XR Metaverse Conference",
     amount: 2_500,
-    role: "Co-Organizer",
+    role: "Applicant (Chair)",
   },
   {
     year: "2025",
     funder: "GSBE",
     project: "Conference Funding: 10th International XR Metaverse Conference",
     amount: 2_500,
-    role: "Co-Organizer",
+    role: "Applicant (Chair)",
+  },
+];
+
+/** 4. PhD sponsorship and individual scholarships (not research grants). */
+const scholarships: Grant[] = [
+  {
+    year: "2023",
+    funder: "Saudi Arabian Cultural Mission (SACM)",
+    project: "PhD sponsorship: Immersive Horizons",
+    amount: 68_333,
+    role: "Supervisor",
+    totalVolume: 205_000,
+    scope:
+      "Payments to UM under the four-year contract (research budget, supervision, DEXLab lab services, bench fee); with Mahr, Hilken",
+  },
+  {
+    year: "2019",
+    funder: "UNSW",
+    project: "Placement Scholarship for Research Excellence",
+    amount: 1_900,
+    role: "Recipient",
+  },
+  {
+    year: "2016",
+    funder: "Australian Government (UNSW)",
+    project: "International Postgraduate Research Scholarship",
+    amount: 180_000,
+    role: "Recipient",
+  },
+  {
+    year: "2016",
+    funder: "UNSW Business School",
+    project: "Supplementary Scholarship",
+    amount: 22_000,
+    role: "Recipient",
   },
 ];
 
@@ -377,23 +390,30 @@ export const fundingTables: FundingTable[] = [
   { key: "external", labelKey: "cv.funding.external", grants: externalCompetitive },
   { key: "internal", labelKey: "cv.funding.internal", grants: internalStrategic },
   { key: "events", labelKey: "cv.funding.events", grants: eventFunding },
+  { key: "scholarships", labelKey: "cv.funding.scholarships", grants: scholarships },
 ];
 
 /**
  * Contract income rather than a grant, so it is reported separately and never
- * folded into the competitive total. Role: Co-PI.
+ * folded into the competitive total.
  */
 export const industryFunding = { since: "2022", amount: 50_000 };
 
 const sum = (grants: Grant[]) => grants.reduce((total, g) => total + g.amount, 0);
 
+const volume = (grants: Grant[]) => grants.reduce((total, g) => total + (g.totalVolume ?? g.amount), 0);
+const research = [...externalCompetitive, ...internalStrategic, ...eventFunding];
+
 export const FUNDING_STATS = {
   external: sum(externalCompetitive),
   internal: sum(internalStrategic),
   events: sum(eventFunding),
-  /** All three tables combined; excludes industry contract income. */
-  grantsTotal: sum(externalCompetitive) + sum(internalStrategic) + sum(eventFunding),
-  grantCount: externalCompetitive.length + internalStrategic.length + eventFunding.length,
+  scholarships: sum(scholarships),
+  /** Personal share across the three research and teaching tables. */
+  grantsTotal: sum(research),
+  /** Full project volume across the three research and teaching tables. */
+  volumeTotal: volume(research),
+  grantCount: research.length,
 } as const;
 
 export const subtotalFor = (key: string) =>
@@ -401,7 +421,9 @@ export const subtotalFor = (key: string) =>
     ? FUNDING_STATS.external
     : key === "internal"
       ? FUNDING_STATS.internal
-      : FUNDING_STATS.events;
+      : key === "events"
+        ? FUNDING_STATS.events
+        : FUNDING_STATS.scholarships;
 
 /** "€1.51M" / "€350K" — compact, locale-neutral. */
 export function formatEur(amount: number): string {
@@ -548,11 +570,12 @@ export const supervision = {
   current: [
     'Maarten Ramaekers — "Preparing Procurement for an AI driven future" (with Prof. D. Mahr & Prof. F. Rozemeijer)',
     'Joana Duhamel — "Emerging Technologies for future-self connectedness" (with Dr. Tim Hilken & Prof. Max Louwerse)',
-    'Imbrahim Humdi — "VR in hedonic service settings" (with Prof. D. Mahr & Dr. Tim Hilken)',
+    'Ibrahim Humdi — "VR in hedonic service settings" (with Prof. D. Mahr & Dr. Tim Hilken)',
     'Stefan Bos — "Immersive Technologies to combat poverty" (with Prof. E. Brüggen & Dr. Minou van der Werf)',
-    'Roberta di Palma — "VR in Education & Service Marketing" (with Prof. D. Mahr, Dr. Tim Hilken & Prof. Simon Beausaert)',
+    'Paula Wodecka — "Learning with Immersive Technologies: Multisensory AI Experiences (LIT-MAX)", joint PhD position with Zuyd University of Applied Sciences (with Prof. D. Mahr, Dr. Tim Hilken & Dr. Danny Han) — starting December 2026',
   ],
   completed: [
+    'Roberta di Palma — "VR in Education & Service Marketing" (with Prof. D. Mahr, Dr. Tim Hilken & Prof. Simon Beausaert) — dissertation submitted, defense scheduled for March 2027',
     'Silke Herold — "Digital Procurement" (with Prof. D. Mahr & Prof. F. Rozemeijer) — Graduated 2025',
   ],
   other: [
